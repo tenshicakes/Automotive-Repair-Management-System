@@ -1,0 +1,364 @@
+﻿using ReaLTaiizor.Controls;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using WinPanel = System.Windows.Forms.Panel;
+
+namespace Olvarra_Capstone
+{
+    public partial class dashboard : Form
+    {
+        public string currentUserRole = "";
+        public dashboard(string role)
+        {
+            InitializeComponent();
+            currentUserRole = role;
+        }
+
+        private void dashboard_Load(object sender, EventArgs e)
+        {
+            ActiveButton(homebtn);
+            ShowPanel(homecontainer);
+        }
+
+        private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // This completely kills the app when the Dashboard is closed
+        }
+
+
+        private FoxButton activeButton = null;
+        private void ActiveButton(FoxButton clickedBtn)
+        {
+            //Set all buttons to inactive by default
+            FoxButton[] navbarbuttons = { homebtn, registerbtn, cxbtn, srlogsbtn, accbtn };
+
+            //Default color for all buttons
+            foreach (FoxButton button in navbarbuttons)
+            {
+                button.BaseColor = Color.FromArgb(169, 8, 28);
+                button.ForeColor = Color.White;
+            }
+
+            //Set a button to active when clicked (color switch)
+            clickedBtn.BaseColor = Color.White;
+            clickedBtn.ForeColor = Color.FromArgb(169, 8, 28);
+
+            activeButton = clickedBtn;
+
+        }
+
+        private void ShowPanel(WinPanel paneltoshow)
+        {
+            WinPanel[] panels = { accscontainer, homecontainer, rgstrcontainer, cstmrscontainer, srvclgscontainer };
+
+            foreach (WinPanel panel in panels)
+            {
+                panel.Visible = false;
+            }
+
+            paneltoshow.Visible = true;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //====================== HOME BUTTON ================ HOME BUTTON ==================== HOME BUTTON ==================
+        private void foxButton1_Click(object sender, EventArgs e)
+        {
+            ActiveButton(homebtn);
+            ShowPanel(homecontainer);
+        }
+
+
+        private void updatejobbtn_Click(object sender, EventArgs e)
+        {
+            UpdatePending update = new UpdatePending();
+            update.ShowDialog();
+        }
+
+        private void viewunpaidjob_Click(object sender, EventArgs e)
+        {
+            UnpaidJob unpaidJob = new UnpaidJob();
+            unpaidJob.ShowDialog();
+        }
+
+
+
+
+
+
+
+        //====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
+        private void registerbtn_Click(object sender, EventArgs e)
+        {
+            ActiveButton(registerbtn);
+            ShowPanel(rgstrcontainer);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //====================== CUSTOMER BUTTON ================ CUSTOMER BUTTON ==================== CUSTOMER BUTTON ==================
+        private void cxbtn_Click(object sender, EventArgs e)
+        {
+            ActiveButton(cxbtn);
+            ShowPanel(cstmrscontainer);
+        }
+
+
+
+
+
+
+
+         
+
+
+
+        //====================== SRVC LOGS BUTTON ================ SRVC LOGS BUTTON ==================== SRVC LOGS BUTTON ==================
+        private void srlogsbtn_Click(object sender, EventArgs e) 
+        {
+            ActiveButton(srlogsbtn);
+            ShowPanel(srvclgscontainer);
+        }
+
+
+        //======================
+        //EDIT CUSTOMER INFO BUTTON
+        //======================
+        private void foxButton2_Click(object sender, EventArgs e)
+        {
+            cxEditInfo cxinfo = new cxEditInfo();
+            cxinfo.ShowDialog();
+        }
+
+
+        //======================
+        //EDIT VEHICLE INFO BUTTON
+        //======================
+        private void vhcleditinfo_Click(object sender, EventArgs e)
+        {
+            vhclEditInfo vhclinfo = new vhclEditInfo();
+            vhclinfo.ShowDialog();
+        }
+
+        //=======================
+        //NEW JOB ORDER BUTTON
+        //=======================
+        private void foxButton2_Click_1(object sender, EventArgs e)
+        {
+            JobOrder joborder = new JobOrder();
+            joborder.ShowDialog();
+        }
+
+        //=======================
+        //ADD VEHICLE BUTTON
+        //=======================
+        private void addvehiclebtn_Click(object sender, EventArgs e)
+        {
+            AddVehicle addvhcl = new AddVehicle();
+            addvhcl.ShowDialog();
+        }
+
+
+
+        //=====================================================================
+        //POTENTIONAL QUERY FOR SEARCHING CUSTOMERS INFO BASED ON PLATE NUMBER
+        //=========== ==========================================================
+
+        /* 
+         * private void searchbtn_Click(object sender, EventArgs e)
+{ 
+    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\InventoryDB.mdf;Integrated Security=True";
+
+    string query = @"
+    SELECT
+        c.FullName,
+        c.PhoneNumber,
+        c.Address,
+        v.VehicleModel,
+        v.PlateNumber 
+    FROM CustomerInfo c
+    INNER JOIN VehicleInfo v
+        ON c.CustomerID = v.CustomerID
+    WHERE v.PlateNumber = @PlateNumber";
+
+    using (SqlConnection conn = new SqlConnection(connectionString))
+    {
+        conn.Open();
+
+        using (SqlCommand cmd = new SqlCommand(query, conn))
+        {
+            cmd.Parameters.AddWithValue("@PlateNumber", search_txtbox.Text.Trim());
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                FoxBigLabel1.Text = reader["FullName"].ToString();
+                FoxBigLabel2.Text = reader["PhoneNumber"].ToString();
+                FoxBigLabel3.Text = reader["Address"].ToString();
+                FoxBigLabel4.Text = reader["VehicleModel"].ToString();
+                FoxBigLabel5.Text = reader["PlateNumber"].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Plate number not found.");
+
+                FoxBigLabel1.Text = "";
+                FoxBigLabel2.Text = "";
+                FoxBigLabel3.Text = "";
+                FoxBigLabel4.Text = "";
+                FoxBigLabel5.Text = "";
+            }
+        }
+    }
+}
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //====================== ACCOUNTS BUTTON ================ ACCOUNTS BUTTON ==================== ACCOUNTS BUTTON ==================
+        private void accbtn_Click(object sender, EventArgs e)
+        {
+            ActiveButton(accbtn);
+            ShowPanel(accscontainer);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dungeonTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void rgstrcontainer_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void dungeonTextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rgstrnewcontainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rgstrvhclcancelbtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void foxLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void foxBigLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchresultscontainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+       
+    }
+}
