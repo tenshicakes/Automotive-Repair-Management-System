@@ -16,5 +16,10 @@ namespace Olvarra_Capstone
         {
             InitializeComponent();
         }
+
+        private void foxbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

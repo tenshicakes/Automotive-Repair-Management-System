@@ -27,6 +27,8 @@ namespace Olvarra_Capstone
         {
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
+            LoadProductsToIventoryGrid();
+            SetupInventoryGrid();
         }
 
         private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,10 +113,59 @@ namespace Olvarra_Capstone
             unpaidJob.ShowDialog();
         }
 
+        private void viewfinishjob_Click(object sender, EventArgs e)
+        {
+            FinishedJob finishedjob = new FinishedJob();
+            finishedjob.ShowDialog();
+        }
 
 
 
 
+
+        private void LoadProductsToIventoryGrid()
+        {
+            string query = "SELECT PartName, StockQuantity, Price FROM SpareParts";
+            DataTable dt = DatabaseHelper.GetTable(query);
+            inventorygrid.DataSource = dt;
+
+            inventorygrid.Columns["PartName"].HeaderText = "Part Name";
+            inventorygrid.Columns["StockQuantity"].HeaderText = "Stocks";
+            inventorygrid.Columns["Price"].HeaderText = "Price";
+        }
+
+        private void SetupInventoryGrid()
+        {
+            inventorygrid.BackgroundColor = Color.White;
+            inventorygrid.BorderStyle = BorderStyle.None;
+            inventorygrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            inventorygrid.RowHeadersVisible = false;
+            inventorygrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            inventorygrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            inventorygrid.MultiSelect = true;
+            inventorygrid.ReadOnly = true;
+            inventorygrid.AllowUserToAddRows = false;
+
+            // Font and Style for the content cells
+            inventorygrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            inventorygrid.DefaultCellStyle.BackColor = Color.White;
+            inventorygrid.DefaultCellStyle.ForeColor = Color.Black;
+            inventorygrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            inventorygrid.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Font and Style for the Column Headers
+            inventorygrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            inventorygrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            inventorygrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            inventorygrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            inventorygrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+
+            // Required for custom header background colors to show
+            inventorygrid.EnableHeadersVisualStyles = false;
+
+            // Height for the rows so they don't look cramped
+            inventorygrid.RowTemplate.Height = 40;
+        }
 
 
         //====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
@@ -359,6 +410,6 @@ namespace Olvarra_Capstone
 
         }
 
-       
+        
     }
 }
