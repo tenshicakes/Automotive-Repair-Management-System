@@ -66,6 +66,12 @@
             this.pendingjobgrid = new System.Windows.Forms.DataGridView();
             this.foxBigLabel1 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.cstmrscontainer = new System.Windows.Forms.Panel();
+            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
+            this.customeraccsgrid = new System.Windows.Forms.DataGridView();
+            this.foxButton1 = new ReaLTaiizor.Controls.FoxButton();
+            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.srvclgscontainer = new System.Windows.Forms.Panel();
             this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
             this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
@@ -105,14 +111,8 @@
             this.vhclmodel_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cxid_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.cstmrscontainer = new System.Windows.Forms.Panel();
-            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.accscontainer = new System.Windows.Forms.Panel();
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.foxButton1 = new ReaLTaiizor.Controls.FoxButton();
-            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
-            this.unpaidjobgrid = new System.Windows.Forms.DataGridView();
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
@@ -124,6 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).BeginInit();
+            this.cstmrscontainer.SuspendLayout();
+            this.finishedjobgrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
             this.srvclgscontainer.SuspendLayout();
             this.searchresultscontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
@@ -134,10 +137,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.rgstrnewcontainer.SuspendLayout();
             this.rgstrvhclcontainer.SuspendLayout();
-            this.cstmrscontainer.SuspendLayout();
             this.accscontainer.SuspendLayout();
-            this.finishedjobgrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unpaidjobgrid)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -321,8 +321,8 @@
             // 
             // main_cont
             // 
-            this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
+            this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
@@ -448,6 +448,7 @@
             this.inventorygrid.Name = "inventorygrid";
             this.inventorygrid.ReadOnly = true;
             this.inventorygrid.RowHeadersVisible = false;
+            this.inventorygrid.RowHeadersWidth = 51;
             this.inventorygrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventorygrid.Size = new System.Drawing.Size(397, 84);
             this.inventorygrid.TabIndex = 9;
@@ -536,7 +537,7 @@
             this.unpaidjobcounter.Multiline = false;
             this.unpaidjobcounter.Name = "unpaidjobcounter";
             this.unpaidjobcounter.ReadOnly = false;
-            this.unpaidjobcounter.Size = new System.Drawing.Size(155, 30);
+            this.unpaidjobcounter.Size = new System.Drawing.Size(155, 35);
             this.unpaidjobcounter.TabIndex = 23;
             this.unpaidjobcounter.Text = "123";
             this.unpaidjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
@@ -599,7 +600,7 @@
             this.finishjobcounter.Multiline = false;
             this.finishjobcounter.Name = "finishjobcounter";
             this.finishjobcounter.ReadOnly = false;
-            this.finishjobcounter.Size = new System.Drawing.Size(155, 30);
+            this.finishjobcounter.Size = new System.Drawing.Size(155, 35);
             this.finishjobcounter.TabIndex = 20;
             this.finishjobcounter.Text = "123";
             this.finishjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
@@ -697,7 +698,7 @@
             this.searchjob_txtbox.Multiline = false;
             this.searchjob_txtbox.Name = "searchjob_txtbox";
             this.searchjob_txtbox.ReadOnly = false;
-            this.searchjob_txtbox.Size = new System.Drawing.Size(294, 36);
+            this.searchjob_txtbox.Size = new System.Drawing.Size(294, 43);
             this.searchjob_txtbox.TabIndex = 16;
             this.searchjob_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.searchjob_txtbox.UseSystemPasswordChar = false;
@@ -769,6 +770,7 @@
             this.pendingjobgrid.Name = "pendingjobgrid";
             this.pendingjobgrid.ReadOnly = true;
             this.pendingjobgrid.RowHeadersVisible = false;
+            this.pendingjobgrid.RowHeadersWidth = 51;
             this.pendingjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pendingjobgrid.Size = new System.Drawing.Size(878, 180);
             this.pendingjobgrid.TabIndex = 9;
@@ -799,6 +801,110 @@
             this.foxBigLabel5.Size = new System.Drawing.Size(271, 31);
             this.foxBigLabel5.TabIndex = 1;
             this.foxBigLabel5.Text = "Dashboard Overview";
+            // 
+            // cstmrscontainer
+            // 
+            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
+            this.cstmrscontainer.Controls.Add(this.foxButton1);
+            this.cstmrscontainer.Controls.Add(this.dungeonTextBox1);
+            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
+            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
+            this.cstmrscontainer.Name = "cstmrscontainer";
+            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
+            this.cstmrscontainer.TabIndex = 9;
+            // 
+            // finishedjobgrid
+            // 
+            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.finishedjobgrid.Controls.Add(this.customeraccsgrid);
+            this.finishedjobgrid.Depth = 0;
+            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
+            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.finishedjobgrid.Name = "finishedjobgrid";
+            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
+            this.finishedjobgrid.TabIndex = 4;
+            // 
+            // customeraccsgrid
+            // 
+            this.customeraccsgrid.AllowUserToAddRows = false;
+            this.customeraccsgrid.AllowUserToDeleteRows = false;
+            this.customeraccsgrid.AllowUserToResizeColumns = false;
+            this.customeraccsgrid.AllowUserToResizeRows = false;
+            this.customeraccsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customeraccsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.customeraccsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customeraccsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customeraccsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customeraccsgrid.Location = new System.Drawing.Point(14, 14);
+            this.customeraccsgrid.MultiSelect = false;
+            this.customeraccsgrid.Name = "customeraccsgrid";
+            this.customeraccsgrid.ReadOnly = true;
+            this.customeraccsgrid.RowHeadersVisible = false;
+            this.customeraccsgrid.RowHeadersWidth = 51;
+            this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
+            this.customeraccsgrid.TabIndex = 11;
+            // 
+            // foxButton1
+            // 
+            this.foxButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxButton1.BackColor = System.Drawing.Color.Transparent;
+            this.foxButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.foxButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.foxButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foxButton1.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.foxButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.foxButton1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.foxButton1.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.foxButton1.EnabledCalc = true;
+            this.foxButton1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.foxButton1.ForeColor = System.Drawing.Color.White;
+            this.foxButton1.Location = new System.Drawing.Point(728, 23);
+            this.foxButton1.Name = "foxButton1";
+            this.foxButton1.OverColor = System.Drawing.Color.Black;
+            this.foxButton1.Size = new System.Drawing.Size(120, 36);
+            this.foxButton1.TabIndex = 3;
+            this.foxButton1.Text = "Search";
+            // 
+            // dungeonTextBox1
+            // 
+            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
+            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.dungeonTextBox1.Location = new System.Drawing.Point(193, 23);
+            this.dungeonTextBox1.MaxLength = 32767;
+            this.dungeonTextBox1.Multiline = false;
+            this.dungeonTextBox1.Name = "dungeonTextBox1";
+            this.dungeonTextBox1.ReadOnly = false;
+            this.dungeonTextBox1.Size = new System.Drawing.Size(519, 43);
+            this.dungeonTextBox1.TabIndex = 2;
+            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            // 
+            // foxBigLabel4
+            // 
+            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
+            this.foxBigLabel4.Name = "foxBigLabel4";
+            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
+            this.foxBigLabel4.TabIndex = 1;
+            this.foxBigLabel4.Text = "Customer Accounts";
             // 
             // srvclgscontainer
             // 
@@ -966,6 +1072,7 @@
             this.vhclsownedgrid.Name = "vhclsownedgrid";
             this.vhclsownedgrid.ReadOnly = true;
             this.vhclsownedgrid.RowHeadersVisible = false;
+            this.vhclsownedgrid.RowHeadersWidth = 51;
             this.vhclsownedgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vhclsownedgrid.Size = new System.Drawing.Size(851, 204);
             this.vhclsownedgrid.TabIndex = 8;
@@ -997,6 +1104,7 @@
             this.cxdetailsgrid.Name = "cxdetailsgrid";
             this.cxdetailsgrid.ReadOnly = true;
             this.cxdetailsgrid.RowHeadersVisible = false;
+            this.cxdetailsgrid.RowHeadersWidth = 51;
             this.cxdetailsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cxdetailsgrid.Size = new System.Drawing.Size(851, 94);
             this.cxdetailsgrid.TabIndex = 6;
@@ -1071,7 +1179,7 @@
             this.search_txtbox.Multiline = false;
             this.search_txtbox.Name = "search_txtbox";
             this.search_txtbox.ReadOnly = false;
-            this.search_txtbox.Size = new System.Drawing.Size(369, 36);
+            this.search_txtbox.Size = new System.Drawing.Size(369, 43);
             this.search_txtbox.TabIndex = 0;
             this.search_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.search_txtbox.UseSystemPasswordChar = false;
@@ -1205,7 +1313,7 @@
             this.address_txtbox.Multiline = false;
             this.address_txtbox.Name = "address_txtbox";
             this.address_txtbox.ReadOnly = false;
-            this.address_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.address_txtbox.Size = new System.Drawing.Size(405, 43);
             this.address_txtbox.TabIndex = 5;
             this.address_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.address_txtbox.UseSystemPasswordChar = false;
@@ -1221,7 +1329,7 @@
             this.label4.Location = new System.Drawing.Point(19, 199);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 26);
+            this.label4.Size = new System.Drawing.Size(108, 33);
             this.label4.TabIndex = 4;
             this.label4.Text = "Address";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -1236,7 +1344,7 @@
             this.rgstrnewlabel.ForeColor = System.Drawing.Color.White;
             this.rgstrnewlabel.Location = new System.Drawing.Point(106, 7);
             this.rgstrnewlabel.Name = "rgstrnewlabel";
-            this.rgstrnewlabel.Size = new System.Drawing.Size(240, 29);
+            this.rgstrnewlabel.Size = new System.Drawing.Size(301, 37);
             this.rgstrnewlabel.TabIndex = 1;
             this.rgstrnewlabel.Text = "REGISTER CUSTOMER";
             // 
@@ -1251,7 +1359,7 @@
             this.label3.Location = new System.Drawing.Point(16, 125);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 26);
+            this.label3.Size = new System.Drawing.Size(188, 33);
             this.label3.TabIndex = 3;
             this.label3.Text = "Phone Number";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -1271,7 +1379,7 @@
             this.phonenum_txtbox.Multiline = false;
             this.phonenum_txtbox.Name = "phonenum_txtbox";
             this.phonenum_txtbox.ReadOnly = false;
-            this.phonenum_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.phonenum_txtbox.Size = new System.Drawing.Size(405, 43);
             this.phonenum_txtbox.TabIndex = 2;
             this.phonenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.phonenum_txtbox.UseSystemPasswordChar = false;
@@ -1288,7 +1396,7 @@
             this.label2.Location = new System.Drawing.Point(16, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 26);
+            this.label2.Size = new System.Drawing.Size(127, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "Full Name";
             // 
@@ -1307,7 +1415,7 @@
             this.fname_txtbox.Multiline = false;
             this.fname_txtbox.Name = "fname_txtbox";
             this.fname_txtbox.ReadOnly = false;
-            this.fname_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.fname_txtbox.Size = new System.Drawing.Size(405, 43);
             this.fname_txtbox.TabIndex = 0;
             this.fname_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.fname_txtbox.UseSystemPasswordChar = false;
@@ -1385,7 +1493,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(115, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(271, 29);
+            this.label7.Size = new System.Drawing.Size(339, 37);
             this.label7.TabIndex = 8;
             this.label7.Text = "REGISTER VEHICLE INFO.";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -1405,7 +1513,7 @@
             this.platenum_txtbox.Multiline = false;
             this.platenum_txtbox.Name = "platenum_txtbox";
             this.platenum_txtbox.ReadOnly = false;
-            this.platenum_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.platenum_txtbox.Size = new System.Drawing.Size(405, 43);
             this.platenum_txtbox.TabIndex = 5;
             this.platenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.platenum_txtbox.UseSystemPasswordChar = false;
@@ -1421,7 +1529,7 @@
             this.label1.Location = new System.Drawing.Point(12, 197);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 26);
+            this.label1.Size = new System.Drawing.Size(172, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "Plate Number";
             // 
@@ -1436,7 +1544,7 @@
             this.label5.Location = new System.Drawing.Point(12, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 26);
+            this.label5.Size = new System.Drawing.Size(175, 33);
             this.label5.TabIndex = 3;
             this.label5.Text = "Vehicle Model";
             // 
@@ -1455,7 +1563,7 @@
             this.vhclmodel_txtbox.Multiline = false;
             this.vhclmodel_txtbox.Name = "vhclmodel_txtbox";
             this.vhclmodel_txtbox.ReadOnly = false;
-            this.vhclmodel_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.vhclmodel_txtbox.Size = new System.Drawing.Size(405, 43);
             this.vhclmodel_txtbox.TabIndex = 2;
             this.vhclmodel_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.vhclmodel_txtbox.UseSystemPasswordChar = false;
@@ -1471,7 +1579,7 @@
             this.label6.Location = new System.Drawing.Point(12, 47);
             this.label6.Margin = new System.Windows.Forms.Padding(5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 26);
+            this.label6.Size = new System.Drawing.Size(156, 33);
             this.label6.TabIndex = 1;
             this.label6.Text = "Customer ID";
             // 
@@ -1490,37 +1598,11 @@
             this.cxid_txtbox.Multiline = false;
             this.cxid_txtbox.Name = "cxid_txtbox";
             this.cxid_txtbox.ReadOnly = false;
-            this.cxid_txtbox.Size = new System.Drawing.Size(405, 36);
+            this.cxid_txtbox.Size = new System.Drawing.Size(405, 43);
             this.cxid_txtbox.TabIndex = 0;
             this.cxid_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.cxid_txtbox.UseSystemPasswordChar = false;
             this.cxid_txtbox.TextChanged += new System.EventHandler(this.dungeonTextBox6_TextChanged);
-            // 
-            // cstmrscontainer
-            // 
-            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
-            this.cstmrscontainer.Controls.Add(this.foxButton1);
-            this.cstmrscontainer.Controls.Add(this.dungeonTextBox1);
-            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
-            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
-            this.cstmrscontainer.Name = "cstmrscontainer";
-            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
-            this.cstmrscontainer.TabIndex = 9;
-            // 
-            // foxBigLabel4
-            // 
-            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
-            this.foxBigLabel4.Name = "foxBigLabel4";
-            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
-            this.foxBigLabel4.TabIndex = 1;
-            this.foxBigLabel4.Text = "Customer Accounts";
             // 
             // accscontainer
             // 
@@ -1544,86 +1626,9 @@
             this.foxBigLabel2.TabIndex = 1;
             this.foxBigLabel2.Text = " Accounts";
             // 
-            // dungeonTextBox1
-            // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(193, 23);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(519, 36);
-            this.dungeonTextBox1.TabIndex = 2;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
-            // 
-            // foxButton1
-            // 
-            this.foxButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.foxButton1.BackColor = System.Drawing.Color.Transparent;
-            this.foxButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.foxButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.foxButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foxButton1.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.foxButton1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.foxButton1.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.foxButton1.EnabledCalc = true;
-            this.foxButton1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.foxButton1.ForeColor = System.Drawing.Color.White;
-            this.foxButton1.Location = new System.Drawing.Point(728, 23);
-            this.foxButton1.Name = "foxButton1";
-            this.foxButton1.OverColor = System.Drawing.Color.Black;
-            this.foxButton1.Size = new System.Drawing.Size(120, 36);
-            this.foxButton1.TabIndex = 3;
-            this.foxButton1.Text = "Search";
-            // 
-            // finishedjobgrid
-            // 
-            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.finishedjobgrid.Controls.Add(this.unpaidjobgrid);
-            this.finishedjobgrid.Depth = 0;
-            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
-            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.finishedjobgrid.Name = "finishedjobgrid";
-            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
-            this.finishedjobgrid.TabIndex = 4;
-            // 
-            // unpaidjobgrid
-            // 
-            this.unpaidjobgrid.AllowUserToAddRows = false;
-            this.unpaidjobgrid.AllowUserToDeleteRows = false;
-            this.unpaidjobgrid.AllowUserToResizeColumns = false;
-            this.unpaidjobgrid.AllowUserToResizeRows = false;
-            this.unpaidjobgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.unpaidjobgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.unpaidjobgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.unpaidjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.unpaidjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unpaidjobgrid.Location = new System.Drawing.Point(14, 14);
-            this.unpaidjobgrid.MultiSelect = false;
-            this.unpaidjobgrid.Name = "unpaidjobgrid";
-            this.unpaidjobgrid.ReadOnly = true;
-            this.unpaidjobgrid.RowHeadersVisible = false;
-            this.unpaidjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.unpaidjobgrid.Size = new System.Drawing.Size(876, 359);
-            this.unpaidjobgrid.TabIndex = 11;
-            // 
             // dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1111, 652);
             this.Controls.Add(this.navbar);
@@ -1647,6 +1652,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).EndInit();
+            this.cstmrscontainer.ResumeLayout(false);
+            this.finishedjobgrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
             this.srvclgscontainer.ResumeLayout(false);
             this.searchresultscontainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
@@ -1659,10 +1667,7 @@
             this.rgstrnewcontainer.PerformLayout();
             this.rgstrvhclcontainer.ResumeLayout(false);
             this.rgstrvhclcontainer.PerformLayout();
-            this.cstmrscontainer.ResumeLayout(false);
             this.accscontainer.ResumeLayout(false);
-            this.finishedjobgrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.unpaidjobgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1752,6 +1757,6 @@
         private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
         private ReaLTaiizor.Controls.FoxButton foxButton1;
         private ReaLTaiizor.Controls.MaterialCard finishedjobgrid;
-        private System.Windows.Forms.DataGridView unpaidjobgrid;
+        private System.Windows.Forms.DataGridView customeraccsgrid;
     }
 }

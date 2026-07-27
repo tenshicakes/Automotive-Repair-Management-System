@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,8 +28,7 @@ namespace Olvarra_Capstone
         {
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
-            LoadProductsToIventoryGrid();
-            SetupInventoryGrid();
+            RefreshAllGrids();
         }
 
         private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,7 +76,13 @@ namespace Olvarra_Capstone
 
 
 
-
+        private void RefreshAllGrids()
+        {
+            LoadProductsToIventoryGrid();
+            SetupInventoryGridStyle();
+            LoadCustomerAccsToGrid();
+            SetupCustomerAccsGridStyle();
+        }
 
 
 
@@ -134,7 +140,7 @@ namespace Olvarra_Capstone
             inventorygrid.Columns["Price"].HeaderText = "Price";
         }
 
-        private void SetupInventoryGrid()
+        private void SetupInventoryGridStyle()
         {
             inventorygrid.BackgroundColor = Color.White;
             inventorygrid.BorderStyle = BorderStyle.None;
@@ -194,15 +200,55 @@ namespace Olvarra_Capstone
         {
             ActiveButton(cxbtn);
             ShowPanel(cstmrscontainer);
+            LoadCustomerAccsToGrid();
+            SetupCustomerAccsGridStyle();
+        }
+
+
+        private void LoadCustomerAccsToGrid()
+            {
+            string query = "SELECT CustomerID, FullName, PhoneNumber, Address FROM CustomerInfo";
+            DataTable dt = DatabaseHelper.GetTable(query);
+            customeraccsgrid.DataSource = dt;
+            customeraccsgrid.Columns["CustomerID"].HeaderText = "Customer ID";
+            customeraccsgrid.Columns["FullName"].HeaderText = "Full Name";
+            customeraccsgrid.Columns["PhoneNumber"].HeaderText = "Phone Number";
+            customeraccsgrid.Columns["Address"].HeaderText = "Address";
+        }
+
+        private void SetupCustomerAccsGridStyle()
+        {
+            customeraccsgrid.BackgroundColor = Color.White;
+            customeraccsgrid.BorderStyle = BorderStyle.None;
+            customeraccsgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            customeraccsgrid.RowHeadersVisible = false;
+            customeraccsgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            customeraccsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            customeraccsgrid.MultiSelect = true;
+            customeraccsgrid.ReadOnly = true;
+            customeraccsgrid.AllowUserToAddRows = false;
+            // Font and Style for the content cells
+            customeraccsgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            customeraccsgrid.DefaultCellStyle.BackColor = Color.White;
+            customeraccsgrid.DefaultCellStyle.ForeColor = Color.Black;
+            customeraccsgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            customeraccsgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            // Font and Style for the Column Headers
+            customeraccsgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            customeraccsgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            customeraccsgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            customeraccsgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            customeraccsgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            // Required for custom header background colors to show
+            customeraccsgrid.EnableHeadersVisualStyles = false;
+            // Height for the rows so they don't look cramped
+            customeraccsgrid.RowTemplate.Height = 40;
         }
 
 
 
 
 
-
-
-         
 
 
 
