@@ -152,24 +152,23 @@ namespace Olvarra_Capstone
             inventorygrid.ReadOnly = true;
             inventorygrid.AllowUserToAddRows = false;
 
-            // Font and Style for the content cells
+            
             inventorygrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             inventorygrid.DefaultCellStyle.BackColor = Color.White;
             inventorygrid.DefaultCellStyle.ForeColor = Color.Black;
             inventorygrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             inventorygrid.DefaultCellStyle.SelectionForeColor = Color.White;
 
-            // Font and Style for the Column Headers
             inventorygrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             inventorygrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             inventorygrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             inventorygrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             inventorygrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
 
-            // Required for custom header background colors to show
+            
             inventorygrid.EnableHeadersVisualStyles = false;
 
-            // Height for the rows so they don't look cramped
+            
             inventorygrid.RowTemplate.Height = 40;
         }
 

@@ -43,12 +43,12 @@
             this.materialCard1.Controls.Add(this.availpartsgrid);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(23, 82);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Location = new System.Drawing.Point(31, 101);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(432, 282);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard1.Size = new System.Drawing.Size(576, 347);
             this.materialCard1.TabIndex = 0;
             // 
             // availpartsgrid
@@ -62,12 +62,14 @@
             this.availpartsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.availpartsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availpartsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.availpartsgrid.Location = new System.Drawing.Point(14, 14);
+            this.availpartsgrid.Location = new System.Drawing.Point(19, 17);
+            this.availpartsgrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.availpartsgrid.Name = "availpartsgrid";
             this.availpartsgrid.ReadOnly = true;
             this.availpartsgrid.RowHeadersVisible = false;
+            this.availpartsgrid.RowHeadersWidth = 51;
             this.availpartsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.availpartsgrid.Size = new System.Drawing.Size(404, 254);
+            this.availpartsgrid.Size = new System.Drawing.Size(538, 313);
             this.availpartsgrid.TabIndex = 11;
             // 
             // foxLabel2
@@ -77,9 +79,10 @@
             this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel2.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel2.ForeColor = System.Drawing.Color.Black;
-            this.foxLabel2.Location = new System.Drawing.Point(139, 34);
+            this.foxLabel2.Location = new System.Drawing.Point(185, 42);
+            this.foxLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(185, 31);
+            this.foxLabel2.Size = new System.Drawing.Size(247, 38);
             this.foxLabel2.TabIndex = 6;
             this.foxLabel2.Text = "Available Parts";
             // 
@@ -97,10 +100,11 @@
             this.addbtn.EnabledCalc = true;
             this.addbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addbtn.ForeColor = System.Drawing.Color.White;
-            this.addbtn.Location = new System.Drawing.Point(300, 381);
+            this.addbtn.Location = new System.Drawing.Point(400, 469);
+            this.addbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addbtn.Name = "addbtn";
             this.addbtn.OverColor = System.Drawing.Color.Black;
-            this.addbtn.Size = new System.Drawing.Size(155, 45);
+            this.addbtn.Size = new System.Drawing.Size(207, 55);
             this.addbtn.TabIndex = 17;
             this.addbtn.Text = "Add";
             // 
@@ -118,28 +122,31 @@
             this.cancelbtn.EnabledCalc = true;
             this.cancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.cancelbtn.ForeColor = System.Drawing.Color.White;
-            this.cancelbtn.Location = new System.Drawing.Point(139, 381);
+            this.cancelbtn.Location = new System.Drawing.Point(185, 469);
+            this.cancelbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.OverColor = System.Drawing.Color.Black;
-            this.cancelbtn.Size = new System.Drawing.Size(155, 45);
+            this.cancelbtn.Size = new System.Drawing.Size(207, 55);
             this.cancelbtn.TabIndex = 18;
             this.cancelbtn.Text = "Cancel";
             // 
             // AddParts
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(478, 450);
+            this.ClientSize = new System.Drawing.Size(635, 544);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.materialCard1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(494, 489);
+            this.MaximumSize = new System.Drawing.Size(653, 591);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(494, 489);
+            this.MinimumSize = new System.Drawing.Size(653, 591);
             this.Name = "AddParts";
-            this.Text = "AddParts";
+            this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.AddParts_Load);
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.availpartsgrid)).EndInit();
             this.ResumeLayout(false);

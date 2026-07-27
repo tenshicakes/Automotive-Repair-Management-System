@@ -39,6 +39,12 @@
             this.registerbtn = new ReaLTaiizor.Controls.FoxButton();
             this.homebtn = new ReaLTaiizor.Controls.FoxButton();
             this.main_cont = new System.Windows.Forms.Panel();
+            this.cstmrscontainer = new System.Windows.Forms.Panel();
+            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
+            this.customeraccsgrid = new System.Windows.Forms.DataGridView();
+            this.foxButton1 = new ReaLTaiizor.Controls.FoxButton();
+            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.homecontainer = new System.Windows.Forms.Panel();
             this.editinventorybtn = new ReaLTaiizor.Controls.FoxButton();
             this.removeinvbtn = new ReaLTaiizor.Controls.FoxButton();
@@ -66,12 +72,6 @@
             this.pendingjobgrid = new System.Windows.Forms.DataGridView();
             this.foxBigLabel1 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.cstmrscontainer = new System.Windows.Forms.Panel();
-            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
-            this.customeraccsgrid = new System.Windows.Forms.DataGridView();
-            this.foxButton1 = new ReaLTaiizor.Controls.FoxButton();
-            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.srvclgscontainer = new System.Windows.Forms.Panel();
             this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
             this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
@@ -116,6 +116,9 @@
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
+            this.cstmrscontainer.SuspendLayout();
+            this.finishedjobgrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
             this.homecontainer.SuspendLayout();
             this.materialCard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).BeginInit();
@@ -124,9 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).BeginInit();
-            this.cstmrscontainer.SuspendLayout();
-            this.finishedjobgrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
             this.srvclgscontainer.SuspendLayout();
             this.searchresultscontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
@@ -321,9 +321,9 @@
             // 
             // main_cont
             // 
-            this.main_cont.Controls.Add(this.cstmrscontainer);
-            this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
+            this.main_cont.Controls.Add(this.homecontainer);
+            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -331,6 +331,110 @@
             this.main_cont.Name = "main_cont";
             this.main_cont.Size = new System.Drawing.Size(1111, 652);
             this.main_cont.TabIndex = 1;
+            // 
+            // cstmrscontainer
+            // 
+            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
+            this.cstmrscontainer.Controls.Add(this.foxButton1);
+            this.cstmrscontainer.Controls.Add(this.dungeonTextBox1);
+            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
+            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
+            this.cstmrscontainer.Name = "cstmrscontainer";
+            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
+            this.cstmrscontainer.TabIndex = 9;
+            // 
+            // finishedjobgrid
+            // 
+            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.finishedjobgrid.Controls.Add(this.customeraccsgrid);
+            this.finishedjobgrid.Depth = 0;
+            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
+            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.finishedjobgrid.Name = "finishedjobgrid";
+            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
+            this.finishedjobgrid.TabIndex = 4;
+            // 
+            // customeraccsgrid
+            // 
+            this.customeraccsgrid.AllowUserToAddRows = false;
+            this.customeraccsgrid.AllowUserToDeleteRows = false;
+            this.customeraccsgrid.AllowUserToResizeColumns = false;
+            this.customeraccsgrid.AllowUserToResizeRows = false;
+            this.customeraccsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customeraccsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.customeraccsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customeraccsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customeraccsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customeraccsgrid.Location = new System.Drawing.Point(14, 14);
+            this.customeraccsgrid.MultiSelect = false;
+            this.customeraccsgrid.Name = "customeraccsgrid";
+            this.customeraccsgrid.ReadOnly = true;
+            this.customeraccsgrid.RowHeadersVisible = false;
+            this.customeraccsgrid.RowHeadersWidth = 51;
+            this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
+            this.customeraccsgrid.TabIndex = 11;
+            // 
+            // foxButton1
+            // 
+            this.foxButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxButton1.BackColor = System.Drawing.Color.Transparent;
+            this.foxButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.foxButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.foxButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.foxButton1.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.foxButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.foxButton1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.foxButton1.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.foxButton1.EnabledCalc = true;
+            this.foxButton1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.foxButton1.ForeColor = System.Drawing.Color.White;
+            this.foxButton1.Location = new System.Drawing.Point(728, 23);
+            this.foxButton1.Name = "foxButton1";
+            this.foxButton1.OverColor = System.Drawing.Color.Black;
+            this.foxButton1.Size = new System.Drawing.Size(120, 36);
+            this.foxButton1.TabIndex = 3;
+            this.foxButton1.Text = "Search";
+            // 
+            // dungeonTextBox1
+            // 
+            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
+            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.dungeonTextBox1.Location = new System.Drawing.Point(193, 23);
+            this.dungeonTextBox1.MaxLength = 32767;
+            this.dungeonTextBox1.Multiline = false;
+            this.dungeonTextBox1.Name = "dungeonTextBox1";
+            this.dungeonTextBox1.ReadOnly = false;
+            this.dungeonTextBox1.Size = new System.Drawing.Size(519, 43);
+            this.dungeonTextBox1.TabIndex = 2;
+            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            // 
+            // foxBigLabel4
+            // 
+            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
+            this.foxBigLabel4.Name = "foxBigLabel4";
+            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
+            this.foxBigLabel4.TabIndex = 1;
+            this.foxBigLabel4.Text = "Customer Accounts";
             // 
             // homecontainer
             // 
@@ -536,7 +640,7 @@
             this.unpaidjobcounter.MaxLength = 32767;
             this.unpaidjobcounter.Multiline = false;
             this.unpaidjobcounter.Name = "unpaidjobcounter";
-            this.unpaidjobcounter.ReadOnly = false;
+            this.unpaidjobcounter.ReadOnly = true;
             this.unpaidjobcounter.Size = new System.Drawing.Size(155, 35);
             this.unpaidjobcounter.TabIndex = 23;
             this.unpaidjobcounter.Text = "123";
@@ -599,7 +703,7 @@
             this.finishjobcounter.MaxLength = 32767;
             this.finishjobcounter.Multiline = false;
             this.finishjobcounter.Name = "finishjobcounter";
-            this.finishjobcounter.ReadOnly = false;
+            this.finishjobcounter.ReadOnly = true;
             this.finishjobcounter.Size = new System.Drawing.Size(155, 35);
             this.finishjobcounter.TabIndex = 20;
             this.finishjobcounter.Text = "123";
@@ -802,110 +906,6 @@
             this.foxBigLabel5.TabIndex = 1;
             this.foxBigLabel5.Text = "Dashboard Overview";
             // 
-            // cstmrscontainer
-            // 
-            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
-            this.cstmrscontainer.Controls.Add(this.foxButton1);
-            this.cstmrscontainer.Controls.Add(this.dungeonTextBox1);
-            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
-            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
-            this.cstmrscontainer.Name = "cstmrscontainer";
-            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
-            this.cstmrscontainer.TabIndex = 9;
-            // 
-            // finishedjobgrid
-            // 
-            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.finishedjobgrid.Controls.Add(this.customeraccsgrid);
-            this.finishedjobgrid.Depth = 0;
-            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
-            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.finishedjobgrid.Name = "finishedjobgrid";
-            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
-            this.finishedjobgrid.TabIndex = 4;
-            // 
-            // customeraccsgrid
-            // 
-            this.customeraccsgrid.AllowUserToAddRows = false;
-            this.customeraccsgrid.AllowUserToDeleteRows = false;
-            this.customeraccsgrid.AllowUserToResizeColumns = false;
-            this.customeraccsgrid.AllowUserToResizeRows = false;
-            this.customeraccsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.customeraccsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.customeraccsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.customeraccsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customeraccsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customeraccsgrid.Location = new System.Drawing.Point(14, 14);
-            this.customeraccsgrid.MultiSelect = false;
-            this.customeraccsgrid.Name = "customeraccsgrid";
-            this.customeraccsgrid.ReadOnly = true;
-            this.customeraccsgrid.RowHeadersVisible = false;
-            this.customeraccsgrid.RowHeadersWidth = 51;
-            this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
-            this.customeraccsgrid.TabIndex = 11;
-            // 
-            // foxButton1
-            // 
-            this.foxButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.foxButton1.BackColor = System.Drawing.Color.Transparent;
-            this.foxButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.foxButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.foxButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.foxButton1.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.foxButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.foxButton1.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.foxButton1.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.foxButton1.EnabledCalc = true;
-            this.foxButton1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.foxButton1.ForeColor = System.Drawing.Color.White;
-            this.foxButton1.Location = new System.Drawing.Point(728, 23);
-            this.foxButton1.Name = "foxButton1";
-            this.foxButton1.OverColor = System.Drawing.Color.Black;
-            this.foxButton1.Size = new System.Drawing.Size(120, 36);
-            this.foxButton1.TabIndex = 3;
-            this.foxButton1.Text = "Search";
-            // 
-            // dungeonTextBox1
-            // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(193, 23);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(519, 43);
-            this.dungeonTextBox1.TabIndex = 2;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
-            // 
-            // foxBigLabel4
-            // 
-            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
-            this.foxBigLabel4.Name = "foxBigLabel4";
-            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
-            this.foxBigLabel4.TabIndex = 1;
-            this.foxBigLabel4.Text = "Customer Accounts";
-            // 
             // srvclgscontainer
             // 
             this.srvclgscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
@@ -1084,7 +1084,7 @@
             this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.foxLabel4.Location = new System.Drawing.Point(17, 165);
             this.foxLabel4.Name = "foxLabel4";
-            this.foxLabel4.Size = new System.Drawing.Size(166, 23);
+            this.foxLabel4.Size = new System.Drawing.Size(188, 23);
             this.foxLabel4.TabIndex = 7;
             this.foxLabel4.Text = "Vehicles Owned";
             // 
@@ -1116,7 +1116,7 @@
             this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.foxLabel3.Location = new System.Drawing.Point(17, 27);
             this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(166, 23);
+            this.foxLabel3.Size = new System.Drawing.Size(188, 23);
             this.foxLabel3.TabIndex = 5;
             this.foxLabel3.Text = "Customer Details";
             this.foxLabel3.Click += new System.EventHandler(this.foxLabel3_Click);
@@ -1644,6 +1644,9 @@
             this.navbar.ResumeLayout(false);
             this.btncontainer.ResumeLayout(false);
             this.main_cont.ResumeLayout(false);
+            this.cstmrscontainer.ResumeLayout(false);
+            this.finishedjobgrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
             this.homecontainer.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
@@ -1652,9 +1655,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).EndInit();
-            this.cstmrscontainer.ResumeLayout(false);
-            this.finishedjobgrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
             this.srvclgscontainer.ResumeLayout(false);
             this.searchresultscontainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
