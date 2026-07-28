@@ -43,7 +43,10 @@ namespace Olvarra_Capstone
                 {
                     if (parameters != null)
                     {
-                        cmd.Parameters.AddRange(parameters);
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.Add((SqlParameter)((ICloneable)param).Clone());
+                        }
                     }
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -64,7 +67,10 @@ namespace Olvarra_Capstone
                 {
                     if (parameters != null)
                     {
-                        cmd.Parameters.AddRange(parameters);
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.Add((SqlParameter)((ICloneable)param).Clone());
+                        }
                     }
 
                     conn.Open();
@@ -82,7 +88,10 @@ namespace Olvarra_Capstone
                 {
                     if (parameters != null)
                     {
-                        cmd.Parameters.AddRange(parameters);
+                        foreach (var param in parameters)
+                        {
+                            cmd.Parameters.Add((SqlParameter)((ICloneable)param).Clone());
+                        }
                     }
 
                     conn.Open();

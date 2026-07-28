@@ -82,6 +82,7 @@ namespace Olvarra_Capstone
             SetupInventoryGridStyle();
             LoadCustomerAccsToGrid();
             SetupCustomerAccsGridStyle();
+            SetupCustomerAndVehicleDetailGridStyle();
         }
 
 
@@ -245,7 +246,10 @@ namespace Olvarra_Capstone
         }
 
 
+        private void cxsearchbtn_Click(object sender, EventArgs e)
+        {
 
+        }
 
 
 
@@ -297,62 +301,109 @@ namespace Olvarra_Capstone
         }
 
 
-
-        //=====================================================================
-        //POTENTIONAL QUERY FOR SEARCHING CUSTOMERS INFO BASED ON PLATE NUMBER
-        //=========== ==========================================================
-
-        /* 
-         * private void searchbtn_Click(object sender, EventArgs e)
-{ 
-    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\InventoryDB.mdf;Integrated Security=True";
-
-    string query = @"
-    SELECT
-        c.FullName,
-        c.PhoneNumber,
-        c.Address,
-        v.VehicleModel,
-        v.PlateNumber 
-    FROM CustomerInfo c
-    INNER JOIN VehicleInfo v
-        ON c.CustomerID = v.CustomerID
-    WHERE v.PlateNumber = @PlateNumber";
-
-    using (SqlConnection conn = new SqlConnection(connectionString))
-    {
-        conn.Open();
-
-        using (SqlCommand cmd = new SqlCommand(query, conn))
+        //======================
+        //SEARCH BUTTON
+        //======================
+        private void searchbtn_Click(object sender, EventArgs e)
         {
-            cmd.Parameters.AddWithValue("@PlateNumber", search_txtbox.Text.Trim());
+            string plateNumberToSearch = search_txtbox.Text.Trim();
 
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
+            if (string.IsNullOrEmpty(plateNumberToSearch))
             {
-                FoxBigLabel1.Text = reader["FullName"].ToString();
-                FoxBigLabel2.Text = reader["PhoneNumber"].ToString();
-                FoxBigLabel3.Text = reader["Address"].ToString();
-                FoxBigLabel4.Text = reader["VehicleModel"].ToString();
-                FoxBigLabel5.Text = reader["PlateNumber"].ToString();
+                MessageBox.Show("Please enter a plate number to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else
-            {
-                MessageBox.Show("Plate number not found.");
 
-                FoxBigLabel1.Text = "";
-                FoxBigLabel2.Text = "";
-                FoxBigLabel3.Text = "";
-                FoxBigLabel4.Text = "";
-                FoxBigLabel5.Text = "";
+            string customerQuery = @"
+        SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
+        FROM CustomerInfo c
+        INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
+        WHERE v.PlateNumber = @PlateNumber";
+
+            string vehicleQuery = @"
+        SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
+        FROM VehicleInfo
+        WHERE PlateNumber = @PlateNumber";
+
+
+            SqlParameter[] parameters = {
+        new SqlParameter("@PlateNumber", plateNumberToSearch)
+    };
+
+            DataTable dtCustomer = DatabaseHelper.GetTable(customerQuery, parameters);
+            DataTable dtVehicle = DatabaseHelper.GetTable(vehicleQuery, parameters);
+
+            cxdetailsgrid.DataSource = dtCustomer;
+            vhclsownedgrid.DataSource = dtVehicle;
+            SetupCustomerAndVehicleDetailGridStyle();
+
+            if (dtCustomer.Rows.Count == 0)
+            {
+                MessageBox.Show("No records found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-    }
-}
 
-        */
 
+       private void SetupCustomerAndVehicleDetailGridStyle ()
+        {
+
+            //Customer Details Grid Style
+            cxdetailsgrid.BackgroundColor = Color.White;
+            cxdetailsgrid.BorderStyle = BorderStyle.None;
+            cxdetailsgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            cxdetailsgrid.RowHeadersVisible = false;
+            cxdetailsgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            cxdetailsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            cxdetailsgrid.MultiSelect = true;
+            cxdetailsgrid.ReadOnly = true;
+            cxdetailsgrid.AllowUserToAddRows = false;
+            // Font and Style for the content cells
+            cxdetailsgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            cxdetailsgrid.DefaultCellStyle.BackColor = Color.White;
+            cxdetailsgrid.DefaultCellStyle.ForeColor = Color.Black;
+            cxdetailsgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            cxdetailsgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            // Font and Style for the Column Headers
+            cxdetailsgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            cxdetailsgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            cxdetailsgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            cxdetailsgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            cxdetailsgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            // Required for custom header background colors to show
+            cxdetailsgrid.EnableHeadersVisualStyles = false;
+            // Height for the rows so they don't look cramped
+            cxdetailsgrid.RowTemplate.Height = 40;
+
+
+
+
+            //Vehicle Details Grid Style
+            vhclsownedgrid.BackgroundColor = Color.White;
+            vhclsownedgrid.BorderStyle = BorderStyle.None;
+            vhclsownedgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            vhclsownedgrid.RowHeadersVisible = false;
+            vhclsownedgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            vhclsownedgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            vhclsownedgrid.MultiSelect = true;
+            vhclsownedgrid.ReadOnly = true;
+            vhclsownedgrid.AllowUserToAddRows = false;
+            // Font and Style for the content cells
+            vhclsownedgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            vhclsownedgrid.DefaultCellStyle.BackColor = Color.White;
+            vhclsownedgrid.DefaultCellStyle.ForeColor = Color.Black;
+            vhclsownedgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            vhclsownedgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            // Font and Style for the Column Headers
+            vhclsownedgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            vhclsownedgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            vhclsownedgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            vhclsownedgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            vhclsownedgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            // Required for custom header background colors to show
+            vhclsownedgrid.EnableHeadersVisualStyles = false;
+            // Height for the rows so they don't look cramped
+            vhclsownedgrid.RowTemplate.Height = 40;
+        }
 
 
 
