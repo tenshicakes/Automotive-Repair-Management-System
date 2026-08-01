@@ -33,7 +33,7 @@
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.loggedby_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
-            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.issue_textbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.createjoborderbtn = new ReaLTaiizor.Controls.FoxButton();
             this.cancelbtn = new ReaLTaiizor.Controls.FoxButton();
             this.SuspendLayout();
@@ -45,9 +45,10 @@
             this.vehiclenamelbl.BackColor = System.Drawing.Color.Transparent;
             this.vehiclenamelbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehiclenamelbl.ForeColor = System.Drawing.Color.White;
-            this.vehiclenamelbl.Location = new System.Drawing.Point(23, 23);
+            this.vehiclenamelbl.Location = new System.Drawing.Point(31, 28);
+            this.vehiclenamelbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vehiclenamelbl.Name = "vehiclenamelbl";
-            this.vehiclenamelbl.Size = new System.Drawing.Size(363, 23);
+            this.vehiclenamelbl.Size = new System.Drawing.Size(484, 28);
             this.vehiclenamelbl.TabIndex = 5;
             this.vehiclenamelbl.Text = "Vehicle Model Name";
             // 
@@ -58,9 +59,10 @@
             this.vehicleplatelbl.BackColor = System.Drawing.Color.Transparent;
             this.vehicleplatelbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicleplatelbl.ForeColor = System.Drawing.Color.White;
-            this.vehicleplatelbl.Location = new System.Drawing.Point(23, 76);
+            this.vehicleplatelbl.Location = new System.Drawing.Point(31, 94);
+            this.vehicleplatelbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vehicleplatelbl.Name = "vehicleplatelbl";
-            this.vehicleplatelbl.Size = new System.Drawing.Size(363, 23);
+            this.vehicleplatelbl.Size = new System.Drawing.Size(484, 28);
             this.vehicleplatelbl.TabIndex = 6;
             this.vehicleplatelbl.Text = "Vehicle Plate Number";
             // 
@@ -71,9 +73,10 @@
             this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel1.ForeColor = System.Drawing.Color.White;
-            this.foxLabel1.Location = new System.Drawing.Point(665, 23);
+            this.foxLabel1.Location = new System.Drawing.Point(887, 28);
+            this.foxLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(112, 34);
+            this.foxLabel1.Size = new System.Drawing.Size(149, 42);
             this.foxLabel1.TabIndex = 7;
             this.foxLabel1.Text = "Logged by:";
             // 
@@ -86,13 +89,13 @@
             this.loggedby_txtbox.EdgeColor = System.Drawing.Color.White;
             this.loggedby_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.loggedby_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.loggedby_txtbox.Location = new System.Drawing.Point(487, 63);
-            this.loggedby_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.loggedby_txtbox.Location = new System.Drawing.Point(649, 78);
+            this.loggedby_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 31);
             this.loggedby_txtbox.MaxLength = 32767;
             this.loggedby_txtbox.Multiline = false;
             this.loggedby_txtbox.Name = "loggedby_txtbox";
             this.loggedby_txtbox.ReadOnly = false;
-            this.loggedby_txtbox.Size = new System.Drawing.Size(290, 36);
+            this.loggedby_txtbox.Size = new System.Drawing.Size(387, 43);
             this.loggedby_txtbox.TabIndex = 8;
             this.loggedby_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.loggedby_txtbox.UseSystemPasswordChar = false;
@@ -104,31 +107,32 @@
             this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel2.ForeColor = System.Drawing.Color.White;
-            this.foxLabel2.Location = new System.Drawing.Point(23, 150);
+            this.foxLabel2.Location = new System.Drawing.Point(31, 185);
+            this.foxLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(186, 28);
+            this.foxLabel2.Size = new System.Drawing.Size(248, 34);
             this.foxLabel2.TabIndex = 9;
             this.foxLabel2.Text = "Issue of the vehicle";
             // 
-            // dungeonTextBox1
+            // issue_textbox
             // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.issue_textbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(23, 184);
-            this.dungeonTextBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = true;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(754, 197);
-            this.dungeonTextBox1.TabIndex = 10;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            this.issue_textbox.BackColor = System.Drawing.Color.Transparent;
+            this.issue_textbox.BorderColor = System.Drawing.Color.Transparent;
+            this.issue_textbox.EdgeColor = System.Drawing.Color.White;
+            this.issue_textbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.issue_textbox.ForeColor = System.Drawing.Color.Black;
+            this.issue_textbox.Location = new System.Drawing.Point(31, 226);
+            this.issue_textbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 31);
+            this.issue_textbox.MaxLength = 32767;
+            this.issue_textbox.Multiline = true;
+            this.issue_textbox.Name = "issue_textbox";
+            this.issue_textbox.ReadOnly = false;
+            this.issue_textbox.Size = new System.Drawing.Size(1005, 242);
+            this.issue_textbox.TabIndex = 10;
+            this.issue_textbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.issue_textbox.UseSystemPasswordChar = false;
             // 
             // createjoborderbtn
             // 
@@ -144,10 +148,11 @@
             this.createjoborderbtn.EnabledCalc = true;
             this.createjoborderbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.createjoborderbtn.ForeColor = System.Drawing.Color.White;
-            this.createjoborderbtn.Location = new System.Drawing.Point(592, 392);
+            this.createjoborderbtn.Location = new System.Drawing.Point(789, 482);
+            this.createjoborderbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.createjoborderbtn.Name = "createjoborderbtn";
             this.createjoborderbtn.OverColor = System.Drawing.Color.Black;
-            this.createjoborderbtn.Size = new System.Drawing.Size(185, 49);
+            this.createjoborderbtn.Size = new System.Drawing.Size(247, 60);
             this.createjoborderbtn.TabIndex = 12;
             this.createjoborderbtn.Text = "Create Job Order";
             this.createjoborderbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.createjoborderbtn_Click);
@@ -166,34 +171,38 @@
             this.cancelbtn.EnabledCalc = true;
             this.cancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.cancelbtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelbtn.Location = new System.Drawing.Point(431, 392);
+            this.cancelbtn.Location = new System.Drawing.Point(575, 482);
+            this.cancelbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.OverColor = System.Drawing.Color.White;
-            this.cancelbtn.Size = new System.Drawing.Size(155, 49);
+            this.cancelbtn.Size = new System.Drawing.Size(207, 60);
             this.cancelbtn.TabIndex = 13;
             this.cancelbtn.Text = "Cancel";
+            this.cancelbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cancelbtn_Click);
             // 
             // JobOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.ClientSize = new System.Drawing.Size(800, 464);
+            this.ClientSize = new System.Drawing.Size(1064, 561);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.createjoborderbtn);
-            this.Controls.Add(this.dungeonTextBox1);
+            this.Controls.Add(this.issue_textbox);
             this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.loggedby_txtbox);
             this.Controls.Add(this.foxLabel1);
             this.Controls.Add(this.vehicleplatelbl);
             this.Controls.Add(this.vehiclenamelbl);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(816, 503);
+            this.MaximumSize = new System.Drawing.Size(1082, 608);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(816, 503);
+            this.MinimumSize = new System.Drawing.Size(1082, 608);
             this.Name = "JobOrder";
-            this.Padding = new System.Windows.Forms.Padding(20);
+            this.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.JobOrder_Load);
             this.ResumeLayout(false);
 
         }
@@ -205,7 +214,7 @@
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
         private ReaLTaiizor.Controls.DungeonTextBox loggedby_txtbox;
         private ReaLTaiizor.Controls.FoxLabel foxLabel2;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.Controls.DungeonTextBox issue_textbox;
         private ReaLTaiizor.Controls.FoxButton createjoborderbtn;
         private ReaLTaiizor.Controls.FoxButton cancelbtn;
     }

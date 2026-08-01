@@ -39,6 +39,28 @@
             this.registerbtn = new ReaLTaiizor.Controls.FoxButton();
             this.homebtn = new ReaLTaiizor.Controls.FoxButton();
             this.main_cont = new System.Windows.Forms.Panel();
+            this.rgstrcontainer = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.rgstrnewcontainer = new System.Windows.Forms.Panel();
+            this.registervhcbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.address_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.platenum_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.vhclmodel_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.phonenum_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.fname_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rgstrnewlabel = new System.Windows.Forms.Label();
+            this.cstmrscontainer = new System.Windows.Forms.Panel();
+            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
+            this.customeraccsgrid = new System.Windows.Forms.DataGridView();
+            this.cxsearchbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.cxsearch_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.srvclgscontainer = new System.Windows.Forms.Panel();
             this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
             this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
@@ -81,41 +103,18 @@
             this.pendingjobgrid = new System.Windows.Forms.DataGridView();
             this.foxBigLabel1 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.cstmrscontainer = new System.Windows.Forms.Panel();
-            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
-            this.customeraccsgrid = new System.Windows.Forms.DataGridView();
-            this.cxsearchbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.cxsearch_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.rgstrcontainer = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.rgstrnewcontainer = new System.Windows.Forms.Panel();
-            this.rgstrcxcancelbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.registercxbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.address_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rgstrnewlabel = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.phonenum_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.fname_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.rgstrvhclcontainer = new System.Windows.Forms.Panel();
-            this.rgstrvhclcancelbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.registervhcbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.platenum_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.vhclmodel_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cxid_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.accscontainer = new System.Windows.Forms.Panel();
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
+            this.rgstrcontainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.rgstrnewcontainer.SuspendLayout();
+            this.cstmrscontainer.SuspendLayout();
+            this.finishedjobgrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
             this.srvclgscontainer.SuspendLayout();
             this.searchresultscontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
@@ -128,15 +127,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).BeginInit();
-            this.cstmrscontainer.SuspendLayout();
-            this.finishedjobgrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
-            this.rgstrcontainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.rgstrnewcontainer.SuspendLayout();
-            this.rgstrvhclcontainer.SuspendLayout();
             this.accscontainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -321,9 +311,9 @@
             // 
             // main_cont
             // 
-            this.main_cont.Controls.Add(this.cstmrscontainer);
-            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
+            this.main_cont.Controls.Add(this.srvclgscontainer);
+            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -331,6 +321,377 @@
             this.main_cont.Name = "main_cont";
             this.main_cont.Size = new System.Drawing.Size(1111, 652);
             this.main_cont.TabIndex = 1;
+            // 
+            // rgstrcontainer
+            // 
+            this.rgstrcontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.rgstrcontainer.Controls.Add(this.pictureBox4);
+            this.rgstrcontainer.Controls.Add(this.pictureBox3);
+            this.rgstrcontainer.Controls.Add(this.rgstrnewcontainer);
+            this.rgstrcontainer.Controls.Add(this.rgstrnewlabel);
+            this.rgstrcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rgstrcontainer.Location = new System.Drawing.Point(0, 0);
+            this.rgstrcontainer.Name = "rgstrcontainer";
+            this.rgstrcontainer.Size = new System.Drawing.Size(1111, 652);
+            this.rgstrcontainer.TabIndex = 3;
+            this.rgstrcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.rgstrcontainer_Paint);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(856, 361);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(215, 160);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(856, 172);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(215, 160);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // rgstrnewcontainer
+            // 
+            this.rgstrnewcontainer.BackColor = System.Drawing.Color.Transparent;
+            this.rgstrnewcontainer.Controls.Add(this.registervhcbtn);
+            this.rgstrnewcontainer.Controls.Add(this.address_txtbox);
+            this.rgstrnewcontainer.Controls.Add(this.label4);
+            this.rgstrnewcontainer.Controls.Add(this.platenum_txtbox);
+            this.rgstrnewcontainer.Controls.Add(this.vhclmodel_txtbox);
+            this.rgstrnewcontainer.Controls.Add(this.label1);
+            this.rgstrnewcontainer.Controls.Add(this.label3);
+            this.rgstrnewcontainer.Controls.Add(this.phonenum_txtbox);
+            this.rgstrnewcontainer.Controls.Add(this.label2);
+            this.rgstrnewcontainer.Controls.Add(this.fname_txtbox);
+            this.rgstrnewcontainer.Controls.Add(this.label5);
+            this.rgstrnewcontainer.Location = new System.Drawing.Point(220, 65);
+            this.rgstrnewcontainer.Name = "rgstrnewcontainer";
+            this.rgstrnewcontainer.Padding = new System.Windows.Forms.Padding(7);
+            this.rgstrnewcontainer.Size = new System.Drawing.Size(618, 595);
+            this.rgstrnewcontainer.TabIndex = 0;
+            this.rgstrnewcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.rgstrnewcontainer_Paint);
+            // 
+            // registervhcbtn
+            // 
+            this.registervhcbtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.registervhcbtn.BackColor = System.Drawing.Color.Transparent;
+            this.registervhcbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.registervhcbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.registervhcbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registervhcbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.registervhcbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.registervhcbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.registervhcbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.registervhcbtn.EnabledCalc = true;
+            this.registervhcbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registervhcbtn.ForeColor = System.Drawing.Color.White;
+            this.registervhcbtn.Location = new System.Drawing.Point(149, 511);
+            this.registervhcbtn.Name = "registervhcbtn";
+            this.registervhcbtn.OverColor = System.Drawing.Color.Black;
+            this.registervhcbtn.Size = new System.Drawing.Size(359, 55);
+            this.registervhcbtn.TabIndex = 6;
+            this.registervhcbtn.Text = "Submit";
+            this.registervhcbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.registervhctn_Click);
+            // 
+            // address_txtbox
+            // 
+            this.address_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.address_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.address_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.address_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.address_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address_txtbox.ForeColor = System.Drawing.Color.DimGray;
+            this.address_txtbox.Location = new System.Drawing.Point(21, 257);
+            this.address_txtbox.Margin = new System.Windows.Forms.Padding(5);
+            this.address_txtbox.MaxLength = 32767;
+            this.address_txtbox.Multiline = false;
+            this.address_txtbox.Name = "address_txtbox";
+            this.address_txtbox.ReadOnly = false;
+            this.address_txtbox.Size = new System.Drawing.Size(585, 43);
+            this.address_txtbox.TabIndex = 5;
+            this.address_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.address_txtbox.UseSystemPasswordChar = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(17, 214);
+            this.label4.Margin = new System.Windows.Forms.Padding(5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 33);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Address";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // platenum_txtbox
+            // 
+            this.platenum_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.platenum_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.platenum_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.platenum_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.platenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.platenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
+            this.platenum_txtbox.Location = new System.Drawing.Point(21, 449);
+            this.platenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
+            this.platenum_txtbox.MaxLength = 32767;
+            this.platenum_txtbox.Multiline = false;
+            this.platenum_txtbox.Name = "platenum_txtbox";
+            this.platenum_txtbox.ReadOnly = false;
+            this.platenum_txtbox.Size = new System.Drawing.Size(585, 43);
+            this.platenum_txtbox.TabIndex = 5;
+            this.platenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.platenum_txtbox.UseSystemPasswordChar = false;
+            // 
+            // vhclmodel_txtbox
+            // 
+            this.vhclmodel_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.vhclmodel_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.vhclmodel_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.vhclmodel_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.vhclmodel_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.vhclmodel_txtbox.ForeColor = System.Drawing.Color.DimGray;
+            this.vhclmodel_txtbox.Location = new System.Drawing.Point(21, 353);
+            this.vhclmodel_txtbox.Margin = new System.Windows.Forms.Padding(5);
+            this.vhclmodel_txtbox.MaxLength = 32767;
+            this.vhclmodel_txtbox.Multiline = false;
+            this.vhclmodel_txtbox.Name = "vhclmodel_txtbox";
+            this.vhclmodel_txtbox.ReadOnly = false;
+            this.vhclmodel_txtbox.Size = new System.Drawing.Size(585, 43);
+            this.vhclmodel_txtbox.TabIndex = 2;
+            this.vhclmodel_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.vhclmodel_txtbox.UseSystemPasswordChar = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(15, 406);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(172, 33);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Plate Number";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(17, 118);
+            this.label3.Margin = new System.Windows.Forms.Padding(5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(188, 33);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Phone Number";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // phonenum_txtbox
+            // 
+            this.phonenum_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.phonenum_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.phonenum_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.phonenum_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.phonenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phonenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
+            this.phonenum_txtbox.Location = new System.Drawing.Point(23, 161);
+            this.phonenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
+            this.phonenum_txtbox.MaxLength = 32767;
+            this.phonenum_txtbox.Multiline = false;
+            this.phonenum_txtbox.Name = "phonenum_txtbox";
+            this.phonenum_txtbox.ReadOnly = false;
+            this.phonenum_txtbox.Size = new System.Drawing.Size(585, 43);
+            this.phonenum_txtbox.TabIndex = 2;
+            this.phonenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.phonenum_txtbox.UseSystemPasswordChar = false;
+            this.phonenum_txtbox.TextChanged += new System.EventHandler(this.dungeonTextBox2_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(17, 20);
+            this.label2.Margin = new System.Windows.Forms.Padding(5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 33);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Full Name";
+            // 
+            // fname_txtbox
+            // 
+            this.fname_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fname_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.fname_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.fname_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.fname_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fname_txtbox.ForeColor = System.Drawing.Color.DimGray;
+            this.fname_txtbox.Location = new System.Drawing.Point(23, 63);
+            this.fname_txtbox.Margin = new System.Windows.Forms.Padding(5);
+            this.fname_txtbox.MaxLength = 32767;
+            this.fname_txtbox.Multiline = false;
+            this.fname_txtbox.Name = "fname_txtbox";
+            this.fname_txtbox.ReadOnly = false;
+            this.fname_txtbox.Size = new System.Drawing.Size(587, 43);
+            this.fname_txtbox.TabIndex = 0;
+            this.fname_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.fname_txtbox.UseSystemPasswordChar = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(15, 310);
+            this.label5.Margin = new System.Windows.Forms.Padding(5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 33);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Vehicle Model";
+            // 
+            // rgstrnewlabel
+            // 
+            this.rgstrnewlabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.rgstrnewlabel.AutoSize = true;
+            this.rgstrnewlabel.BackColor = System.Drawing.Color.Transparent;
+            this.rgstrnewlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rgstrnewlabel.ForeColor = System.Drawing.Color.White;
+            this.rgstrnewlabel.Location = new System.Drawing.Point(283, 22);
+            this.rgstrnewlabel.Name = "rgstrnewlabel";
+            this.rgstrnewlabel.Size = new System.Drawing.Size(482, 37);
+            this.rgstrnewlabel.TabIndex = 1;
+            this.rgstrnewlabel.Text = "REGISTER CUSTOMER AND VEHICLE";
+            this.rgstrnewlabel.Click += new System.EventHandler(this.rgstrnewlabel_Click);
+            // 
+            // cstmrscontainer
+            // 
+            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
+            this.cstmrscontainer.Controls.Add(this.cxsearchbtn);
+            this.cstmrscontainer.Controls.Add(this.cxsearch_txtbox);
+            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
+            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
+            this.cstmrscontainer.Name = "cstmrscontainer";
+            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
+            this.cstmrscontainer.TabIndex = 9;
+            // 
+            // finishedjobgrid
+            // 
+            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.finishedjobgrid.Controls.Add(this.customeraccsgrid);
+            this.finishedjobgrid.Depth = 0;
+            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
+            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.finishedjobgrid.Name = "finishedjobgrid";
+            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
+            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
+            this.finishedjobgrid.TabIndex = 4;
+            // 
+            // customeraccsgrid
+            // 
+            this.customeraccsgrid.AllowUserToAddRows = false;
+            this.customeraccsgrid.AllowUserToDeleteRows = false;
+            this.customeraccsgrid.AllowUserToResizeColumns = false;
+            this.customeraccsgrid.AllowUserToResizeRows = false;
+            this.customeraccsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.customeraccsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.customeraccsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.customeraccsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customeraccsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customeraccsgrid.Location = new System.Drawing.Point(14, 14);
+            this.customeraccsgrid.MultiSelect = false;
+            this.customeraccsgrid.Name = "customeraccsgrid";
+            this.customeraccsgrid.ReadOnly = true;
+            this.customeraccsgrid.RowHeadersVisible = false;
+            this.customeraccsgrid.RowHeadersWidth = 51;
+            this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
+            this.customeraccsgrid.TabIndex = 11;
+            // 
+            // cxsearchbtn
+            // 
+            this.cxsearchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cxsearchbtn.BackColor = System.Drawing.Color.Transparent;
+            this.cxsearchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.cxsearchbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.cxsearchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cxsearchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.cxsearchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.cxsearchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.cxsearchbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.cxsearchbtn.EnabledCalc = true;
+            this.cxsearchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cxsearchbtn.ForeColor = System.Drawing.Color.White;
+            this.cxsearchbtn.Location = new System.Drawing.Point(728, 23);
+            this.cxsearchbtn.Name = "cxsearchbtn";
+            this.cxsearchbtn.OverColor = System.Drawing.Color.Black;
+            this.cxsearchbtn.Size = new System.Drawing.Size(120, 43);
+            this.cxsearchbtn.TabIndex = 3;
+            this.cxsearchbtn.Text = "Search";
+            this.cxsearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cxsearchbtn_Click);
+            // 
+            // cxsearch_txtbox
+            // 
+            this.cxsearch_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cxsearch_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.cxsearch_txtbox.BorderColor = System.Drawing.Color.Transparent;
+            this.cxsearch_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.cxsearch_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cxsearch_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.cxsearch_txtbox.Location = new System.Drawing.Point(193, 23);
+            this.cxsearch_txtbox.MaxLength = 32767;
+            this.cxsearch_txtbox.Multiline = false;
+            this.cxsearch_txtbox.Name = "cxsearch_txtbox";
+            this.cxsearch_txtbox.ReadOnly = false;
+            this.cxsearch_txtbox.Size = new System.Drawing.Size(519, 43);
+            this.cxsearch_txtbox.TabIndex = 2;
+            this.cxsearch_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cxsearch_txtbox.UseSystemPasswordChar = false;
+            // 
+            // foxBigLabel4
+            // 
+            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
+            this.foxBigLabel4.Name = "foxBigLabel4";
+            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
+            this.foxBigLabel4.TabIndex = 1;
+            this.foxBigLabel4.Text = "Customer Accounts";
             // 
             // srvclgscontainer
             // 
@@ -648,10 +1009,10 @@
             this.editinventorybtn.EnabledCalc = true;
             this.editinventorybtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.editinventorybtn.ForeColor = System.Drawing.Color.White;
-            this.editinventorybtn.Location = new System.Drawing.Point(771, 540);
+            this.editinventorybtn.Location = new System.Drawing.Point(683, 540);
             this.editinventorybtn.Name = "editinventorybtn";
             this.editinventorybtn.OverColor = System.Drawing.Color.Black;
-            this.editinventorybtn.Size = new System.Drawing.Size(155, 78);
+            this.editinventorybtn.Size = new System.Drawing.Size(165, 78);
             this.editinventorybtn.TabIndex = 27;
             this.editinventorybtn.Text = "Edit Inventory";
             // 
@@ -668,7 +1029,7 @@
             this.removeinvbtn.EnabledCalc = true;
             this.removeinvbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.removeinvbtn.ForeColor = System.Drawing.Color.White;
-            this.removeinvbtn.Location = new System.Drawing.Point(610, 582);
+            this.removeinvbtn.Location = new System.Drawing.Point(517, 582);
             this.removeinvbtn.Name = "removeinvbtn";
             this.removeinvbtn.OverColor = System.Drawing.Color.Black;
             this.removeinvbtn.Size = new System.Drawing.Size(155, 36);
@@ -688,7 +1049,7 @@
             this.addinvbtn.EnabledCalc = true;
             this.addinvbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addinvbtn.ForeColor = System.Drawing.Color.White;
-            this.addinvbtn.Location = new System.Drawing.Point(610, 540);
+            this.addinvbtn.Location = new System.Drawing.Point(517, 540);
             this.addinvbtn.Name = "addinvbtn";
             this.addinvbtn.OverColor = System.Drawing.Color.Black;
             this.addinvbtn.Size = new System.Drawing.Size(155, 36);
@@ -708,7 +1069,7 @@
             this.materialCard3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
             this.materialCard3.Padding = new System.Windows.Forms.Padding(7);
-            this.materialCard3.Size = new System.Drawing.Size(411, 98);
+            this.materialCard3.Size = new System.Drawing.Size(309, 98);
             this.materialCard3.TabIndex = 10;
             // 
             // inventorygrid
@@ -729,7 +1090,7 @@
             this.inventorygrid.RowHeadersVisible = false;
             this.inventorygrid.RowHeadersWidth = 51;
             this.inventorygrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventorygrid.Size = new System.Drawing.Size(397, 84);
+            this.inventorygrid.Size = new System.Drawing.Size(295, 84);
             this.inventorygrid.TabIndex = 9;
             // 
             // foxBigLabel9
@@ -744,7 +1105,7 @@
             this.foxBigLabel9.Location = new System.Drawing.Point(193, 508);
             this.foxBigLabel9.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.foxBigLabel9.Name = "foxBigLabel9";
-            this.foxBigLabel9.Size = new System.Drawing.Size(207, 28);
+            this.foxBigLabel9.Size = new System.Drawing.Size(259, 28);
             this.foxBigLabel9.TabIndex = 24;
             this.foxBigLabel9.Text = "Items in the Inventory";
             // 
@@ -852,7 +1213,7 @@
             this.foxBigLabel7.LineColor = System.Drawing.Color.Transparent;
             this.foxBigLabel7.Location = new System.Drawing.Point(464, 9);
             this.foxBigLabel7.Name = "foxBigLabel7";
-            this.foxBigLabel7.Size = new System.Drawing.Size(191, 28);
+            this.foxBigLabel7.Size = new System.Drawing.Size(220, 28);
             this.foxBigLabel7.TabIndex = 22;
             this.foxBigLabel7.Text = "Unpaid Job Orders";
             // 
@@ -925,7 +1286,7 @@
             this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
             this.foxBigLabel3.Location = new System.Drawing.Point(116, 9);
             this.foxBigLabel3.Name = "foxBigLabel3";
-            this.foxBigLabel3.Size = new System.Drawing.Size(191, 28);
+            this.foxBigLabel3.Size = new System.Drawing.Size(236, 28);
             this.foxBigLabel3.TabIndex = 4;
             this.foxBigLabel3.Text = "Finished Job Orders";
             // 
@@ -939,7 +1300,7 @@
             this.foxBigLabel8.Location = new System.Drawing.Point(651, 460);
             this.foxBigLabel8.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.foxBigLabel8.Name = "foxBigLabel8";
-            this.foxBigLabel8.Size = new System.Drawing.Size(358, 28);
+            this.foxBigLabel8.Size = new System.Drawing.Size(374, 28);
             this.foxBigLabel8.TabIndex = 18;
             this.foxBigLabel8.Text = "Search a plate number to view a specific job order.";
             this.foxBigLabel8.Click += new System.EventHandler(this.foxBigLabel8_Click);
@@ -992,7 +1353,7 @@
             this.foxBigLabel6.Location = new System.Drawing.Point(193, 204);
             this.foxBigLabel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.foxBigLabel6.Name = "foxBigLabel6";
-            this.foxBigLabel6.Size = new System.Drawing.Size(358, 28);
+            this.foxBigLabel6.Size = new System.Drawing.Size(379, 28);
             this.foxBigLabel6.TabIndex = 14;
             this.foxBigLabel6.Text = "Select a row and click the button to update.";
             // 
@@ -1046,6 +1407,7 @@
             this.pendingjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pendingjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pendingjobgrid.Location = new System.Drawing.Point(14, 14);
+            this.pendingjobgrid.MultiSelect = false;
             this.pendingjobgrid.Name = "pendingjobgrid";
             this.pendingjobgrid.ReadOnly = true;
             this.pendingjobgrid.RowHeadersVisible = false;
@@ -1064,7 +1426,7 @@
             this.foxBigLabel1.Location = new System.Drawing.Point(193, 172);
             this.foxBigLabel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
             this.foxBigLabel1.Name = "foxBigLabel1";
-            this.foxBigLabel1.Size = new System.Drawing.Size(207, 28);
+            this.foxBigLabel1.Size = new System.Drawing.Size(232, 28);
             this.foxBigLabel1.TabIndex = 2;
             this.foxBigLabel1.Text = "Pending Job Orders";
             // 
@@ -1080,531 +1442,6 @@
             this.foxBigLabel5.Size = new System.Drawing.Size(271, 31);
             this.foxBigLabel5.TabIndex = 1;
             this.foxBigLabel5.Text = "Dashboard Overview";
-            // 
-            // cstmrscontainer
-            // 
-            this.cstmrscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.cstmrscontainer.Controls.Add(this.finishedjobgrid);
-            this.cstmrscontainer.Controls.Add(this.cxsearchbtn);
-            this.cstmrscontainer.Controls.Add(this.cxsearch_txtbox);
-            this.cstmrscontainer.Controls.Add(this.foxBigLabel4);
-            this.cstmrscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cstmrscontainer.Location = new System.Drawing.Point(0, 0);
-            this.cstmrscontainer.Name = "cstmrscontainer";
-            this.cstmrscontainer.Size = new System.Drawing.Size(1111, 652);
-            this.cstmrscontainer.TabIndex = 9;
-            // 
-            // finishedjobgrid
-            // 
-            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.finishedjobgrid.Controls.Add(this.customeraccsgrid);
-            this.finishedjobgrid.Depth = 0;
-            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.finishedjobgrid.Location = new System.Drawing.Point(193, 136);
-            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.finishedjobgrid.Name = "finishedjobgrid";
-            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
-            this.finishedjobgrid.TabIndex = 4;
-            // 
-            // customeraccsgrid
-            // 
-            this.customeraccsgrid.AllowUserToAddRows = false;
-            this.customeraccsgrid.AllowUserToDeleteRows = false;
-            this.customeraccsgrid.AllowUserToResizeColumns = false;
-            this.customeraccsgrid.AllowUserToResizeRows = false;
-            this.customeraccsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.customeraccsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.customeraccsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.customeraccsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.customeraccsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customeraccsgrid.Location = new System.Drawing.Point(14, 14);
-            this.customeraccsgrid.MultiSelect = false;
-            this.customeraccsgrid.Name = "customeraccsgrid";
-            this.customeraccsgrid.ReadOnly = true;
-            this.customeraccsgrid.RowHeadersVisible = false;
-            this.customeraccsgrid.RowHeadersWidth = 51;
-            this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
-            this.customeraccsgrid.TabIndex = 11;
-            // 
-            // cxsearchbtn
-            // 
-            this.cxsearchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cxsearchbtn.BackColor = System.Drawing.Color.Transparent;
-            this.cxsearchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.cxsearchbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.cxsearchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cxsearchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.cxsearchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.cxsearchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.cxsearchbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.cxsearchbtn.EnabledCalc = true;
-            this.cxsearchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cxsearchbtn.ForeColor = System.Drawing.Color.White;
-            this.cxsearchbtn.Location = new System.Drawing.Point(728, 23);
-            this.cxsearchbtn.Name = "cxsearchbtn";
-            this.cxsearchbtn.OverColor = System.Drawing.Color.Black;
-            this.cxsearchbtn.Size = new System.Drawing.Size(120, 36);
-            this.cxsearchbtn.TabIndex = 3;
-            this.cxsearchbtn.Text = "Search";
-            this.cxsearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cxsearchbtn_Click);
-            // 
-            // cxsearch_txtbox
-            // 
-            this.cxsearch_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cxsearch_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.cxsearch_txtbox.BorderColor = System.Drawing.Color.Transparent;
-            this.cxsearch_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.cxsearch_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cxsearch_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.cxsearch_txtbox.Location = new System.Drawing.Point(193, 23);
-            this.cxsearch_txtbox.MaxLength = 32767;
-            this.cxsearch_txtbox.Multiline = false;
-            this.cxsearch_txtbox.Name = "cxsearch_txtbox";
-            this.cxsearch_txtbox.ReadOnly = false;
-            this.cxsearch_txtbox.Size = new System.Drawing.Size(519, 43);
-            this.cxsearch_txtbox.TabIndex = 2;
-            this.cxsearch_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cxsearch_txtbox.UseSystemPasswordChar = false;
-            // 
-            // foxBigLabel4
-            // 
-            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Location = new System.Drawing.Point(193, 97);
-            this.foxBigLabel4.Name = "foxBigLabel4";
-            this.foxBigLabel4.Size = new System.Drawing.Size(273, 25);
-            this.foxBigLabel4.TabIndex = 1;
-            this.foxBigLabel4.Text = "Customer Accounts";
-            // 
-            // rgstrcontainer
-            // 
-            this.rgstrcontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.rgstrcontainer.Controls.Add(this.pictureBox4);
-            this.rgstrcontainer.Controls.Add(this.pictureBox3);
-            this.rgstrcontainer.Controls.Add(this.tableLayoutPanel1);
-            this.rgstrcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rgstrcontainer.Location = new System.Drawing.Point(0, 0);
-            this.rgstrcontainer.Name = "rgstrcontainer";
-            this.rgstrcontainer.Size = new System.Drawing.Size(1111, 652);
-            this.rgstrcontainer.TabIndex = 3;
-            this.rgstrcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.rgstrcontainer_Paint);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(794, 23);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(215, 118);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 12;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(309, 23);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(215, 118);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.rgstrnewcontainer, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.rgstrvhclcontainer, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(188, 147);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(916, 364);
-            this.tableLayoutPanel1.TabIndex = 10;
-            // 
-            // rgstrnewcontainer
-            // 
-            this.rgstrnewcontainer.BackColor = System.Drawing.Color.Transparent;
-            this.rgstrnewcontainer.Controls.Add(this.rgstrcxcancelbtn);
-            this.rgstrnewcontainer.Controls.Add(this.registercxbtn);
-            this.rgstrnewcontainer.Controls.Add(this.address_txtbox);
-            this.rgstrnewcontainer.Controls.Add(this.label4);
-            this.rgstrnewcontainer.Controls.Add(this.rgstrnewlabel);
-            this.rgstrnewcontainer.Controls.Add(this.label3);
-            this.rgstrnewcontainer.Controls.Add(this.phonenum_txtbox);
-            this.rgstrnewcontainer.Controls.Add(this.label2);
-            this.rgstrnewcontainer.Controls.Add(this.fname_txtbox);
-            this.rgstrnewcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rgstrnewcontainer.Location = new System.Drawing.Point(3, 3);
-            this.rgstrnewcontainer.Name = "rgstrnewcontainer";
-            this.rgstrnewcontainer.Padding = new System.Windows.Forms.Padding(7);
-            this.rgstrnewcontainer.Size = new System.Drawing.Size(452, 358);
-            this.rgstrnewcontainer.TabIndex = 0;
-            this.rgstrnewcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.rgstrnewcontainer_Paint);
-            // 
-            // rgstrcxcancelbtn
-            // 
-            this.rgstrcxcancelbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgstrcxcancelbtn.BackColor = System.Drawing.Color.Transparent;
-            this.rgstrcxcancelbtn.BaseColor = System.Drawing.Color.White;
-            this.rgstrcxcancelbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.rgstrcxcancelbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rgstrcxcancelbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.rgstrcxcancelbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.rgstrcxcancelbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.rgstrcxcancelbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.rgstrcxcancelbtn.EnabledCalc = true;
-            this.rgstrcxcancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgstrcxcancelbtn.ForeColor = System.Drawing.Color.Black;
-            this.rgstrcxcancelbtn.Location = new System.Drawing.Point(21, 293);
-            this.rgstrcxcancelbtn.Name = "rgstrcxcancelbtn";
-            this.rgstrcxcancelbtn.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.rgstrcxcancelbtn.Size = new System.Drawing.Size(196, 55);
-            this.rgstrcxcancelbtn.TabIndex = 7;
-            this.rgstrcxcancelbtn.Text = "Cancel";
-            // 
-            // registercxbtn
-            // 
-            this.registercxbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.registercxbtn.BackColor = System.Drawing.Color.Transparent;
-            this.registercxbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.registercxbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.registercxbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registercxbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.registercxbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.registercxbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.registercxbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.registercxbtn.EnabledCalc = true;
-            this.registercxbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registercxbtn.ForeColor = System.Drawing.Color.White;
-            this.registercxbtn.Location = new System.Drawing.Point(230, 293);
-            this.registercxbtn.Name = "registercxbtn";
-            this.registercxbtn.OverColor = System.Drawing.Color.Black;
-            this.registercxbtn.Size = new System.Drawing.Size(196, 55);
-            this.registercxbtn.TabIndex = 6;
-            this.registercxbtn.Text = "Confirm";
-            // 
-            // address_txtbox
-            // 
-            this.address_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.address_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.address_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.address_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.address_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.address_txtbox.Location = new System.Drawing.Point(21, 235);
-            this.address_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.address_txtbox.MaxLength = 32767;
-            this.address_txtbox.Multiline = false;
-            this.address_txtbox.Name = "address_txtbox";
-            this.address_txtbox.ReadOnly = false;
-            this.address_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.address_txtbox.TabIndex = 5;
-            this.address_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.address_txtbox.UseSystemPasswordChar = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(19, 199);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 33);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Address";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // rgstrnewlabel
-            // 
-            this.rgstrnewlabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgstrnewlabel.AutoSize = true;
-            this.rgstrnewlabel.BackColor = System.Drawing.Color.Transparent;
-            this.rgstrnewlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgstrnewlabel.ForeColor = System.Drawing.Color.White;
-            this.rgstrnewlabel.Location = new System.Drawing.Point(106, 7);
-            this.rgstrnewlabel.Name = "rgstrnewlabel";
-            this.rgstrnewlabel.Size = new System.Drawing.Size(301, 37);
-            this.rgstrnewlabel.TabIndex = 1;
-            this.rgstrnewlabel.Text = "REGISTER CUSTOMER";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 125);
-            this.label3.Margin = new System.Windows.Forms.Padding(5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(188, 33);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Phone Number";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // phonenum_txtbox
-            // 
-            this.phonenum_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.phonenum_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.phonenum_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.phonenum_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.phonenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phonenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.phonenum_txtbox.Location = new System.Drawing.Point(21, 161);
-            this.phonenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.phonenum_txtbox.MaxLength = 32767;
-            this.phonenum_txtbox.Multiline = false;
-            this.phonenum_txtbox.Name = "phonenum_txtbox";
-            this.phonenum_txtbox.ReadOnly = false;
-            this.phonenum_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.phonenum_txtbox.TabIndex = 2;
-            this.phonenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.phonenum_txtbox.UseSystemPasswordChar = false;
-            this.phonenum_txtbox.TextChanged += new System.EventHandler(this.dungeonTextBox2_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 33);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Full Name";
-            // 
-            // fname_txtbox
-            // 
-            this.fname_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fname_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.fname_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.fname_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.fname_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fname_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.fname_txtbox.Location = new System.Drawing.Point(21, 85);
-            this.fname_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.fname_txtbox.MaxLength = 32767;
-            this.fname_txtbox.Multiline = false;
-            this.fname_txtbox.Name = "fname_txtbox";
-            this.fname_txtbox.ReadOnly = false;
-            this.fname_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.fname_txtbox.TabIndex = 0;
-            this.fname_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.fname_txtbox.UseSystemPasswordChar = false;
-            // 
-            // rgstrvhclcontainer
-            // 
-            this.rgstrvhclcontainer.BackColor = System.Drawing.Color.Transparent;
-            this.rgstrvhclcontainer.Controls.Add(this.rgstrvhclcancelbtn);
-            this.rgstrvhclcontainer.Controls.Add(this.registervhcbtn);
-            this.rgstrvhclcontainer.Controls.Add(this.label7);
-            this.rgstrvhclcontainer.Controls.Add(this.platenum_txtbox);
-            this.rgstrvhclcontainer.Controls.Add(this.label1);
-            this.rgstrvhclcontainer.Controls.Add(this.label5);
-            this.rgstrvhclcontainer.Controls.Add(this.vhclmodel_txtbox);
-            this.rgstrvhclcontainer.Controls.Add(this.label6);
-            this.rgstrvhclcontainer.Controls.Add(this.cxid_txtbox);
-            this.rgstrvhclcontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rgstrvhclcontainer.Location = new System.Drawing.Point(463, 5);
-            this.rgstrvhclcontainer.Margin = new System.Windows.Forms.Padding(5);
-            this.rgstrvhclcontainer.Name = "rgstrvhclcontainer";
-            this.rgstrvhclcontainer.Padding = new System.Windows.Forms.Padding(5);
-            this.rgstrvhclcontainer.Size = new System.Drawing.Size(448, 354);
-            this.rgstrvhclcontainer.TabIndex = 7;
-            // 
-            // rgstrvhclcancelbtn
-            // 
-            this.rgstrvhclcancelbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.rgstrvhclcancelbtn.BackColor = System.Drawing.Color.Transparent;
-            this.rgstrvhclcancelbtn.BaseColor = System.Drawing.Color.White;
-            this.rgstrvhclcancelbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.rgstrvhclcancelbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rgstrvhclcancelbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.rgstrvhclcancelbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.rgstrvhclcancelbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.rgstrvhclcancelbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.rgstrvhclcancelbtn.EnabledCalc = true;
-            this.rgstrvhclcancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rgstrvhclcancelbtn.ForeColor = System.Drawing.Color.Black;
-            this.rgstrvhclcancelbtn.Location = new System.Drawing.Point(17, 289);
-            this.rgstrvhclcancelbtn.Name = "rgstrvhclcancelbtn";
-            this.rgstrvhclcancelbtn.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.rgstrvhclcancelbtn.Size = new System.Drawing.Size(196, 55);
-            this.rgstrvhclcancelbtn.TabIndex = 8;
-            this.rgstrvhclcancelbtn.Text = "Cancel";
-            this.rgstrvhclcancelbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.rgstrvhclcancelbtn_Click);
-            // 
-            // registervhcbtn
-            // 
-            this.registervhcbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.registervhcbtn.BackColor = System.Drawing.Color.Transparent;
-            this.registervhcbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.registervhcbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.registervhcbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.registervhcbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.registervhcbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.registervhcbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.registervhcbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.registervhcbtn.EnabledCalc = true;
-            this.registervhcbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registervhcbtn.ForeColor = System.Drawing.Color.White;
-            this.registervhcbtn.Location = new System.Drawing.Point(226, 289);
-            this.registervhcbtn.Name = "registervhcbtn";
-            this.registervhcbtn.OverColor = System.Drawing.Color.Black;
-            this.registervhcbtn.Size = new System.Drawing.Size(196, 55);
-            this.registervhcbtn.TabIndex = 6;
-            this.registervhcbtn.Text = "Submit";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(115, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(339, 37);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "REGISTER VEHICLE INFO.";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // platenum_txtbox
-            // 
-            this.platenum_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.platenum_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.platenum_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.platenum_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.platenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.platenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.platenum_txtbox.Location = new System.Drawing.Point(17, 233);
-            this.platenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.platenum_txtbox.MaxLength = 32767;
-            this.platenum_txtbox.Multiline = false;
-            this.platenum_txtbox.Name = "platenum_txtbox";
-            this.platenum_txtbox.ReadOnly = false;
-            this.platenum_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.platenum_txtbox.TabIndex = 5;
-            this.platenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.platenum_txtbox.UseSystemPasswordChar = false;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 197);
-            this.label1.Margin = new System.Windows.Forms.Padding(5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 33);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Plate Number";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(12, 123);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(175, 33);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Vehicle Model";
-            // 
-            // vhclmodel_txtbox
-            // 
-            this.vhclmodel_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vhclmodel_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.vhclmodel_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.vhclmodel_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.vhclmodel_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.vhclmodel_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.vhclmodel_txtbox.Location = new System.Drawing.Point(17, 159);
-            this.vhclmodel_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.vhclmodel_txtbox.MaxLength = 32767;
-            this.vhclmodel_txtbox.Multiline = false;
-            this.vhclmodel_txtbox.Name = "vhclmodel_txtbox";
-            this.vhclmodel_txtbox.ReadOnly = false;
-            this.vhclmodel_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.vhclmodel_txtbox.TabIndex = 2;
-            this.vhclmodel_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.vhclmodel_txtbox.UseSystemPasswordChar = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(12, 47);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(156, 33);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Customer ID";
-            // 
-            // cxid_txtbox
-            // 
-            this.cxid_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cxid_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.cxid_txtbox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.cxid_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.cxid_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cxid_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.cxid_txtbox.Location = new System.Drawing.Point(17, 83);
-            this.cxid_txtbox.Margin = new System.Windows.Forms.Padding(5);
-            this.cxid_txtbox.MaxLength = 32767;
-            this.cxid_txtbox.Multiline = false;
-            this.cxid_txtbox.Name = "cxid_txtbox";
-            this.cxid_txtbox.ReadOnly = false;
-            this.cxid_txtbox.Size = new System.Drawing.Size(405, 43);
-            this.cxid_txtbox.TabIndex = 0;
-            this.cxid_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.cxid_txtbox.UseSystemPasswordChar = false;
-            this.cxid_txtbox.TextChanged += new System.EventHandler(this.dungeonTextBox6_TextChanged);
             // 
             // accscontainer
             // 
@@ -1646,6 +1483,15 @@
             this.navbar.ResumeLayout(false);
             this.btncontainer.ResumeLayout(false);
             this.main_cont.ResumeLayout(false);
+            this.rgstrcontainer.ResumeLayout(false);
+            this.rgstrcontainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.rgstrnewcontainer.ResumeLayout(false);
+            this.rgstrnewcontainer.PerformLayout();
+            this.cstmrscontainer.ResumeLayout(false);
+            this.finishedjobgrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
             this.srvclgscontainer.ResumeLayout(false);
             this.searchresultscontainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
@@ -1658,17 +1504,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).EndInit();
-            this.cstmrscontainer.ResumeLayout(false);
-            this.finishedjobgrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
-            this.rgstrcontainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.rgstrnewcontainer.ResumeLayout(false);
-            this.rgstrnewcontainer.PerformLayout();
-            this.rgstrvhclcontainer.ResumeLayout(false);
-            this.rgstrvhclcontainer.PerformLayout();
             this.accscontainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1689,17 +1524,12 @@
         private System.Windows.Forms.Panel homecontainer;
         private System.Windows.Forms.Panel rgstrcontainer;
         private System.Windows.Forms.Label rgstrnewlabel;
-        private System.Windows.Forms.Panel rgstrvhclcontainer;
         private ReaLTaiizor.Controls.FoxButton registervhcbtn;
         private ReaLTaiizor.Controls.DungeonTextBox platenum_txtbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private ReaLTaiizor.Controls.DungeonTextBox vhclmodel_txtbox;
-        private System.Windows.Forms.Label label6;
-        private ReaLTaiizor.Controls.DungeonTextBox cxid_txtbox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel rgstrnewcontainer;
-        private ReaLTaiizor.Controls.FoxButton registercxbtn;
         private ReaLTaiizor.Controls.DungeonTextBox address_txtbox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -1712,9 +1542,6 @@
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel5;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel4;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private ReaLTaiizor.Controls.FoxButton rgstrcxcancelbtn;
-        private ReaLTaiizor.Controls.FoxButton rgstrvhclcancelbtn;
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
         private ReaLTaiizor.Controls.FoxButton searchbtn;
         private ReaLTaiizor.Controls.DungeonTextBox search_txtbox;

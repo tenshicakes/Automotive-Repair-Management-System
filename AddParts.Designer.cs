@@ -63,9 +63,8 @@
             this.availpartsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availpartsgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.availpartsgrid.Location = new System.Drawing.Point(19, 17);
-            this.availpartsgrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.availpartsgrid.Margin = new System.Windows.Forms.Padding(4);
             this.availpartsgrid.Name = "availpartsgrid";
-            this.availpartsgrid.ReadOnly = true;
             this.availpartsgrid.RowHeadersVisible = false;
             this.availpartsgrid.RowHeadersWidth = 51;
             this.availpartsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -80,7 +79,7 @@
             this.foxLabel2.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel2.ForeColor = System.Drawing.Color.Black;
             this.foxLabel2.Location = new System.Drawing.Point(185, 42);
-            this.foxLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.foxLabel2.Name = "foxLabel2";
             this.foxLabel2.Size = new System.Drawing.Size(247, 38);
             this.foxLabel2.TabIndex = 6;
@@ -101,12 +100,13 @@
             this.addbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addbtn.ForeColor = System.Drawing.Color.White;
             this.addbtn.Location = new System.Drawing.Point(400, 469);
-            this.addbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addbtn.Margin = new System.Windows.Forms.Padding(4);
             this.addbtn.Name = "addbtn";
             this.addbtn.OverColor = System.Drawing.Color.Black;
             this.addbtn.Size = new System.Drawing.Size(207, 55);
             this.addbtn.TabIndex = 17;
             this.addbtn.Text = "Add";
+            this.addbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addbtn_Click);
             // 
             // cancelbtn
             // 
@@ -123,7 +123,7 @@
             this.cancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.cancelbtn.ForeColor = System.Drawing.Color.White;
             this.cancelbtn.Location = new System.Drawing.Point(185, 469);
-            this.cancelbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelbtn.Margin = new System.Windows.Forms.Padding(4);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.OverColor = System.Drawing.Color.Black;
             this.cancelbtn.Size = new System.Drawing.Size(207, 55);
@@ -139,7 +139,7 @@
             this.Controls.Add(this.addbtn);
             this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.materialCard1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(653, 591);
             this.MinimizeBox = false;

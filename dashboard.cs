@@ -83,6 +83,8 @@ namespace Olvarra_Capstone
             LoadCustomerAccsToGrid();
             SetupCustomerAccsGridStyle();
             SetupCustomerAndVehicleDetailGridStyle();
+            LoadPendingJobOrdersToGrid();
+            SetupPendingJobOrdersGridStyle();
         }
 
 
@@ -105,13 +107,70 @@ namespace Olvarra_Capstone
         {
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
+            LoadPendingJobOrdersToGrid();
+            SetupPendingJobOrdersGridStyle();
         }
 
+        private void LoadPendingJobOrdersToGrid()
+        {
+            string query = "SELECT s.LogID, v.VehicleModel, v.PlateNumber, s.Issue, s.LoggedBy, s.DateLogged FROM VehicleInfo v INNER JOIN ServiceLogs s ON v.VehicleID = s.VehicleID WHERE s.Status = 'Pending'";
+            DataTable dt = DatabaseHelper.GetTable(query);
+            pendingjobgrid.DataSource = dt;
+            pendingjobgrid.Columns["VehicleModel"].HeaderText = "Vehicle Model";
+            pendingjobgrid.Columns["PlateNumber"].HeaderText = "Plate Number";
+            pendingjobgrid.Columns["Issue"].HeaderText = "Issue";
+            pendingjobgrid.Columns["LoggedBy"].HeaderText = "Logged By";
+            pendingjobgrid.Columns["DateLogged"].HeaderText = "Date Logged";
+            
+        }
+
+        private void SetupPendingJobOrdersGridStyle()
+        {
+            pendingjobgrid.BackgroundColor = Color.White;
+            pendingjobgrid.BorderStyle = BorderStyle.None;
+            pendingjobgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            pendingjobgrid.RowHeadersVisible = false;
+            pendingjobgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            pendingjobgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
+            pendingjobgrid.ReadOnly = true;
+            pendingjobgrid.AllowUserToAddRows = false;
+            // Font and Style for the content cells
+            pendingjobgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            pendingjobgrid.DefaultCellStyle.BackColor = Color.White;
+            pendingjobgrid.DefaultCellStyle.ForeColor = Color.Black;
+            pendingjobgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            pendingjobgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            // Font and Style for the Column Headers
+            pendingjobgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            pendingjobgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            pendingjobgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            pendingjobgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            pendingjobgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            // Required for custom header background colors to show
+            pendingjobgrid.EnableHeadersVisualStyles = false;
+            // Height for the rows so they don't look cramped
+            pendingjobgrid.RowTemplate.Height = 40;
+        }
 
         private void updatejobbtn_Click(object sender, EventArgs e)
         {
-            UpdatePending update = new UpdatePending();
-            update.ShowDialog();
+            if (pendingjobgrid.SelectedRows.Count == 0 && pendingjobgrid.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Please select a pending job order first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int rowIndex = pendingjobgrid.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = pendingjobgrid.Rows[rowIndex];
+
+            // Extract necessary IDs and details (adjust column names to match your DB/grid)
+            string serviceLogID = selectedRow.Cells["LogID"].Value.ToString();
+            string vehicleModel = selectedRow.Cells["VehicleModel"].Value.ToString();
+            string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
+
+            UpdatePending updateForm = new UpdatePending(serviceLogID, vehicleModel, plateNumber);
+            updateForm.ShowDialog();
         }
 
         private void viewunpaidjob_Click(object sender, EventArgs e)
@@ -182,7 +241,78 @@ namespace Olvarra_Capstone
         }
 
 
+        private void registervhctn_Click(object sender, EventArgs e)
+        {
+            string fullName = fname_txtbox.Text.Trim();
+            string phone = phonenum_txtbox.Text.Trim();
+            string address = address_txtbox.Text.Trim();
 
+            string vehicleModel = vhclmodel_txtbox.Text.Trim();
+            string plateNumber = platenum_txtbox.Text.Trim();
+
+            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(vehicleModel) || string.IsNullOrEmpty(plateNumber))
+            {
+                MessageBox.Show("Please fill in all fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 4. Define the queries
+            // Query 1 inserts the customer record
+            string combinedQuery = @"
+            DECLARE @NewCustomerID INT;
+
+            INSERT INTO CustomerInfo (FullName, PhoneNumber, Address) 
+            VALUES (@FullName, @PhoneNumber, @Address);
+
+            -- Grab the newly generated identity ID
+            SET @NewCustomerID = SCOPE_IDENTITY();
+
+            INSERT INTO VehicleInfo (CustomerID, VehicleModel, PlateNumber) 
+            VALUES (@NewCustomerID, @VehicleModel, @PlateNumber);
+            ";
+
+
+
+           
+            SqlParameter[] parameters = {
+            new SqlParameter("@FullName", fullName),
+            new SqlParameter("@PhoneNumber", phone),
+            new SqlParameter("@Address", address),
+            new SqlParameter("@VehicleModel", vehicleModel),
+            new SqlParameter("@PlateNumber", plateNumber)
+    };
+
+            try
+            {
+                int rowsAffected = DatabaseHelper.ExecuteQuery(combinedQuery, parameters);
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Customer and vehicle registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearAllForms();
+                }
+                else
+                {
+                    MessageBox.Show("Registration failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+
+        private void ClearAllForms()
+        {
+            // Clear customer registration fields
+            fname_txtbox.Text = "";
+            phonenum_txtbox.Text = "";
+            address_txtbox.Text = "";
+            // Clear vehicle registration fields
+            vhclmodel_txtbox.Text = "";
+            platenum_txtbox.Text = "";
+        }
 
 
 
@@ -287,7 +417,25 @@ namespace Olvarra_Capstone
         //=======================
         private void foxButton2_Click_1(object sender, EventArgs e)
         {
-            JobOrder joborder = new JobOrder();
+            
+            if (vhclsownedgrid.SelectedRows.Count == 0 && vhclsownedgrid.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("Please select a vehicle row first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Get the selected row (handles full row select or cell select)
+            int rowIndex = vhclsownedgrid.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = vhclsownedgrid.Rows[rowIndex];
+
+            // Extract the needed data (Make sure your column names match your database/grid columns)
+            string vehicleID = selectedRow.Cells["VehicleID"].Value.ToString();
+            string vehicleModel = selectedRow.Cells["VehicleModel"].Value.ToString();
+            string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
+
+            // Open the popup form and pass the data
+  
+            JobOrder joborder = new JobOrder(vehicleID, vehicleModel, plateNumber);
             joborder.ShowDialog();
         }
 
@@ -315,20 +463,20 @@ namespace Olvarra_Capstone
             }
 
             string customerQuery = @"
-        SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
-        FROM CustomerInfo c
-        INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
-        WHERE v.PlateNumber = @PlateNumber";
+            SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
+            FROM CustomerInfo c
+            INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
+            WHERE v.PlateNumber = @PlateNumber";
 
             string vehicleQuery = @"
-        SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
-        FROM VehicleInfo
-        WHERE PlateNumber = @PlateNumber";
+            SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
+            FROM VehicleInfo
+            WHERE PlateNumber = @PlateNumber";
 
 
             SqlParameter[] parameters = {
-        new SqlParameter("@PlateNumber", plateNumberToSearch)
-    };
+            new SqlParameter("@PlateNumber", plateNumberToSearch)
+            };
 
             DataTable dtCustomer = DatabaseHelper.GetTable(customerQuery, parameters);
             DataTable dtVehicle = DatabaseHelper.GetTable(vehicleQuery, parameters);
@@ -506,6 +654,14 @@ namespace Olvarra_Capstone
 
         }
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rgstrnewlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
