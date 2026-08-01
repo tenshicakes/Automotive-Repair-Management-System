@@ -33,24 +33,24 @@ namespace Olvarra_Capstone
 
         private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit(); // This completely kills the app when the Dashboard is closed
+            Application.Exit(); 
         }
 
 
         private FoxButton activeButton = null;
         private void ActiveButton(FoxButton clickedBtn)
         {
-            //Set all buttons to inactive by default
+            
             FoxButton[] navbarbuttons = { homebtn, registerbtn, cxbtn, srlogsbtn, accbtn };
 
-            //Default color for all buttons
+            
             foreach (FoxButton button in navbarbuttons)
             {
                 button.BaseColor = Color.FromArgb(169, 8, 28);
                 button.ForeColor = Color.White;
             }
 
-            //Set a button to active when clicked (color switch)
+            
             clickedBtn.BaseColor = Color.White;
             clickedBtn.ForeColor = Color.FromArgb(169, 8, 28);
 
@@ -135,21 +135,19 @@ namespace Olvarra_Capstone
             
             pendingjobgrid.ReadOnly = true;
             pendingjobgrid.AllowUserToAddRows = false;
-            // Font and Style for the content cells
+            
             pendingjobgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             pendingjobgrid.DefaultCellStyle.BackColor = Color.White;
             pendingjobgrid.DefaultCellStyle.ForeColor = Color.Black;
             pendingjobgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             pendingjobgrid.DefaultCellStyle.SelectionForeColor = Color.White;
-            // Font and Style for the Column Headers
+            
             pendingjobgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             pendingjobgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             pendingjobgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             pendingjobgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             pendingjobgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            // Required for custom header background colors to show
             pendingjobgrid.EnableHeadersVisualStyles = false;
-            // Height for the rows so they don't look cramped
             pendingjobgrid.RowTemplate.Height = 40;
         }
 
@@ -163,8 +161,6 @@ namespace Olvarra_Capstone
 
             int rowIndex = pendingjobgrid.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = pendingjobgrid.Rows[rowIndex];
-
-            // Extract necessary IDs and details (adjust column names to match your DB/grid)
             string serviceLogID = selectedRow.Cells["LogID"].Value.ToString();
             string vehicleModel = selectedRow.Cells["VehicleModel"].Value.ToString();
             string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
@@ -211,24 +207,17 @@ namespace Olvarra_Capstone
             inventorygrid.MultiSelect = true;
             inventorygrid.ReadOnly = true;
             inventorygrid.AllowUserToAddRows = false;
-
-            
             inventorygrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             inventorygrid.DefaultCellStyle.BackColor = Color.White;
             inventorygrid.DefaultCellStyle.ForeColor = Color.Black;
             inventorygrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             inventorygrid.DefaultCellStyle.SelectionForeColor = Color.White;
-
             inventorygrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             inventorygrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             inventorygrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             inventorygrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             inventorygrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-
-            
             inventorygrid.EnableHeadersVisualStyles = false;
-
-            
             inventorygrid.RowTemplate.Height = 40;
         }
 
@@ -246,7 +235,6 @@ namespace Olvarra_Capstone
             string fullName = fname_txtbox.Text.Trim();
             string phone = phonenum_txtbox.Text.Trim();
             string address = address_txtbox.Text.Trim();
-
             string vehicleModel = vhclmodel_txtbox.Text.Trim();
             string plateNumber = platenum_txtbox.Text.Trim();
 
@@ -256,8 +244,7 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // 4. Define the queries
-            // Query 1 inserts the customer record
+       
             string combinedQuery = @"
             DECLARE @NewCustomerID INT;
 
@@ -305,11 +292,10 @@ namespace Olvarra_Capstone
 
         private void ClearAllForms()
         {
-            // Clear customer registration fields
+         
             fname_txtbox.Text = "";
             phonenum_txtbox.Text = "";
             address_txtbox.Text = "";
-            // Clear vehicle registration fields
             vhclmodel_txtbox.Text = "";
             platenum_txtbox.Text = "";
         }
@@ -357,21 +343,17 @@ namespace Olvarra_Capstone
             customeraccsgrid.MultiSelect = true;
             customeraccsgrid.ReadOnly = true;
             customeraccsgrid.AllowUserToAddRows = false;
-            // Font and Style for the content cells
             customeraccsgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             customeraccsgrid.DefaultCellStyle.BackColor = Color.White;
             customeraccsgrid.DefaultCellStyle.ForeColor = Color.Black;
             customeraccsgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             customeraccsgrid.DefaultCellStyle.SelectionForeColor = Color.White;
-            // Font and Style for the Column Headers
             customeraccsgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             customeraccsgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             customeraccsgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             customeraccsgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             customeraccsgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            // Required for custom header background colors to show
             customeraccsgrid.EnableHeadersVisualStyles = false;
-            // Height for the rows so they don't look cramped
             customeraccsgrid.RowTemplate.Height = 40;
         }
 
@@ -494,8 +476,6 @@ namespace Olvarra_Capstone
 
        private void SetupCustomerAndVehicleDetailGridStyle ()
         {
-
-            //Customer Details Grid Style
             cxdetailsgrid.BackgroundColor = Color.White;
             cxdetailsgrid.BorderStyle = BorderStyle.None;
             cxdetailsgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -505,27 +485,20 @@ namespace Olvarra_Capstone
             cxdetailsgrid.MultiSelect = true;
             cxdetailsgrid.ReadOnly = true;
             cxdetailsgrid.AllowUserToAddRows = false;
-            // Font and Style for the content cells
             cxdetailsgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             cxdetailsgrid.DefaultCellStyle.BackColor = Color.White;
             cxdetailsgrid.DefaultCellStyle.ForeColor = Color.Black;
             cxdetailsgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             cxdetailsgrid.DefaultCellStyle.SelectionForeColor = Color.White;
-            // Font and Style for the Column Headers
             cxdetailsgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             cxdetailsgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             cxdetailsgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             cxdetailsgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             cxdetailsgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            // Required for custom header background colors to show
             cxdetailsgrid.EnableHeadersVisualStyles = false;
-            // Height for the rows so they don't look cramped
             cxdetailsgrid.RowTemplate.Height = 40;
 
 
-
-
-            //Vehicle Details Grid Style
             vhclsownedgrid.BackgroundColor = Color.White;
             vhclsownedgrid.BorderStyle = BorderStyle.None;
             vhclsownedgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
@@ -535,21 +508,17 @@ namespace Olvarra_Capstone
             vhclsownedgrid.MultiSelect = true;
             vhclsownedgrid.ReadOnly = true;
             vhclsownedgrid.AllowUserToAddRows = false;
-            // Font and Style for the content cells
             vhclsownedgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             vhclsownedgrid.DefaultCellStyle.BackColor = Color.White;
             vhclsownedgrid.DefaultCellStyle.ForeColor = Color.Black;
             vhclsownedgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
             vhclsownedgrid.DefaultCellStyle.SelectionForeColor = Color.White;
-            // Font and Style for the Column Headers
             vhclsownedgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             vhclsownedgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             vhclsownedgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
             vhclsownedgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
             vhclsownedgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
-            // Required for custom header background colors to show
             vhclsownedgrid.EnableHeadersVisualStyles = false;
-            // Height for the rows so they don't look cramped
             vhclsownedgrid.RowTemplate.Height = 40;
         }
 

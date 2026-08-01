@@ -74,7 +74,7 @@ namespace Olvarra_Capstone
                     }
 
                     conn.Open();
-                    return cmd.ExecuteNonQuery(); // Returns number of affected rows
+                    return cmd.ExecuteNonQuery(); 
                 }
             }
         }
@@ -101,7 +101,6 @@ namespace Olvarra_Capstone
         }
 
         // 5. ExecuteTransaction (For multi-step operations where all must succeed or all fail)
-        // Example: Inserting a Customer AND a Vehicle at the exact same time safely.
         public static bool ExecuteTransaction(string[] queries, SqlParameter[][] allParameters)
         {
             using (SqlConnection conn = new SqlConnection(connString))
@@ -127,13 +126,13 @@ namespace Olvarra_Capstone
                                 cmd.ExecuteNonQuery();
                             }
 
-                            // If everything succeeded, commit the transaction to save changes permanently
+                       
                             transaction.Commit();
                             return true;
                         }
                         catch (Exception)
                         {
-                            // If any error happens, roll back everything so the database stays clean
+                     
                             transaction.Rollback();
                             return false;
                         }
