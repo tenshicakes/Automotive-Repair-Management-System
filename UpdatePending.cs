@@ -111,6 +111,7 @@ namespace Olvarra_Capstone
             {
                 MessageBox.Show("Job order updated and inventory deducted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
+                
             }
             else
             {

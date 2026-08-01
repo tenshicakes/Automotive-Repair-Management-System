@@ -78,7 +78,7 @@ namespace Olvarra_Capstone
 
         private void RefreshAllGrids()
         {
-            LoadProductsToIventoryGrid();
+            LoadProductsToInventoryGrid();
             SetupInventoryGridStyle();
             LoadCustomerAccsToGrid();
             SetupCustomerAccsGridStyle();
@@ -109,6 +109,9 @@ namespace Olvarra_Capstone
             ShowPanel(homecontainer);
             LoadPendingJobOrdersToGrid();
             SetupPendingJobOrdersGridStyle();
+            LoadProductsToInventoryGrid();
+            SetupInventoryGridStyle();
+            RefreshAllGrids();
         }
 
         private void LoadPendingJobOrdersToGrid()
@@ -166,9 +169,12 @@ namespace Olvarra_Capstone
             string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
 
             UpdatePending updateForm = new UpdatePending(serviceLogID, vehicleModel, plateNumber);
-            updateForm.ShowDialog();
+            
+            if (updateForm.ShowDialog() == DialogResult.OK)
+            {
+                RefreshAllGrids();
+            }
         }
-
         private void viewunpaidjob_Click(object sender, EventArgs e)
         {
             UnpaidJob unpaidJob = new UnpaidJob();
@@ -185,7 +191,7 @@ namespace Olvarra_Capstone
 
 
 
-        private void LoadProductsToIventoryGrid()
+        private void LoadProductsToInventoryGrid()
         {
             string query = "SELECT PartName, StockQuantity, Price FROM SpareParts";
             DataTable dt = DatabaseHelper.GetTable(query);
