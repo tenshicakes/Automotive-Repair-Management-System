@@ -51,7 +51,7 @@
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(593, 291);
+            this.materialCard1.Size = new System.Drawing.Size(845, 291);
             this.materialCard1.TabIndex = 1;
             // 
             // unpaidjobgrid
@@ -71,7 +71,7 @@
             this.unpaidjobgrid.ReadOnly = true;
             this.unpaidjobgrid.RowHeadersVisible = false;
             this.unpaidjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.unpaidjobgrid.Size = new System.Drawing.Size(565, 263);
+            this.unpaidjobgrid.Size = new System.Drawing.Size(817, 263);
             this.unpaidjobgrid.TabIndex = 11;
             // 
             // foxbutton
@@ -83,7 +83,7 @@
             this.foxbutton.ForeColor = System.Drawing.Color.White;
             this.foxbutton.Location = new System.Drawing.Point(23, 12);
             this.foxbutton.Name = "foxbutton";
-            this.foxbutton.Size = new System.Drawing.Size(262, 23);
+            this.foxbutton.Size = new System.Drawing.Size(514, 23);
             this.foxbutton.TabIndex = 8;
             this.foxbutton.Text = "Job Orders that are unpaid";
             // 
@@ -101,7 +101,7 @@
             this.updatebtn.EnabledCalc = true;
             this.updatebtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.updatebtn.ForeColor = System.Drawing.Color.White;
-            this.updatebtn.Location = new System.Drawing.Point(461, 368);
+            this.updatebtn.Location = new System.Drawing.Point(713, 368);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.OverColor = System.Drawing.Color.Black;
             this.updatebtn.Size = new System.Drawing.Size(155, 45);
@@ -128,16 +128,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.ClientSize = new System.Drawing.Size(639, 470);
+            this.ClientSize = new System.Drawing.Size(891, 470);
             this.Controls.Add(this.foxBigLabel6);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.foxbutton);
             this.Controls.Add(this.materialCard1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "UnpaidJob";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UnpaidJob";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UnpaidJob_Load);
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.unpaidjobgrid)).EndInit();

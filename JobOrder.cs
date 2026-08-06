@@ -27,6 +27,7 @@ namespace Olvarra_Capstone
         {
             string loggedBy = loggedby_txtbox.Text.Trim();
             string issue = issue_textbox.Text.Trim();
+            string status = statuslbl.Text.Trim();
 
             // Validation
             if (string.IsNullOrEmpty(loggedBy) || string.IsNullOrEmpty(issue))
@@ -37,13 +38,14 @@ namespace Olvarra_Capstone
 
             // Query to insert into ServiceLogs table
             string query = @"
-                INSERT INTO ServiceLogs (VehicleID, LoggedBy, Issue, DateLogged) 
-                VALUES (@VehicleID, @LoggedBy, @Issue, GETDATE())";
+                INSERT INTO ServiceLogs (VehicleID, LoggedBy, Issue, Status, DateLogged) 
+                VALUES (@VehicleID, @LoggedBy, @Issue, @Status, GETDATE())";
 
             SqlParameter[] parameters = {
                 new SqlParameter("@VehicleID", _vehicleID),
                 new SqlParameter("@LoggedBy", loggedBy),
-                new SqlParameter("@Issue", issue)
+                new SqlParameter("@Issue", issue),
+                new SqlParameter("@Status", status)
             };
 
             try

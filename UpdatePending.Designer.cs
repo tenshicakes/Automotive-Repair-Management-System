@@ -45,6 +45,9 @@
             this.datefinishlbl = new ReaLTaiizor.Controls.FoxLabel();
             this.updatestatus = new ReaLTaiizor.Controls.FoxLabel();
             this.materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
+            this.removepartsbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.fixedby_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.foxLabel6 = new ReaLTaiizor.Controls.FoxLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.partsusedgrid)).BeginInit();
             this.materialCard2.SuspendLayout();
@@ -58,10 +61,9 @@
             this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel2.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel2.ForeColor = System.Drawing.Color.White;
-            this.foxLabel2.Location = new System.Drawing.Point(360, 1);
-            this.foxLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel2.Location = new System.Drawing.Point(270, 1);
             this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(316, 38);
+            this.foxLabel2.Size = new System.Drawing.Size(237, 31);
             this.foxLabel2.TabIndex = 5;
             this.foxLabel2.Text = "Finalize Job Order";
             // 
@@ -72,10 +74,9 @@
             this.vhclmodellbl.BackColor = System.Drawing.Color.Transparent;
             this.vhclmodellbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vhclmodellbl.ForeColor = System.Drawing.Color.White;
-            this.vhclmodellbl.Location = new System.Drawing.Point(16, 64);
-            this.vhclmodellbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.vhclmodellbl.Location = new System.Drawing.Point(12, 52);
             this.vhclmodellbl.Name = "vhclmodellbl";
-            this.vhclmodellbl.Size = new System.Drawing.Size(427, 34);
+            this.vhclmodellbl.Size = new System.Drawing.Size(320, 28);
             this.vhclmodellbl.TabIndex = 6;
             this.vhclmodellbl.Text = "Toyota Wigo";
             // 
@@ -86,10 +87,9 @@
             this.platenumberlbl.BackColor = System.Drawing.Color.Transparent;
             this.platenumberlbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.platenumberlbl.ForeColor = System.Drawing.Color.White;
-            this.platenumberlbl.Location = new System.Drawing.Point(16, 106);
-            this.platenumberlbl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.platenumberlbl.Location = new System.Drawing.Point(12, 86);
             this.platenumberlbl.Name = "platenumberlbl";
-            this.platenumberlbl.Size = new System.Drawing.Size(427, 34);
+            this.platenumberlbl.Size = new System.Drawing.Size(320, 28);
             this.platenumberlbl.TabIndex = 7;
             this.platenumberlbl.Text = "NEO 2125";
             // 
@@ -100,10 +100,9 @@
             this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel1.ForeColor = System.Drawing.Color.White;
-            this.foxLabel1.Location = new System.Drawing.Point(16, 251);
-            this.foxLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel1.Location = new System.Drawing.Point(12, 222);
             this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(259, 28);
+            this.foxLabel1.Size = new System.Drawing.Size(194, 23);
             this.foxLabel1.TabIndex = 8;
             this.foxLabel1.Text = "Solution";
             // 
@@ -116,13 +115,13 @@
             this.solution_txtbox.EdgeColor = System.Drawing.Color.White;
             this.solution_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.solution_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.solution_txtbox.Location = new System.Drawing.Point(16, 287);
-            this.solution_txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 31);
+            this.solution_txtbox.Location = new System.Drawing.Point(12, 251);
+            this.solution_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.solution_txtbox.MaxLength = 32767;
             this.solution_txtbox.Multiline = true;
             this.solution_txtbox.Name = "solution_txtbox";
             this.solution_txtbox.ReadOnly = false;
-            this.solution_txtbox.Size = new System.Drawing.Size(997, 91);
+            this.solution_txtbox.Size = new System.Drawing.Size(748, 56);
             this.solution_txtbox.TabIndex = 9;
             this.solution_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.solution_txtbox.UseSystemPasswordChar = false;
@@ -134,10 +133,9 @@
             this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel3.ForeColor = System.Drawing.Color.White;
-            this.foxLabel3.Location = new System.Drawing.Point(16, 396);
-            this.foxLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel3.Location = new System.Drawing.Point(12, 322);
             this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(288, 28);
+            this.foxLabel3.Size = new System.Drawing.Size(216, 23);
             this.foxLabel3.TabIndex = 10;
             this.foxLabel3.Text = "Parts Used";
             // 
@@ -149,12 +147,12 @@
             this.materialCard1.Controls.Add(this.partsusedgrid);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(16, 426);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard1.Location = new System.Drawing.Point(12, 346);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.materialCard1.Size = new System.Drawing.Size(997, 107);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(5);
+            this.materialCard1.Size = new System.Drawing.Size(748, 87);
             this.materialCard1.TabIndex = 11;
             // 
             // partsusedgrid
@@ -168,14 +166,13 @@
             this.partsusedgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.partsusedgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.partsusedgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.partsusedgrid.Location = new System.Drawing.Point(7, 6);
-            this.partsusedgrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.partsusedgrid.Location = new System.Drawing.Point(5, 5);
             this.partsusedgrid.Name = "partsusedgrid";
             this.partsusedgrid.ReadOnly = true;
             this.partsusedgrid.RowHeadersVisible = false;
             this.partsusedgrid.RowHeadersWidth = 51;
             this.partsusedgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.partsusedgrid.Size = new System.Drawing.Size(983, 95);
+            this.partsusedgrid.Size = new System.Drawing.Size(738, 77);
             this.partsusedgrid.TabIndex = 10;
             // 
             // addpartsbtn
@@ -192,11 +189,10 @@
             this.addpartsbtn.EnabledCalc = true;
             this.addpartsbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addpartsbtn.ForeColor = System.Drawing.Color.Black;
-            this.addpartsbtn.Location = new System.Drawing.Point(16, 554);
-            this.addpartsbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addpartsbtn.Location = new System.Drawing.Point(12, 450);
             this.addpartsbtn.Name = "addpartsbtn";
             this.addpartsbtn.OverColor = System.Drawing.Color.White;
-            this.addpartsbtn.Size = new System.Drawing.Size(207, 41);
+            this.addpartsbtn.Size = new System.Drawing.Size(155, 33);
             this.addpartsbtn.TabIndex = 13;
             this.addpartsbtn.Text = "Add +";
             this.addpartsbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addpartsbtn_Click);
@@ -207,10 +203,9 @@
             this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel4.ForeColor = System.Drawing.Color.White;
-            this.foxLabel4.Location = new System.Drawing.Point(849, 51);
-            this.foxLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel4.Location = new System.Drawing.Point(637, 41);
             this.foxLabel4.Name = "foxLabel4";
-            this.foxLabel4.Size = new System.Drawing.Size(94, 28);
+            this.foxLabel4.Size = new System.Drawing.Size(70, 23);
             this.foxLabel4.TabIndex = 15;
             this.foxLabel4.Text = "Status";
             // 
@@ -228,11 +223,10 @@
             this.savejobbtn.EnabledCalc = true;
             this.savejobbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.savejobbtn.ForeColor = System.Drawing.Color.White;
-            this.savejobbtn.Location = new System.Drawing.Point(807, 554);
-            this.savejobbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.savejobbtn.Location = new System.Drawing.Point(605, 450);
             this.savejobbtn.Name = "savejobbtn";
             this.savejobbtn.OverColor = System.Drawing.Color.Black;
-            this.savejobbtn.Size = new System.Drawing.Size(207, 55);
+            this.savejobbtn.Size = new System.Drawing.Size(155, 45);
             this.savejobbtn.TabIndex = 16;
             this.savejobbtn.Text = "Save ";
             this.savejobbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.savejobbtn_Click);
@@ -251,11 +245,10 @@
             this.cancelbtn.EnabledCalc = true;
             this.cancelbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.cancelbtn.ForeColor = System.Drawing.Color.Black;
-            this.cancelbtn.Location = new System.Drawing.Point(592, 554);
-            this.cancelbtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelbtn.Location = new System.Drawing.Point(444, 450);
             this.cancelbtn.Name = "cancelbtn";
             this.cancelbtn.OverColor = System.Drawing.Color.White;
-            this.cancelbtn.Size = new System.Drawing.Size(207, 55);
+            this.cancelbtn.Size = new System.Drawing.Size(155, 45);
             this.cancelbtn.TabIndex = 17;
             this.cancelbtn.Text = "Cancel";
             // 
@@ -265,10 +258,9 @@
             this.foxLabel5.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel5.ForeColor = System.Drawing.Color.White;
-            this.foxLabel5.Location = new System.Drawing.Point(807, 152);
-            this.foxLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.foxLabel5.Location = new System.Drawing.Point(12, 134);
             this.foxLabel5.Name = "foxLabel5";
-            this.foxLabel5.Size = new System.Drawing.Size(191, 28);
+            this.foxLabel5.Size = new System.Drawing.Size(143, 23);
             this.foxLabel5.TabIndex = 18;
             this.foxLabel5.Text = "Date Finished:";
             // 
@@ -280,12 +272,12 @@
             this.materialCard2.Controls.Add(this.datefinishlbl);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(763, 187);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard2.Location = new System.Drawing.Point(12, 164);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.materialCard2.Size = new System.Drawing.Size(251, 50);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(5);
+            this.materialCard2.Size = new System.Drawing.Size(188, 41);
             this.materialCard2.TabIndex = 12;
             // 
             // datefinishlbl
@@ -294,10 +286,9 @@
             this.datefinishlbl.BackColor = System.Drawing.Color.Transparent;
             this.datefinishlbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datefinishlbl.ForeColor = System.Drawing.Color.Black;
-            this.datefinishlbl.Location = new System.Drawing.Point(11, 10);
-            this.datefinishlbl.Margin = new System.Windows.Forms.Padding(4);
+            this.datefinishlbl.Location = new System.Drawing.Point(8, 8);
             this.datefinishlbl.Name = "datefinishlbl";
-            this.datefinishlbl.Size = new System.Drawing.Size(229, 28);
+            this.datefinishlbl.Size = new System.Drawing.Size(172, 23);
             this.datefinishlbl.TabIndex = 19;
             this.datefinishlbl.Text = "12/04/2026";
             // 
@@ -308,10 +299,9 @@
             this.updatestatus.BackColor = System.Drawing.Color.Transparent;
             this.updatestatus.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updatestatus.ForeColor = System.Drawing.Color.Black;
-            this.updatestatus.Location = new System.Drawing.Point(75, 8);
-            this.updatestatus.Margin = new System.Windows.Forms.Padding(4);
+            this.updatestatus.Location = new System.Drawing.Point(56, 6);
             this.updatestatus.Name = "updatestatus";
-            this.updatestatus.Size = new System.Drawing.Size(105, 32);
+            this.updatestatus.Size = new System.Drawing.Size(79, 26);
             this.updatestatus.TabIndex = 19;
             this.updatestatus.Text = "Finished";
             // 
@@ -323,20 +313,77 @@
             this.materialCard3.Controls.Add(this.updatestatus);
             this.materialCard3.Depth = 0;
             this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(763, 90);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(19, 17, 19, 17);
+            this.materialCard3.Location = new System.Drawing.Point(572, 73);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.materialCard3.Size = new System.Drawing.Size(251, 50);
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(5);
+            this.materialCard3.Size = new System.Drawing.Size(188, 41);
             this.materialCard3.TabIndex = 20;
+            // 
+            // removepartsbtn
+            // 
+            this.removepartsbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removepartsbtn.BackColor = System.Drawing.Color.Transparent;
+            this.removepartsbtn.BaseColor = System.Drawing.Color.White;
+            this.removepartsbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.removepartsbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removepartsbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.removepartsbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.removepartsbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.removepartsbtn.DownColor = System.Drawing.Color.Silver;
+            this.removepartsbtn.EnabledCalc = true;
+            this.removepartsbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.removepartsbtn.ForeColor = System.Drawing.Color.Black;
+            this.removepartsbtn.Location = new System.Drawing.Point(177, 450);
+            this.removepartsbtn.Name = "removepartsbtn";
+            this.removepartsbtn.OverColor = System.Drawing.Color.White;
+            this.removepartsbtn.Size = new System.Drawing.Size(155, 33);
+            this.removepartsbtn.TabIndex = 21;
+            this.removepartsbtn.Text = "Remove -";
+            this.removepartsbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.removepartsbtn_Click);
+            // 
+            // fixedby_txtbox
+            // 
+            this.fixedby_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.fixedby_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.fixedby_txtbox.BorderColor = System.Drawing.Color.Transparent;
+            this.fixedby_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.fixedby_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.fixedby_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.fixedby_txtbox.Location = new System.Drawing.Point(511, 163);
+            this.fixedby_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.fixedby_txtbox.MaxLength = 32767;
+            this.fixedby_txtbox.Multiline = false;
+            this.fixedby_txtbox.Name = "fixedby_txtbox";
+            this.fixedby_txtbox.ReadOnly = false;
+            this.fixedby_txtbox.Size = new System.Drawing.Size(250, 36);
+            this.fixedby_txtbox.TabIndex = 22;
+            this.fixedby_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.fixedby_txtbox.UseSystemPasswordChar = false;
+            // 
+            // foxLabel6
+            // 
+            this.foxLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel6.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel6.ForeColor = System.Drawing.Color.White;
+            this.foxLabel6.Location = new System.Drawing.Point(672, 134);
+            this.foxLabel6.Name = "foxLabel6";
+            this.foxLabel6.Size = new System.Drawing.Size(89, 23);
+            this.foxLabel6.TabIndex = 23;
+            this.foxLabel6.Text = "Fixed By:";
             // 
             // UpdatePending
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.ClientSize = new System.Drawing.Size(1027, 625);
+            this.ClientSize = new System.Drawing.Size(772, 514);
+            this.Controls.Add(this.foxLabel6);
+            this.Controls.Add(this.fixedby_txtbox);
+            this.Controls.Add(this.removepartsbtn);
             this.Controls.Add(this.materialCard3);
             this.Controls.Add(this.materialCard2);
             this.Controls.Add(this.foxLabel5);
@@ -351,11 +398,10 @@
             this.Controls.Add(this.platenumberlbl);
             this.Controls.Add(this.vhclmodellbl);
             this.Controls.Add(this.foxLabel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1045, 672);
+            this.MaximumSize = new System.Drawing.Size(788, 553);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1045, 672);
+            this.MinimumSize = new System.Drawing.Size(788, 553);
             this.Name = "UpdatePending";
             this.ShowIcon = false;
             this.Load += new System.EventHandler(this.UpdatePending_Load);
@@ -386,5 +432,8 @@
         private ReaLTaiizor.Controls.FoxLabel datefinishlbl;
         private ReaLTaiizor.Controls.FoxLabel updatestatus;
         private ReaLTaiizor.Controls.MaterialCard materialCard3;
+        private ReaLTaiizor.Controls.FoxButton removepartsbtn;
+        private ReaLTaiizor.Controls.DungeonTextBox fixedby_txtbox;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel6;
     }
 }

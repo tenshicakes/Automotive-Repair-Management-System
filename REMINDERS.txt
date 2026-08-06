@@ -1,0 +1,21 @@
+﻿CODES THAT ARE COMPLICATED AND MAY REQUIRE ADDITIONAL CONTEXT OR EXPLANATION.
+1. The system stores PartsUsed as text and in this exact format "Part Name (Qty: 1)".
+The string of code is located at UpdatePending in savebtn_Click. The code is as follows:
+string partsUsedText = null;
+    if (dtPartsUsed.Rows.Count > 0)
+    {
+        List<string> partNamesList = new List<string>();
+        foreach (DataRow row in dtPartsUsed.Rows)
+        {
+            string pName = row["PartName"].ToString();
+            int pQty = Convert.ToInt32(row["Quantity"]);
+
+            partNamesList.Add($"{pName} (Qty: {pQty})");
+        }
+        partsUsedText = string.Join(", ", partNamesList);
+    }
+
+2. There is a function in UpdateUnpaidJob.cs that converts the text of PartsUsed into
+something that can be calculated. It is important that the format of the text is not changed, 
+as it will break the function in UpdateUnpaidJob.cs. If anything bugs out, check the format of the text 
+in UpdatePending.cs and UpdateUnpaidJob.cs. 

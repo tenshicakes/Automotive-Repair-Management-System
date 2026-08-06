@@ -28,6 +28,13 @@ namespace Olvarra_Capstone
         {
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
+
+            LoadPendingJobOrdersToGrid();
+            SetupPendingJobOrdersGridStyle();
+
+            LoadProductsToInventoryGrid();
+            SetupInventoryGridStyle();
+
             RefreshAllGrids();
         }
 
@@ -78,13 +85,18 @@ namespace Olvarra_Capstone
 
         private void RefreshAllGrids()
         {
-            LoadProductsToInventoryGrid();
-            SetupInventoryGridStyle();
-            LoadCustomerAccsToGrid();
-            SetupCustomerAccsGridStyle();
-            SetupCustomerAndVehicleDetailGridStyle();
             LoadPendingJobOrdersToGrid();
             SetupPendingJobOrdersGridStyle();
+
+            LoadProductsToInventoryGrid();
+            SetupInventoryGridStyle();
+
+            LoadCustomerAccsToGrid();
+            SetupCustomerAccsGridStyle();
+
+            SetupCustomerAndVehicleDetailGridStyle();
+
+            
         }
 
 
@@ -226,6 +238,8 @@ namespace Olvarra_Capstone
             inventorygrid.EnableHeadersVisualStyles = false;
             inventorygrid.RowTemplate.Height = 40;
         }
+
+
 
 
         //====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
@@ -530,6 +544,25 @@ namespace Olvarra_Capstone
 
 
 
+        private void vhclsownedgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Make sure they clicked an actual row and not the header
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = vhclsownedgrid.Rows[e.RowIndex];
+
+                // Grab the necessary data from the clicked row 
+                // (Make sure these column names match your vhclsownedgrid's data source columns)
+                int vehicleId = Convert.ToInt32(row.Cells["VehicleID"].Value);
+                string vehicleModel = row.Cells["VehicleModel"].Value.ToString();
+                string plateNumber = row.Cells["PlateNumber"].Value.ToString();
+
+                // Open the ViewVehicleHistory form and pass the data into its constructor
+                ViewVehicleHistory historyForm = new ViewVehicleHistory(vehicleId, vehicleModel, plateNumber);
+                historyForm.ShowDialog();
+            }
+        }
+
 
 
 
@@ -638,5 +671,12 @@ namespace Olvarra_Capstone
         {
 
         }
+
+        private void vhclsownedgrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }

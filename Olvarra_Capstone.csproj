@@ -144,6 +144,12 @@
     <Compile Include="vhclEditInfo.Designer.cs">
       <DependentUpon>vhclEditInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewVehicleHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewVehicleHistory.Designer.cs">
+      <DependentUpon>ViewVehicleHistory.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddParts.resx">
       <DependentUpon>AddParts.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
     <EmbeddedResource Include="vhclEditInfo.resx">
       <DependentUpon>vhclEditInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewVehicleHistory.resx">
+      <DependentUpon>ViewVehicleHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -212,6 +221,7 @@
       <DependentUpon>olvarraDB.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="REMINDERS.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">

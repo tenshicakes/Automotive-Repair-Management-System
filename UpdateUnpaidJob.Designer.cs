@@ -28,27 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
+            this.totalamountlbl = new ReaLTaiizor.Controls.FoxLabel();
             this.amountpaid_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
-            this.updatestatus = new ReaLTaiizor.Controls.DungeonComboBox();
             this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
             this.processby_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.updatebtn = new ReaLTaiizor.Controls.FoxButton();
+            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.datelbl = new ReaLTaiizor.Controls.FoxLabel();
             this.SuspendLayout();
             // 
-            // foxLabel2
+            // totalamountlbl
             // 
-            this.foxLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.totalamountlbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxLabel2.ForeColor = System.Drawing.Color.Black;
-            this.foxLabel2.Location = new System.Drawing.Point(12, 12);
-            this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(191, 23);
-            this.foxLabel2.TabIndex = 6;
-            this.foxLabel2.Text = "Total Amount Paid";
+            this.totalamountlbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalamountlbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalamountlbl.ForeColor = System.Drawing.Color.Black;
+            this.totalamountlbl.Location = new System.Drawing.Point(12, 41);
+            this.totalamountlbl.Name = "totalamountlbl";
+            this.totalamountlbl.Size = new System.Drawing.Size(177, 23);
+            this.totalamountlbl.TabIndex = 6;
+            this.totalamountlbl.Text = "xxxxxxxxx";
             // 
             // amountpaid_txtbox
             // 
@@ -59,7 +61,7 @@
             this.amountpaid_txtbox.EdgeColor = System.Drawing.Color.White;
             this.amountpaid_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.amountpaid_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.amountpaid_txtbox.Location = new System.Drawing.Point(12, 41);
+            this.amountpaid_txtbox.Location = new System.Drawing.Point(12, 131);
             this.amountpaid_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.amountpaid_txtbox.MaximumSize = new System.Drawing.Size(273, 36);
             this.amountpaid_txtbox.MaxLength = 32767;
@@ -79,45 +81,11 @@
             this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel1.ForeColor = System.Drawing.Color.Black;
-            this.foxLabel1.Location = new System.Drawing.Point(12, 198);
+            this.foxLabel1.Location = new System.Drawing.Point(12, 257);
             this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(157, 23);
+            this.foxLabel1.Size = new System.Drawing.Size(148, 23);
             this.foxLabel1.TabIndex = 11;
-            this.foxLabel1.Text = "Update Status";
-            // 
-            // updatestatus
-            // 
-            this.updatestatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updatestatus.BackColor = System.Drawing.Color.White;
-            this.updatestatus.ColorA = System.Drawing.Color.Black;
-            this.updatestatus.ColorB = System.Drawing.Color.Black;
-            this.updatestatus.ColorC = System.Drawing.Color.White;
-            this.updatestatus.ColorD = System.Drawing.Color.White;
-            this.updatestatus.ColorE = System.Drawing.Color.White;
-            this.updatestatus.ColorF = System.Drawing.Color.Black;
-            this.updatestatus.ColorG = System.Drawing.Color.Black;
-            this.updatestatus.ColorH = System.Drawing.Color.White;
-            this.updatestatus.ColorI = System.Drawing.Color.Black;
-            this.updatestatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updatestatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.updatestatus.DropDownHeight = 500;
-            this.updatestatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.updatestatus.DropDownWidth = 243;
-            this.updatestatus.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updatestatus.ForeColor = System.Drawing.Color.Black;
-            this.updatestatus.FormattingEnabled = true;
-            this.updatestatus.HoverSelectionColor = System.Drawing.Color.Black;
-            this.updatestatus.IntegralHeight = false;
-            this.updatestatus.ItemHeight = 40;
-            this.updatestatus.Items.AddRange(new object[] {
-            "Finished",
-            "Pending"});
-            this.updatestatus.Location = new System.Drawing.Point(12, 227);
-            this.updatestatus.MaxDropDownItems = 4;
-            this.updatestatus.Name = "updatestatus";
-            this.updatestatus.Size = new System.Drawing.Size(273, 46);
-            this.updatestatus.StartIndex = 0;
-            this.updatestatus.TabIndex = 15;
+            this.foxLabel1.Text = "Payment Date:";
             // 
             // foxLabel3
             // 
@@ -126,9 +94,9 @@
             this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
             this.foxLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.foxLabel3.ForeColor = System.Drawing.Color.Black;
-            this.foxLabel3.Location = new System.Drawing.Point(12, 105);
+            this.foxLabel3.Location = new System.Drawing.Point(12, 173);
             this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(123, 23);
+            this.foxLabel3.Size = new System.Drawing.Size(338, 23);
             this.foxLabel3.TabIndex = 16;
             this.foxLabel3.Text = "Processed By:";
             // 
@@ -141,7 +109,7 @@
             this.processby_txtbox.EdgeColor = System.Drawing.Color.White;
             this.processby_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.processby_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.processby_txtbox.Location = new System.Drawing.Point(12, 134);
+            this.processby_txtbox.Location = new System.Drawing.Point(12, 212);
             this.processby_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
             this.processby_txtbox.MaximumSize = new System.Drawing.Size(273, 36);
             this.processby_txtbox.MaxLength = 32767;
@@ -168,43 +136,88 @@
             this.updatebtn.EnabledCalc = true;
             this.updatebtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.updatebtn.ForeColor = System.Drawing.Color.White;
-            this.updatebtn.Location = new System.Drawing.Point(12, 291);
+            this.updatebtn.Location = new System.Drawing.Point(227, 348);
             this.updatebtn.Name = "updatebtn";
             this.updatebtn.OverColor = System.Drawing.Color.Black;
             this.updatebtn.Size = new System.Drawing.Size(273, 56);
             this.updatebtn.TabIndex = 19;
             this.updatebtn.Text = "Update ";
+            this.updatebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.updatebtn_Click);
+            // 
+            // foxLabel2
+            // 
+            this.foxLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel2.ForeColor = System.Drawing.Color.Black;
+            this.foxLabel2.Location = new System.Drawing.Point(12, 12);
+            this.foxLabel2.Name = "foxLabel2";
+            this.foxLabel2.Size = new System.Drawing.Size(338, 23);
+            this.foxLabel2.TabIndex = 20;
+            this.foxLabel2.Text = "Total Amount for parts used:";
+            // 
+            // foxLabel4
+            // 
+            this.foxLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel4.ForeColor = System.Drawing.Color.Black;
+            this.foxLabel4.Location = new System.Drawing.Point(12, 102);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(338, 23);
+            this.foxLabel4.TabIndex = 21;
+            this.foxLabel4.Text = "Total Amount Paid:";
+            // 
+            // datelbl
+            // 
+            this.datelbl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datelbl.BackColor = System.Drawing.Color.Transparent;
+            this.datelbl.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelbl.ForeColor = System.Drawing.Color.Black;
+            this.datelbl.Location = new System.Drawing.Point(12, 286);
+            this.datelbl.Name = "datelbl";
+            this.datelbl.Size = new System.Drawing.Size(148, 23);
+            this.datelbl.TabIndex = 22;
+            this.datelbl.Text = "xxxx xxx xxx ";
             // 
             // UpdateUnpaidJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(307, 383);
+            this.ClientSize = new System.Drawing.Size(522, 416);
+            this.Controls.Add(this.datelbl);
+            this.Controls.Add(this.foxLabel4);
+            this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.processby_txtbox);
             this.Controls.Add(this.foxLabel3);
-            this.Controls.Add(this.updatestatus);
             this.Controls.Add(this.foxLabel1);
             this.Controls.Add(this.amountpaid_txtbox);
-            this.Controls.Add(this.foxLabel2);
+            this.Controls.Add(this.totalamountlbl);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(323, 422);
+            this.MaximumSize = new System.Drawing.Size(538, 455);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(323, 422);
+            this.MinimumSize = new System.Drawing.Size(538, 455);
             this.Name = "UpdateUnpaidJob";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.UpdateUnpaidJob_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ReaLTaiizor.Controls.FoxLabel foxLabel2;
+        private ReaLTaiizor.Controls.FoxLabel totalamountlbl;
         private ReaLTaiizor.Controls.DungeonTextBox amountpaid_txtbox;
         private ReaLTaiizor.Controls.FoxLabel foxLabel1;
-        private ReaLTaiizor.Controls.DungeonComboBox updatestatus;
         private ReaLTaiizor.Controls.FoxLabel foxLabel3;
         private ReaLTaiizor.Controls.DungeonTextBox processby_txtbox;
         private ReaLTaiizor.Controls.FoxButton updatebtn;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel2;
+        private ReaLTaiizor.Controls.FoxLabel foxLabel4;
+        private ReaLTaiizor.Controls.FoxLabel datelbl;
     }
 }

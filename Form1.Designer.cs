@@ -146,7 +146,7 @@
             this.loginbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginbtn.ForeColor = System.Drawing.Color.Transparent;
-            this.loginbtn.Location = new System.Drawing.Point(141, 317);
+            this.loginbtn.Location = new System.Drawing.Point(151, 317);
             this.loginbtn.Name = "loginbtn";
             this.loginbtn.Rounded = true;
             this.loginbtn.Size = new System.Drawing.Size(157, 50);

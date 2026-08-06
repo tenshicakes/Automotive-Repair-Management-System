@@ -105,6 +105,7 @@
             this.rgstrnewlabel = new System.Windows.Forms.Label();
             this.accscontainer = new System.Windows.Forms.Panel();
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.removevhclbtn = new ReaLTaiizor.Controls.FoxButton();
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
@@ -311,9 +312,9 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
-            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -835,6 +836,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchresultscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchresultscontainer.Controls.Add(this.removevhclbtn);
             this.searchresultscontainer.Controls.Add(this.addvehiclebtn);
             this.searchresultscontainer.Controls.Add(this.newjoborderbtn);
             this.searchresultscontainer.Controls.Add(this.vhcleditinfo);
@@ -963,6 +965,8 @@
             this.vhclsownedgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.vhclsownedgrid.Size = new System.Drawing.Size(851, 204);
             this.vhclsownedgrid.TabIndex = 8;
+            this.vhclsownedgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellContentClick);
+            this.vhclsownedgrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellDoubleClick);
             // 
             // foxLabel4
             // 
@@ -1465,6 +1469,27 @@
             this.foxBigLabel2.TabIndex = 1;
             this.foxBigLabel2.Text = " Accounts";
             // 
+            // removevhclbtn
+            // 
+            this.removevhclbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removevhclbtn.BackColor = System.Drawing.Color.Transparent;
+            this.removevhclbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.removevhclbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.removevhclbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removevhclbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.removevhclbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.removevhclbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.removevhclbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.removevhclbtn.EnabledCalc = true;
+            this.removevhclbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.removevhclbtn.ForeColor = System.Drawing.Color.White;
+            this.removevhclbtn.Location = new System.Drawing.Point(167, 404);
+            this.removevhclbtn.Name = "removevhclbtn";
+            this.removevhclbtn.OverColor = System.Drawing.Color.Black;
+            this.removevhclbtn.Size = new System.Drawing.Size(175, 36);
+            this.removevhclbtn.TabIndex = 12;
+            this.removevhclbtn.Text = "Remove Vehicle -";
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1587,5 +1612,6 @@
         private ReaLTaiizor.Controls.FoxButton cxsearchbtn;
         private ReaLTaiizor.Controls.MaterialCard finishedjobgrid;
         private System.Windows.Forms.DataGridView customeraccsgrid;
+        private ReaLTaiizor.Controls.FoxButton removevhclbtn;
     }
 }
