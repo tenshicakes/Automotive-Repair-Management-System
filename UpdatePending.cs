@@ -34,6 +34,33 @@ namespace Olvarra_Capstone
         }
 
 
+
+        private void PartsUsedGridDesign()
+        {
+            partsusedgrid.BackgroundColor = Color.White;
+            partsusedgrid.BorderStyle = BorderStyle.None;
+            partsusedgrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            partsusedgrid.RowHeadersVisible = false;
+            partsusedgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            partsusedgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            partsusedgrid.MultiSelect = true;
+            partsusedgrid.ReadOnly = true;
+            partsusedgrid.AllowUserToAddRows = false;
+            partsusedgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            partsusedgrid.DefaultCellStyle.BackColor = Color.White;
+            partsusedgrid.DefaultCellStyle.ForeColor = Color.Black;
+            partsusedgrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            partsusedgrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            partsusedgrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            partsusedgrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            partsusedgrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            partsusedgrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            partsusedgrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            partsusedgrid.EnableHeadersVisualStyles = false;
+            partsusedgrid.RowTemplate.Height = 40;
+        }
+        
+
         // Event handler for the "Add Parts" button click
         private void addpartsbtn_Click(object sender, EventArgs e)
         {
@@ -124,7 +151,7 @@ namespace Olvarra_Capstone
 
         private void UpdatePending_Load(object sender, EventArgs e)
         {
-
+            PartsUsedGridDesign();
         }
 
         private void foxLabel6_Click(object sender, EventArgs e)

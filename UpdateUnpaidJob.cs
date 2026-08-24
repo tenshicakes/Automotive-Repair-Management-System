@@ -49,25 +49,20 @@ namespace Olvarra_Capstone
 
             foreach (string entry in partEntries)
             {
-                // Use RegEx to parse out the part name and quantity
-                // Example format: "Oil Filter (Qty: 3)" -> Group 1 = "Oil Filter", Group 2 = "3"
+
                 Match match = Regex.Match(entry.Trim(), @"^(.*?)\s*\(Qty:\s*(\d+)\)$");
 
                 if (match.Success)
                 {
                     string partName = match.Groups[1].Value.Trim();
                     int qty = int.Parse(match.Groups[2].Value);
-
-                    // Fetch the price for this specific part from the SpareParts table
                     decimal price = GetPartPriceFromDatabase(partName);
-
-                    // Multiply and add to grand total
                     grandTotal += (price * qty);
                 }
             }
 
             _calculatedTotalAmount = grandTotal;
-            totalamountlbl.Text = _calculatedTotalAmount.ToString("N2"); // Formats nicely with commas and 2 decimal places (e.g., "600.00")
+            totalamountlbl.Text = _calculatedTotalAmount.ToString("N2"); 
         }
 
         private decimal GetPartPriceFromDatabase(string partName)
@@ -109,9 +104,6 @@ namespace Olvarra_Capstone
             }
 
             string paymentDate = datelbl.Text;
-
-            // 3. Prepare Insert Query into PaymentLogs
-            // (Mapping LogID ensures this payment is accurately bound to this specific service log)
             string insertQuery = @"
                 INSERT INTO PaymentLogs (LogID, TotalAmount, PaymentDate, ProcessedBy) 
                 VALUES (@LogID, @TotalAmount, @PaymentDate, @ProcessedBy)";
@@ -124,7 +116,6 @@ namespace Olvarra_Capstone
                 new SqlParameter("@ProcessedBy", processedBy)
             };
 
-            // 4. Execute insertion using DatabaseHelper
             int rowsAffected = DatabaseHelper.ExecuteQuery(insertQuery, parameters);
 
             if (rowsAffected > 0)

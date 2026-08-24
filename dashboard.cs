@@ -26,7 +26,7 @@ namespace Olvarra_Capstone
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-            ActiveButton(homebtn);
+                ActiveButton(homebtn);
             ShowPanel(homecontainer);
 
             LoadPendingJobOrdersToGrid();
@@ -126,6 +126,9 @@ namespace Olvarra_Capstone
             RefreshAllGrids();
         }
 
+
+
+        
         private void LoadPendingJobOrdersToGrid()
         {
             string query = "SELECT s.LogID, v.VehicleModel, v.PlateNumber, s.Issue, s.LoggedBy, s.DateLogged FROM VehicleInfo v INNER JOIN ServiceLogs s ON v.VehicleID = s.VehicleID WHERE s.Status = 'Pending'";
@@ -181,11 +184,9 @@ namespace Olvarra_Capstone
             string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
 
             UpdatePending updateForm = new UpdatePending(serviceLogID, vehicleModel, plateNumber);
+            updateForm.ShowDialog();
             
-            if (updateForm.ShowDialog() == DialogResult.OK)
-            {
-                RefreshAllGrids();
-            }
+            RefreshAllGrids();
         }
         private void viewunpaidjob_Click(object sender, EventArgs e)
         {
@@ -264,51 +265,56 @@ namespace Olvarra_Capstone
                 return;
             }
 
-       
             string combinedQuery = @"
+        BEGIN TRY
+            BEGIN TRANSACTION;
+
             DECLARE @NewCustomerID INT;
 
             INSERT INTO CustomerInfo (FullName, PhoneNumber, Address) 
             VALUES (@FullName, @PhoneNumber, @Address);
 
-            -- Grab the newly generated identity ID
             SET @NewCustomerID = SCOPE_IDENTITY();
 
             INSERT INTO VehicleInfo (CustomerID, VehicleModel, PlateNumber) 
             VALUES (@NewCustomerID, @VehicleModel, @PlateNumber);
-            ";
 
+            COMMIT TRANSACTION;
+        END TRY
+        BEGIN CATCH
+            ROLLBACK TRANSACTION;
+            THROW;
+        END CATCH";
 
-
-           
             SqlParameter[] parameters = {
-            new SqlParameter("@FullName", fullName),
-            new SqlParameter("@PhoneNumber", phone),
-            new SqlParameter("@Address", address),
-            new SqlParameter("@VehicleModel", vehicleModel),
-            new SqlParameter("@PlateNumber", plateNumber)
+        new SqlParameter("@FullName", fullName),
+        new SqlParameter("@PhoneNumber", phone),
+        new SqlParameter("@Address", address),
+        new SqlParameter("@VehicleModel", vehicleModel),
+        new SqlParameter("@PlateNumber", plateNumber)
     };
 
             try
             {
                 int rowsAffected = DatabaseHelper.ExecuteQuery(combinedQuery, parameters);
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Customer and vehicle registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAllForms();
-                }
-                else
-                {
-                    MessageBox.Show("Registration failed. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Customer and vehicle registered successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearAllForms();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Catch duplicate plate number or any other database error cleanly
+                if (ex.Message.Contains("Violation of UNIQUE KEY constraint") || ex.Message.Contains("PlateNumber"))
+                {
+                    MessageBox.Show("This plate number is already registered in the system.", "Duplicate Plate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
-        
+
 
         private void ClearAllForms()
         {

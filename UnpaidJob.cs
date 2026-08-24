@@ -117,5 +117,9 @@ namespace Olvarra_Capstone
             unpaidjobgrid.RowTemplate.Height = 40;
         }
 
+        private void materialCard1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

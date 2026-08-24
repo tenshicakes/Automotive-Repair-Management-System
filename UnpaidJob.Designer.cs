@@ -53,6 +53,7 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(845, 291);
             this.materialCard1.TabIndex = 1;
+            this.materialCard1.Paint += new System.Windows.Forms.PaintEventHandler(this.materialCard1_Paint);
             // 
             // unpaidjobgrid
             // 
@@ -133,6 +134,7 @@
             this.Controls.Add(this.updatebtn);
             this.Controls.Add(this.foxbutton);
             this.Controls.Add(this.materialCard1);
+            this.MinimumSize = new System.Drawing.Size(907, 509);
             this.Name = "UnpaidJob";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

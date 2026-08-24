@@ -28,49 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.finishedjobgrid = new ReaLTaiizor.Controls.MaterialCard();
-            this.unpaidjobgrid = new System.Windows.Forms.DataGridView();
+            this.MaterialCard = new ReaLTaiizor.Controls.MaterialCard();
+            this.finishedjobgrid = new System.Windows.Forms.DataGridView();
             this.foxbutton = new ReaLTaiizor.Controls.FoxLabel();
-            this.finishedjobgrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unpaidjobgrid)).BeginInit();
+            this.MaterialCard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.finishedjobgrid)).BeginInit();
             this.SuspendLayout();
+            // 
+            // MaterialCard
+            // 
+            this.MaterialCard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaterialCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.MaterialCard.Controls.Add(this.finishedjobgrid);
+            this.MaterialCard.Depth = 0;
+            this.MaterialCard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaterialCard.Location = new System.Drawing.Point(36, 69);
+            this.MaterialCard.Margin = new System.Windows.Forms.Padding(14);
+            this.MaterialCard.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.MaterialCard.Name = "MaterialCard";
+            this.MaterialCard.Padding = new System.Windows.Forms.Padding(14);
+            this.MaterialCard.Size = new System.Drawing.Size(816, 365);
+            this.MaterialCard.TabIndex = 2;
+            this.MaterialCard.Paint += new System.Windows.Forms.PaintEventHandler(this.finishedjobgrid_Paint);
             // 
             // finishedjobgrid
             // 
-            this.finishedjobgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.finishedjobgrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.finishedjobgrid.Controls.Add(this.unpaidjobgrid);
-            this.finishedjobgrid.Depth = 0;
-            this.finishedjobgrid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.finishedjobgrid.Location = new System.Drawing.Point(36, 69);
-            this.finishedjobgrid.Margin = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.finishedjobgrid.AllowUserToAddRows = false;
+            this.finishedjobgrid.AllowUserToDeleteRows = false;
+            this.finishedjobgrid.AllowUserToResizeColumns = false;
+            this.finishedjobgrid.AllowUserToResizeRows = false;
+            this.finishedjobgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.finishedjobgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.finishedjobgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.finishedjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.finishedjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.finishedjobgrid.Location = new System.Drawing.Point(14, 14);
+            this.finishedjobgrid.MultiSelect = false;
             this.finishedjobgrid.Name = "finishedjobgrid";
-            this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.Size = new System.Drawing.Size(661, 249);
-            this.finishedjobgrid.TabIndex = 2;
-            // 
-            // unpaidjobgrid
-            // 
-            this.unpaidjobgrid.AllowUserToAddRows = false;
-            this.unpaidjobgrid.AllowUserToDeleteRows = false;
-            this.unpaidjobgrid.AllowUserToResizeColumns = false;
-            this.unpaidjobgrid.AllowUserToResizeRows = false;
-            this.unpaidjobgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.unpaidjobgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.unpaidjobgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.unpaidjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.unpaidjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.unpaidjobgrid.Location = new System.Drawing.Point(14, 14);
-            this.unpaidjobgrid.MultiSelect = false;
-            this.unpaidjobgrid.Name = "unpaidjobgrid";
-            this.unpaidjobgrid.ReadOnly = true;
-            this.unpaidjobgrid.RowHeadersVisible = false;
-            this.unpaidjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.unpaidjobgrid.Size = new System.Drawing.Size(633, 221);
-            this.unpaidjobgrid.TabIndex = 11;
+            this.finishedjobgrid.ReadOnly = true;
+            this.finishedjobgrid.RowHeadersVisible = false;
+            this.finishedjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.finishedjobgrid.Size = new System.Drawing.Size(788, 337);
+            this.finishedjobgrid.TabIndex = 11;
+            this.finishedjobgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.finishedjobgrid_CellContentClick);
             // 
             // foxbutton
             // 
@@ -81,7 +83,7 @@
             this.foxbutton.ForeColor = System.Drawing.Color.White;
             this.foxbutton.Location = new System.Drawing.Point(36, 29);
             this.foxbutton.Name = "foxbutton";
-            this.foxbutton.Size = new System.Drawing.Size(267, 23);
+            this.foxbutton.Size = new System.Drawing.Size(422, 23);
             this.foxbutton.TabIndex = 9;
             this.foxbutton.Text = "Job Orders that are finished ";
             this.foxbutton.Click += new System.EventHandler(this.foxbutton_Click);
@@ -91,25 +93,25 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.ClientSize = new System.Drawing.Size(736, 354);
+            this.ClientSize = new System.Drawing.Size(891, 470);
             this.Controls.Add(this.foxbutton);
-            this.Controls.Add(this.finishedjobgrid);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(752, 393);
-            this.MinimizeBox = false;
+            this.Controls.Add(this.MaterialCard);
             this.MinimumSize = new System.Drawing.Size(752, 393);
             this.Name = "FinishedJob";
             this.ShowIcon = false;
-            this.finishedjobgrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.unpaidjobgrid)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FinishedJob_Load);
+            this.MaterialCard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.finishedjobgrid)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ReaLTaiizor.Controls.MaterialCard finishedjobgrid;
-        private System.Windows.Forms.DataGridView unpaidjobgrid;
+        private ReaLTaiizor.Controls.MaterialCard MaterialCard;
+        private System.Windows.Forms.DataGridView finishedjobgrid;
         private ReaLTaiizor.Controls.FoxLabel foxbutton;
     }
 }
