@@ -136,6 +136,7 @@
             this.savebtn.Size = new System.Drawing.Size(155, 36);
             this.savebtn.TabIndex = 12;
             this.savebtn.Text = "Save Changes";
+            this.savebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.savebtn_Click);
             // 
             // cancelbtn
             // 
@@ -157,6 +158,7 @@
             this.cancelbtn.Size = new System.Drawing.Size(155, 36);
             this.cancelbtn.TabIndex = 13;
             this.cancelbtn.Text = "Cancel";
+            this.cancelbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cancelbtn_Click);
             // 
             // vhclEditInfo
             // 
@@ -177,6 +179,7 @@
             this.Name = "vhclEditInfo";
             this.ShowIcon = false;
             this.Text = "vhclEditInfo";
+            this.Load += new System.EventHandler(this.vhclEditInfo_Load);
             this.ResumeLayout(false);
 
         }

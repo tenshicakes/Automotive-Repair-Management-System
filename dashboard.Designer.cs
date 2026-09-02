@@ -310,9 +310,9 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
-            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;

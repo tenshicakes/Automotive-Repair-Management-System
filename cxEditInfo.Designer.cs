@@ -34,7 +34,7 @@
             this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
             this.editphone_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
-            this.dungeonTextBox1 = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.editaddress_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.savebtn = new ReaLTaiizor.Controls.FoxButton();
             this.cancelbtn = new ReaLTaiizor.Controls.FoxButton();
             this.SuspendLayout();
@@ -131,25 +131,25 @@
             this.foxLabel4.TabIndex = 9;
             this.foxLabel4.Text = "Address";
             // 
-            // dungeonTextBox1
+            // editaddress_txtbox
             // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.editaddress_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(33, 306);
-            this.dungeonTextBox1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(498, 36);
-            this.dungeonTextBox1.TabIndex = 10;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            this.editaddress_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.editaddress_txtbox.BorderColor = System.Drawing.Color.Transparent;
+            this.editaddress_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.editaddress_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.editaddress_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.editaddress_txtbox.Location = new System.Drawing.Point(33, 306);
+            this.editaddress_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.editaddress_txtbox.MaxLength = 32767;
+            this.editaddress_txtbox.Multiline = false;
+            this.editaddress_txtbox.Name = "editaddress_txtbox";
+            this.editaddress_txtbox.ReadOnly = false;
+            this.editaddress_txtbox.Size = new System.Drawing.Size(498, 36);
+            this.editaddress_txtbox.TabIndex = 10;
+            this.editaddress_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.editaddress_txtbox.UseSystemPasswordChar = false;
             // 
             // savebtn
             // 
@@ -171,6 +171,7 @@
             this.savebtn.Size = new System.Drawing.Size(155, 36);
             this.savebtn.TabIndex = 11;
             this.savebtn.Text = "Save Changes";
+            this.savebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.savebtn_Click);
             // 
             // cancelbtn
             // 
@@ -192,6 +193,7 @@
             this.cancelbtn.Size = new System.Drawing.Size(155, 36);
             this.cancelbtn.TabIndex = 12;
             this.cancelbtn.Text = "Cancel";
+            this.cancelbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cancelbtn_Click);
             // 
             // cxEditInfo
             // 
@@ -201,7 +203,7 @@
             this.ClientSize = new System.Drawing.Size(575, 444);
             this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.savebtn);
-            this.Controls.Add(this.dungeonTextBox1);
+            this.Controls.Add(this.editaddress_txtbox);
             this.Controls.Add(this.foxLabel4);
             this.Controls.Add(this.editphone_txtbox);
             this.Controls.Add(this.foxLabel3);
@@ -215,6 +217,7 @@
             this.Name = "cxEditInfo";
             this.Padding = new System.Windows.Forms.Padding(30);
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.cxEditInfo_Load);
             this.ResumeLayout(false);
 
         }
@@ -227,7 +230,7 @@
         private ReaLTaiizor.Controls.FoxLabel foxLabel3;
         private ReaLTaiizor.Controls.DungeonTextBox editphone_txtbox;
         private ReaLTaiizor.Controls.FoxLabel foxLabel4;
-        private ReaLTaiizor.Controls.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.Controls.DungeonTextBox editaddress_txtbox;
         private ReaLTaiizor.Controls.FoxButton savebtn;
         private ReaLTaiizor.Controls.FoxButton cancelbtn;
     }

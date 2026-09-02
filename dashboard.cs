@@ -26,7 +26,7 @@ namespace Olvarra_Capstone
 
         private void dashboard_Load(object sender, EventArgs e)
         {
-                ActiveButton(homebtn);
+            ActiveButton(homebtn);
             ShowPanel(homecontainer);
 
             LoadPendingJobOrdersToGrid();
@@ -94,7 +94,13 @@ namespace Olvarra_Capstone
             LoadCustomerAccsToGrid();
             SetupCustomerAccsGridStyle();
 
+
+            cxdetailsgrid.Refresh();
+            customeraccsgrid.Refresh();
+            srvclgscontainer.Refresh();
             SetupCustomerAndVehicleDetailGridStyle();
+
+            
 
             
         }
@@ -185,19 +191,20 @@ namespace Olvarra_Capstone
 
             UpdatePending updateForm = new UpdatePending(serviceLogID, vehicleModel, plateNumber);
             updateForm.ShowDialog();
-            
             RefreshAllGrids();
         }
         private void viewunpaidjob_Click(object sender, EventArgs e)
         {
             UnpaidJob unpaidJob = new UnpaidJob();
             unpaidJob.ShowDialog();
+            RefreshAllGrids();
         }
 
         private void viewfinishjob_Click(object sender, EventArgs e)
         {
             FinishedJob finishedjob = new FinishedJob();
             finishedjob.ShowDialog();
+            RefreshAllGrids();
         }
 
 
@@ -398,6 +405,7 @@ namespace Olvarra_Capstone
         {
             ActiveButton(srlogsbtn);
             ShowPanel(srvclgscontainer);
+           
         }
 
 
@@ -406,9 +414,32 @@ namespace Olvarra_Capstone
         //======================
         private void foxButton2_Click(object sender, EventArgs e)
         {
-            cxEditInfo cxinfo = new cxEditInfo();
-            cxinfo.ShowDialog();
+            // Prevent crash if grid is empty
+            if (cxdetailsgrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer to edit from the list.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow selectedRow = cxdetailsgrid.SelectedRows[0];
+
+            // Extract the data, including the hidden CustomerID anchor
+            int customerID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
+            string currentName = selectedRow.Cells["FullName"].Value?.ToString() ?? "";
+            string currentPhone = selectedRow.Cells["PhoneNumber"].Value?.ToString() ?? "";
+            string currentAddress = selectedRow.Cells["Address"].Value?.ToString() ?? "";
+
+            // Pass the ID alongside the text values
+            using (cxEditInfo editForm = new cxEditInfo(customerID, currentName, currentPhone, currentAddress))
+            {
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    RefreshAllGrids();
+                    searchbtn_Click(sender, e);
+                }
+            }
         }
+        
 
 
         //======================
@@ -416,8 +447,28 @@ namespace Olvarra_Capstone
         //======================
         private void vhcleditinfo_Click(object sender, EventArgs e)
         {
-            vhclEditInfo vhclinfo = new vhclEditInfo();
-            vhclinfo.ShowDialog();
+            if (vhclsownedgrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a vehicle row first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            int rowIndex = vhclsownedgrid.SelectedRows[0].Index;
+            DataGridViewRow selectedRow = vhclsownedgrid.Rows[rowIndex];
+            string currentModel = selectedRow.Cells["VehicleModel"].Value.ToString() ?? "";
+            string currentPlate = selectedRow.Cells["PlateNumber"].Value.ToString() ?? "";
+
+
+
+            using (vhclEditInfo editForm = new vhclEditInfo(currentModel, currentPlate))
+            {
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    search_txtbox.Text = editForm.UpdatedPlateNumber;
+                    searchbtn_Click(sender, e);
+                }
+
+
+            }
         }
 
         //=======================
