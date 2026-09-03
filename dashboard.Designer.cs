@@ -312,8 +312,8 @@
             // 
             // main_cont
             // 
-            this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.homecontainer);
+            this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.accscontainer);
@@ -669,6 +669,7 @@
             this.editinventorybtn.Size = new System.Drawing.Size(155, 39);
             this.editinventorybtn.TabIndex = 27;
             this.editinventorybtn.Text = "Edit Inventory";
+            this.editinventorybtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.editinventorybtn_Click);
             // 
             // materialCard3
             // 

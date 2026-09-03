@@ -94,6 +94,12 @@
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="EditInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditInventory.Designer.cs">
+      <DependentUpon>EditInventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinishedJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditInventory.resx">
+      <DependentUpon>EditInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FinishedJob.resx">
       <DependentUpon>FinishedJob.cs</DependentUpon>

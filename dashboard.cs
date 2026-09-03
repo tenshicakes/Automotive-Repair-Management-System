@@ -316,12 +316,17 @@ namespace Olvarra_Capstone
             homesearchbtn.BaseColor = Color.Silver;
             homesearchbtn.ForeColor = Color.Black; // Swapped to black for better contrast on a silver background
         }
-    
+
+
+        private void editinventorybtn_Click(object sender, EventArgs e)
+        {
+
+        }
 
 
 
-//====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
-private void registerbtn_Click(object sender, EventArgs e)
+        //====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
+        private void registerbtn_Click(object sender, EventArgs e)
         {
             ActiveButton(registerbtn);
             ShowPanel(rgstrcontainer);
