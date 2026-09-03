@@ -247,11 +247,81 @@ namespace Olvarra_Capstone
             inventorygrid.RowTemplate.Height = 40;
         }
 
+        private void homesearchbtn_Click(object sender, EventArgs e)
+        {
+            // ==========================================
+            // PHASE 2: CLEAR MODE LOGIC
+            // ==========================================
+            if (homesearchbtn.Text == "Clear")
+            {
+                // 1. Reload the original unfiltered data
+                LoadPendingJobOrdersToGrid();
+
+                // 2. Clear the textbox for the next search
+                searchjob_txtbox.Text = "";
+
+                // 3. Reset the ReaLTaiizor FoxButton appearance to original
+                homesearchbtn.Text = "Search"; // Assuming your original text was "Search"
+                homesearchbtn.BaseColor = Color.Black;
+                homesearchbtn.ForeColor = Color.White;
+
+                // Exit the method so it doesn't execute the search logic below
+                return;
+            }
+
+            // ==========================================
+            // PHASE 1: SEARCH MODE LOGIC
+            // ==========================================
+            string plateToSearch = searchjob_txtbox.Text.Trim();
+
+            // Flaw Address 1: Prevent empty searches
+            if (string.IsNullOrEmpty(plateToSearch))
+            {
+                MessageBox.Show("Please enter a plate number to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Execute the filtered query using the exact same JOIN structure, but adding the PlateNumber condition
+            string filteredQuery = @"
+                SELECT s.LogID, v.VehicleModel, v.PlateNumber, s.Issue, s.LoggedBy, s.DateLogged 
+                FROM VehicleInfo v 
+                INNER JOIN ServiceLogs s ON v.VehicleID = s.VehicleID 
+                WHERE s.Status = 'Pending' AND v.PlateNumber = @PlateNumber";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@PlateNumber", plateToSearch)
+            };
+
+            DataTable dt = DatabaseHelper.GetTable(filteredQuery, parameters);
+
+            // Flaw Address 2: Prevent empty grids on failed searches
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No pending jobs found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; // Stops execution so the button doesn't turn into "Clear" unnecessarily
+            }
+
+            // Bind the successful search to the grid
+            pendingjobgrid.DataSource = dt;
+
+            // Reapply your column headers since a new DataSource resets them
+            pendingjobgrid.Columns["VehicleModel"].HeaderText = "Vehicle Model";
+            pendingjobgrid.Columns["PlateNumber"].HeaderText = "Plate Number";
+            pendingjobgrid.Columns["Issue"].HeaderText = "Issue";
+            pendingjobgrid.Columns["LoggedBy"].HeaderText = "Logged By";
+            pendingjobgrid.Columns["DateLogged"].HeaderText = "Date Logged";
+
+            // Transform the button into "Clear" mode
+            homesearchbtn.Text = "Clear";
+            homesearchbtn.BaseColor = Color.Silver;
+            homesearchbtn.ForeColor = Color.Black; // Swapped to black for better contrast on a silver background
+        }
+    
 
 
 
-        //====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
-        private void registerbtn_Click(object sender, EventArgs e)
+//====================== REGISTER BUTTON ================ REGISTER BUTTON ==================== REGISTER BUTTON ==================
+private void registerbtn_Click(object sender, EventArgs e)
         {
             ActiveButton(registerbtn);
             ShowPanel(rgstrcontainer);

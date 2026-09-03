@@ -104,6 +104,8 @@
             this.rgstrnewlabel = new System.Windows.Forms.Label();
             this.accscontainer = new System.Windows.Forms.Panel();
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
@@ -310,10 +312,10 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
-            this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_cont.Location = new System.Drawing.Point(0, 0);
@@ -932,10 +934,11 @@
             this.homesearchbtn.ForeColor = System.Drawing.Color.White;
             this.homesearchbtn.Location = new System.Drawing.Point(496, 418);
             this.homesearchbtn.Name = "homesearchbtn";
-            this.homesearchbtn.OverColor = System.Drawing.Color.Black;
+            this.homesearchbtn.OverColor = System.Drawing.Color.Silver;
             this.homesearchbtn.Size = new System.Drawing.Size(155, 36);
             this.homesearchbtn.TabIndex = 17;
             this.homesearchbtn.Text = "Search";
+            this.homesearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.homesearchbtn_Click);
             // 
             // searchjob_txtbox
             // 
@@ -1165,6 +1168,8 @@
             // rgstrcontainer
             // 
             this.rgstrcontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.rgstrcontainer.Controls.Add(this.label7);
+            this.rgstrcontainer.Controls.Add(this.label6);
             this.rgstrcontainer.Controls.Add(this.pictureBox4);
             this.rgstrcontainer.Controls.Add(this.pictureBox3);
             this.rgstrcontainer.Controls.Add(this.rgstrnewcontainer);
@@ -1179,9 +1184,9 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(856, 361);
+            this.pictureBox4.Location = new System.Drawing.Point(253, 384);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(215, 160);
+            this.pictureBox4.Size = new System.Drawing.Size(97, 79);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
@@ -1190,9 +1195,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(856, 172);
+            this.pictureBox3.Location = new System.Drawing.Point(253, 92);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(215, 160);
+            this.pictureBox3.Size = new System.Drawing.Size(97, 79);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 11;
             this.pictureBox3.TabStop = false;
@@ -1211,10 +1216,10 @@
             this.rgstrnewcontainer.Controls.Add(this.label2);
             this.rgstrnewcontainer.Controls.Add(this.fname_txtbox);
             this.rgstrnewcontainer.Controls.Add(this.label5);
-            this.rgstrnewcontainer.Location = new System.Drawing.Point(220, 65);
+            this.rgstrnewcontainer.Location = new System.Drawing.Point(431, 55);
             this.rgstrnewcontainer.Name = "rgstrnewcontainer";
             this.rgstrnewcontainer.Padding = new System.Windows.Forms.Padding(7);
-            this.rgstrnewcontainer.Size = new System.Drawing.Size(618, 595);
+            this.rgstrnewcontainer.Size = new System.Drawing.Size(618, 591);
             this.rgstrnewcontainer.TabIndex = 0;
             this.rgstrnewcontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.rgstrnewcontainer_Paint);
             // 
@@ -1233,10 +1238,10 @@
             this.registervhcbtn.EnabledCalc = true;
             this.registervhcbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registervhcbtn.ForeColor = System.Drawing.Color.White;
-            this.registervhcbtn.Location = new System.Drawing.Point(149, 511);
+            this.registervhcbtn.Location = new System.Drawing.Point(147, 485);
             this.registervhcbtn.Name = "registervhcbtn";
             this.registervhcbtn.OverColor = System.Drawing.Color.Black;
-            this.registervhcbtn.Size = new System.Drawing.Size(359, 55);
+            this.registervhcbtn.Size = new System.Drawing.Size(359, 71);
             this.registervhcbtn.TabIndex = 6;
             this.registervhcbtn.Text = "Submit";
             this.registervhcbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.registervhctn_Click);
@@ -1250,7 +1255,7 @@
             this.address_txtbox.EdgeColor = System.Drawing.Color.White;
             this.address_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.address_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.address_txtbox.Location = new System.Drawing.Point(21, 257);
+            this.address_txtbox.Location = new System.Drawing.Point(22, 192);
             this.address_txtbox.Margin = new System.Windows.Forms.Padding(5);
             this.address_txtbox.MaxLength = 32767;
             this.address_txtbox.Multiline = false;
@@ -1267,7 +1272,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(17, 214);
+            this.label4.Location = new System.Drawing.Point(17, 163);
             this.label4.Margin = new System.Windows.Forms.Padding(5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 26);
@@ -1284,7 +1289,7 @@
             this.platenum_txtbox.EdgeColor = System.Drawing.Color.White;
             this.platenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.platenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.platenum_txtbox.Location = new System.Drawing.Point(21, 449);
+            this.platenum_txtbox.Location = new System.Drawing.Point(24, 407);
             this.platenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
             this.platenum_txtbox.MaxLength = 32767;
             this.platenum_txtbox.Multiline = false;
@@ -1304,7 +1309,7 @@
             this.vhclmodel_txtbox.EdgeColor = System.Drawing.Color.White;
             this.vhclmodel_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.vhclmodel_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.vhclmodel_txtbox.Location = new System.Drawing.Point(21, 353);
+            this.vhclmodel_txtbox.Location = new System.Drawing.Point(22, 336);
             this.vhclmodel_txtbox.Margin = new System.Windows.Forms.Padding(5);
             this.vhclmodel_txtbox.MaxLength = 32767;
             this.vhclmodel_txtbox.Multiline = false;
@@ -1323,7 +1328,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 406);
+            this.label1.Location = new System.Drawing.Point(17, 382);
             this.label1.Margin = new System.Windows.Forms.Padding(5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 26);
@@ -1336,7 +1341,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 118);
+            this.label3.Location = new System.Drawing.Point(17, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(146, 26);
@@ -1353,7 +1358,7 @@
             this.phonenum_txtbox.EdgeColor = System.Drawing.Color.White;
             this.phonenum_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonenum_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.phonenum_txtbox.Location = new System.Drawing.Point(23, 161);
+            this.phonenum_txtbox.Location = new System.Drawing.Point(22, 117);
             this.phonenum_txtbox.Margin = new System.Windows.Forms.Padding(5);
             this.phonenum_txtbox.MaxLength = 32767;
             this.phonenum_txtbox.Multiline = false;
@@ -1387,7 +1392,7 @@
             this.fname_txtbox.EdgeColor = System.Drawing.Color.White;
             this.fname_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fname_txtbox.ForeColor = System.Drawing.Color.DimGray;
-            this.fname_txtbox.Location = new System.Drawing.Point(23, 63);
+            this.fname_txtbox.Location = new System.Drawing.Point(22, 46);
             this.fname_txtbox.Margin = new System.Windows.Forms.Padding(5);
             this.fname_txtbox.MaxLength = 32767;
             this.fname_txtbox.Multiline = false;
@@ -1406,7 +1411,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(15, 310);
+            this.label5.Location = new System.Drawing.Point(17, 307);
             this.label5.Margin = new System.Windows.Forms.Padding(5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(138, 26);
@@ -1421,7 +1426,7 @@
             this.rgstrnewlabel.BackColor = System.Drawing.Color.Transparent;
             this.rgstrnewlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rgstrnewlabel.ForeColor = System.Drawing.Color.White;
-            this.rgstrnewlabel.Location = new System.Drawing.Point(283, 22);
+            this.rgstrnewlabel.Location = new System.Drawing.Point(188, 20);
             this.rgstrnewlabel.Name = "rgstrnewlabel";
             this.rgstrnewlabel.Size = new System.Drawing.Size(384, 29);
             this.rgstrnewlabel.TabIndex = 1;
@@ -1449,6 +1454,30 @@
             this.foxBigLabel2.Size = new System.Drawing.Size(213, 46);
             this.foxBigLabel2.TabIndex = 1;
             this.foxBigLabel2.Text = " Accounts";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(184, 178);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(241, 29);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Customer Information";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(198, 469);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(215, 29);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Vehicle Information";
             // 
             // dashboard
             // 
@@ -1571,5 +1600,7 @@
         private ReaLTaiizor.Controls.MaterialCard finishedjobgrid;
         private System.Windows.Forms.DataGridView customeraccsgrid;
         private ReaLTaiizor.Controls.FoxButton removevhclbtn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
