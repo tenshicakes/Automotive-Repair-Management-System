@@ -39,6 +39,22 @@
             this.registerbtn = new ReaLTaiizor.Controls.FoxButton();
             this.homebtn = new ReaLTaiizor.Controls.FoxButton();
             this.main_cont = new System.Windows.Forms.Panel();
+            this.srvclgscontainer = new System.Windows.Forms.Panel();
+            this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
+            this.removevhclbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.addvehiclebtn = new ReaLTaiizor.Controls.FoxButton();
+            this.newjoborderbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.vhcleditinfo = new ReaLTaiizor.Controls.FoxButton();
+            this.cxeditinfo = new ReaLTaiizor.Controls.FoxButton();
+            this.vhclsownedgrid = new System.Windows.Forms.DataGridView();
+            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
+            this.cxdetailsgrid = new System.Windows.Forms.DataGridView();
+            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
+            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
+            this.searchbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.search_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.homecontainer = new System.Windows.Forms.Panel();
             this.editinventorybtn = new ReaLTaiizor.Controls.FoxButton();
             this.materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
@@ -70,22 +86,6 @@
             this.cxsearchbtn = new ReaLTaiizor.Controls.FoxButton();
             this.cxsearch_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.srvclgscontainer = new System.Windows.Forms.Panel();
-            this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
-            this.removevhclbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.addvehiclebtn = new ReaLTaiizor.Controls.FoxButton();
-            this.newjoborderbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.vhcleditinfo = new ReaLTaiizor.Controls.FoxButton();
-            this.cxeditinfo = new ReaLTaiizor.Controls.FoxButton();
-            this.vhclsownedgrid = new System.Windows.Forms.DataGridView();
-            this.foxLabel4 = new ReaLTaiizor.Controls.FoxLabel();
-            this.cxdetailsgrid = new System.Windows.Forms.DataGridView();
-            this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
-            this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
-            this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
-            this.searchbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.search_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.rgstrcontainer = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -107,6 +107,10 @@
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
+            this.srvclgscontainer.SuspendLayout();
+            this.searchresultscontainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).BeginInit();
             this.homecontainer.SuspendLayout();
             this.materialCard3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).BeginInit();
@@ -118,10 +122,6 @@
             this.cstmrscontainer.SuspendLayout();
             this.finishedjobgrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
-            this.srvclgscontainer.SuspendLayout();
-            this.searchresultscontainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).BeginInit();
             this.rgstrcontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -310,8 +310,8 @@
             // 
             // main_cont
             // 
-            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
+            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.accscontainer);
@@ -320,6 +320,310 @@
             this.main_cont.Name = "main_cont";
             this.main_cont.Size = new System.Drawing.Size(1111, 652);
             this.main_cont.TabIndex = 1;
+            // 
+            // srvclgscontainer
+            // 
+            this.srvclgscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.srvclgscontainer.Controls.Add(this.reportbtn);
+            this.srvclgscontainer.Controls.Add(this.searchresultscontainer);
+            this.srvclgscontainer.Controls.Add(this.foxLabel2);
+            this.srvclgscontainer.Controls.Add(this.foxLabel1);
+            this.srvclgscontainer.Controls.Add(this.searchbtn);
+            this.srvclgscontainer.Controls.Add(this.search_txtbox);
+            this.srvclgscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.srvclgscontainer.Location = new System.Drawing.Point(0, 0);
+            this.srvclgscontainer.Name = "srvclgscontainer";
+            this.srvclgscontainer.Size = new System.Drawing.Size(1111, 652);
+            this.srvclgscontainer.TabIndex = 15;
+            // 
+            // reportbtn
+            // 
+            this.reportbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportbtn.BackColor = System.Drawing.Color.Transparent;
+            this.reportbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.reportbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reportbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.reportbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.reportbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.reportbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.reportbtn.EnabledCalc = true;
+            this.reportbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.reportbtn.ForeColor = System.Drawing.Color.White;
+            this.reportbtn.Location = new System.Drawing.Point(892, 88);
+            this.reportbtn.Name = "reportbtn";
+            this.reportbtn.OverColor = System.Drawing.Color.Black;
+            this.reportbtn.Size = new System.Drawing.Size(196, 36);
+            this.reportbtn.TabIndex = 5;
+            this.reportbtn.Text = "Generate Report";
+            // 
+            // searchresultscontainer
+            // 
+            this.searchresultscontainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchresultscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.searchresultscontainer.Controls.Add(this.removevhclbtn);
+            this.searchresultscontainer.Controls.Add(this.addvehiclebtn);
+            this.searchresultscontainer.Controls.Add(this.newjoborderbtn);
+            this.searchresultscontainer.Controls.Add(this.vhcleditinfo);
+            this.searchresultscontainer.Controls.Add(this.cxeditinfo);
+            this.searchresultscontainer.Controls.Add(this.vhclsownedgrid);
+            this.searchresultscontainer.Controls.Add(this.foxLabel4);
+            this.searchresultscontainer.Controls.Add(this.cxdetailsgrid);
+            this.searchresultscontainer.Controls.Add(this.foxLabel3);
+            this.searchresultscontainer.Depth = 0;
+            this.searchresultscontainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.searchresultscontainer.Location = new System.Drawing.Point(203, 136);
+            this.searchresultscontainer.Margin = new System.Windows.Forms.Padding(14);
+            this.searchresultscontainer.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.searchresultscontainer.Name = "searchresultscontainer";
+            this.searchresultscontainer.Padding = new System.Windows.Forms.Padding(14);
+            this.searchresultscontainer.Size = new System.Drawing.Size(885, 460);
+            this.searchresultscontainer.TabIndex = 4;
+            this.searchresultscontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.searchresultscontainer_Paint);
+            // 
+            // removevhclbtn
+            // 
+            this.removevhclbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removevhclbtn.BackColor = System.Drawing.Color.Transparent;
+            this.removevhclbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.removevhclbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.removevhclbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.removevhclbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.removevhclbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.removevhclbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.removevhclbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.removevhclbtn.EnabledCalc = true;
+            this.removevhclbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.removevhclbtn.ForeColor = System.Drawing.Color.White;
+            this.removevhclbtn.Location = new System.Drawing.Point(167, 404);
+            this.removevhclbtn.Name = "removevhclbtn";
+            this.removevhclbtn.OverColor = System.Drawing.Color.Black;
+            this.removevhclbtn.Size = new System.Drawing.Size(175, 36);
+            this.removevhclbtn.TabIndex = 12;
+            this.removevhclbtn.Text = "Remove Vehicle -";
+            // 
+            // addvehiclebtn
+            // 
+            this.addvehiclebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addvehiclebtn.BackColor = System.Drawing.Color.Transparent;
+            this.addvehiclebtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.addvehiclebtn.BorderColor = System.Drawing.Color.Transparent;
+            this.addvehiclebtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addvehiclebtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.addvehiclebtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.addvehiclebtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.addvehiclebtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.addvehiclebtn.EnabledCalc = true;
+            this.addvehiclebtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.addvehiclebtn.ForeColor = System.Drawing.Color.White;
+            this.addvehiclebtn.Location = new System.Drawing.Point(17, 404);
+            this.addvehiclebtn.Name = "addvehiclebtn";
+            this.addvehiclebtn.OverColor = System.Drawing.Color.Black;
+            this.addvehiclebtn.Size = new System.Drawing.Size(144, 36);
+            this.addvehiclebtn.TabIndex = 11;
+            this.addvehiclebtn.Text = "Add Vehicle +";
+            this.addvehiclebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addvehiclebtn_Click);
+            // 
+            // newjoborderbtn
+            // 
+            this.newjoborderbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newjoborderbtn.BackColor = System.Drawing.Color.Transparent;
+            this.newjoborderbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
+            this.newjoborderbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.newjoborderbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newjoborderbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.newjoborderbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.newjoborderbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.newjoborderbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.newjoborderbtn.EnabledCalc = true;
+            this.newjoborderbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.newjoborderbtn.ForeColor = System.Drawing.Color.White;
+            this.newjoborderbtn.Location = new System.Drawing.Point(692, 404);
+            this.newjoborderbtn.Name = "newjoborderbtn";
+            this.newjoborderbtn.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
+            this.newjoborderbtn.Size = new System.Drawing.Size(176, 36);
+            this.newjoborderbtn.TabIndex = 10;
+            this.newjoborderbtn.Text = "New Job Order";
+            this.newjoborderbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton2_Click_1);
+            // 
+            // vhcleditinfo
+            // 
+            this.vhcleditinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.vhcleditinfo.BackColor = System.Drawing.Color.Transparent;
+            this.vhcleditinfo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.vhcleditinfo.BorderColor = System.Drawing.Color.Transparent;
+            this.vhcleditinfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.vhcleditinfo.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.vhcleditinfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.vhcleditinfo.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.vhcleditinfo.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.vhcleditinfo.EnabledCalc = true;
+            this.vhcleditinfo.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.vhcleditinfo.ForeColor = System.Drawing.Color.White;
+            this.vhcleditinfo.Location = new System.Drawing.Point(457, 404);
+            this.vhcleditinfo.Name = "vhcleditinfo";
+            this.vhcleditinfo.OverColor = System.Drawing.Color.Black;
+            this.vhcleditinfo.Size = new System.Drawing.Size(229, 36);
+            this.vhcleditinfo.TabIndex = 9;
+            this.vhcleditinfo.Text = "Edit Vehicle Info.";
+            this.vhcleditinfo.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.vhcleditinfo_Click);
+            // 
+            // cxeditinfo
+            // 
+            this.cxeditinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cxeditinfo.BackColor = System.Drawing.Color.Transparent;
+            this.cxeditinfo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.cxeditinfo.BorderColor = System.Drawing.Color.Transparent;
+            this.cxeditinfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cxeditinfo.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.cxeditinfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.cxeditinfo.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.cxeditinfo.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.cxeditinfo.EnabledCalc = true;
+            this.cxeditinfo.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.cxeditinfo.ForeColor = System.Drawing.Color.White;
+            this.cxeditinfo.Location = new System.Drawing.Point(641, 16);
+            this.cxeditinfo.Name = "cxeditinfo";
+            this.cxeditinfo.OverColor = System.Drawing.Color.Black;
+            this.cxeditinfo.Size = new System.Drawing.Size(229, 36);
+            this.cxeditinfo.TabIndex = 5;
+            this.cxeditinfo.Text = "Edit Customer Info.";
+            this.cxeditinfo.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton2_Click);
+            // 
+            // vhclsownedgrid
+            // 
+            this.vhclsownedgrid.AllowUserToAddRows = false;
+            this.vhclsownedgrid.AllowUserToDeleteRows = false;
+            this.vhclsownedgrid.AllowUserToResizeColumns = false;
+            this.vhclsownedgrid.AllowUserToResizeRows = false;
+            this.vhclsownedgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.vhclsownedgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vhclsownedgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.vhclsownedgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.vhclsownedgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vhclsownedgrid.Location = new System.Drawing.Point(17, 194);
+            this.vhclsownedgrid.MultiSelect = false;
+            this.vhclsownedgrid.Name = "vhclsownedgrid";
+            this.vhclsownedgrid.ReadOnly = true;
+            this.vhclsownedgrid.RowHeadersVisible = false;
+            this.vhclsownedgrid.RowHeadersWidth = 51;
+            this.vhclsownedgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vhclsownedgrid.Size = new System.Drawing.Size(851, 204);
+            this.vhclsownedgrid.TabIndex = 8;
+            this.vhclsownedgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellContentClick);
+            this.vhclsownedgrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellDoubleClick);
+            // 
+            // foxLabel4
+            // 
+            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.foxLabel4.Location = new System.Drawing.Point(17, 165);
+            this.foxLabel4.Name = "foxLabel4";
+            this.foxLabel4.Size = new System.Drawing.Size(188, 23);
+            this.foxLabel4.TabIndex = 7;
+            this.foxLabel4.Text = "Vehicles Owned";
+            // 
+            // cxdetailsgrid
+            // 
+            this.cxdetailsgrid.AllowUserToAddRows = false;
+            this.cxdetailsgrid.AllowUserToDeleteRows = false;
+            this.cxdetailsgrid.AllowUserToResizeColumns = false;
+            this.cxdetailsgrid.AllowUserToResizeRows = false;
+            this.cxdetailsgrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cxdetailsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cxdetailsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.cxdetailsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cxdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cxdetailsgrid.Location = new System.Drawing.Point(17, 58);
+            this.cxdetailsgrid.Name = "cxdetailsgrid";
+            this.cxdetailsgrid.ReadOnly = true;
+            this.cxdetailsgrid.RowHeadersVisible = false;
+            this.cxdetailsgrid.RowHeadersWidth = 51;
+            this.cxdetailsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cxdetailsgrid.Size = new System.Drawing.Size(851, 94);
+            this.cxdetailsgrid.TabIndex = 6;
+            // 
+            // foxLabel3
+            // 
+            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.foxLabel3.Location = new System.Drawing.Point(17, 27);
+            this.foxLabel3.Name = "foxLabel3";
+            this.foxLabel3.Size = new System.Drawing.Size(188, 23);
+            this.foxLabel3.TabIndex = 5;
+            this.foxLabel3.Text = "Customer Details";
+            this.foxLabel3.Click += new System.EventHandler(this.foxLabel3_Click);
+            // 
+            // foxLabel2
+            // 
+            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel2.ForeColor = System.Drawing.Color.White;
+            this.foxLabel2.Location = new System.Drawing.Point(203, 101);
+            this.foxLabel2.Name = "foxLabel2";
+            this.foxLabel2.Size = new System.Drawing.Size(75, 23);
+            this.foxLabel2.TabIndex = 3;
+            this.foxLabel2.Text = "Results";
+            // 
+            // foxLabel1
+            // 
+            this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.foxLabel1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxLabel1.ForeColor = System.Drawing.Color.White;
+            this.foxLabel1.Location = new System.Drawing.Point(203, 12);
+            this.foxLabel1.Name = "foxLabel1";
+            this.foxLabel1.Size = new System.Drawing.Size(761, 23);
+            this.foxLabel1.TabIndex = 2;
+            this.foxLabel1.Text = "Search a plate number of a customer’s vehicle to view full customer and vehicle i" +
+    "nformation.";
+            // 
+            // searchbtn
+            // 
+            this.searchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchbtn.BackColor = System.Drawing.Color.Transparent;
+            this.searchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.searchbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.searchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.searchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.searchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.searchbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.searchbtn.EnabledCalc = true;
+            this.searchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.searchbtn.ForeColor = System.Drawing.Color.White;
+            this.searchbtn.Location = new System.Drawing.Point(578, 41);
+            this.searchbtn.Name = "searchbtn";
+            this.searchbtn.OverColor = System.Drawing.Color.Black;
+            this.searchbtn.Size = new System.Drawing.Size(120, 36);
+            this.searchbtn.TabIndex = 1;
+            this.searchbtn.Text = "Search";
+            this.searchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.searchbtn_Click);
+            // 
+            // search_txtbox
+            // 
+            this.search_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.search_txtbox.BorderColor = System.Drawing.Color.Transparent;
+            this.search_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.search_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.search_txtbox.Location = new System.Drawing.Point(203, 41);
+            this.search_txtbox.MaxLength = 32767;
+            this.search_txtbox.Multiline = false;
+            this.search_txtbox.Name = "search_txtbox";
+            this.search_txtbox.ReadOnly = false;
+            this.search_txtbox.Size = new System.Drawing.Size(369, 36);
+            this.search_txtbox.TabIndex = 0;
+            this.search_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.search_txtbox.UseSystemPasswordChar = false;
             // 
             // homecontainer
             // 
@@ -858,309 +1162,6 @@
             this.foxBigLabel4.TabIndex = 1;
             this.foxBigLabel4.Text = "Customer Accounts";
             // 
-            // srvclgscontainer
-            // 
-            this.srvclgscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.srvclgscontainer.Controls.Add(this.reportbtn);
-            this.srvclgscontainer.Controls.Add(this.searchresultscontainer);
-            this.srvclgscontainer.Controls.Add(this.foxLabel2);
-            this.srvclgscontainer.Controls.Add(this.foxLabel1);
-            this.srvclgscontainer.Controls.Add(this.searchbtn);
-            this.srvclgscontainer.Controls.Add(this.search_txtbox);
-            this.srvclgscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.srvclgscontainer.Location = new System.Drawing.Point(0, 0);
-            this.srvclgscontainer.Name = "srvclgscontainer";
-            this.srvclgscontainer.Size = new System.Drawing.Size(1111, 652);
-            this.srvclgscontainer.TabIndex = 15;
-            // 
-            // reportbtn
-            // 
-            this.reportbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportbtn.BackColor = System.Drawing.Color.Transparent;
-            this.reportbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.reportbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.reportbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.reportbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.reportbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.reportbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.reportbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.reportbtn.EnabledCalc = true;
-            this.reportbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.reportbtn.ForeColor = System.Drawing.Color.White;
-            this.reportbtn.Location = new System.Drawing.Point(892, 88);
-            this.reportbtn.Name = "reportbtn";
-            this.reportbtn.OverColor = System.Drawing.Color.Black;
-            this.reportbtn.Size = new System.Drawing.Size(196, 36);
-            this.reportbtn.TabIndex = 5;
-            this.reportbtn.Text = "Generate Report";
-            // 
-            // searchresultscontainer
-            // 
-            this.searchresultscontainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchresultscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.searchresultscontainer.Controls.Add(this.removevhclbtn);
-            this.searchresultscontainer.Controls.Add(this.addvehiclebtn);
-            this.searchresultscontainer.Controls.Add(this.newjoborderbtn);
-            this.searchresultscontainer.Controls.Add(this.vhcleditinfo);
-            this.searchresultscontainer.Controls.Add(this.cxeditinfo);
-            this.searchresultscontainer.Controls.Add(this.vhclsownedgrid);
-            this.searchresultscontainer.Controls.Add(this.foxLabel4);
-            this.searchresultscontainer.Controls.Add(this.cxdetailsgrid);
-            this.searchresultscontainer.Controls.Add(this.foxLabel3);
-            this.searchresultscontainer.Depth = 0;
-            this.searchresultscontainer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.searchresultscontainer.Location = new System.Drawing.Point(203, 136);
-            this.searchresultscontainer.Margin = new System.Windows.Forms.Padding(14);
-            this.searchresultscontainer.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.searchresultscontainer.Name = "searchresultscontainer";
-            this.searchresultscontainer.Padding = new System.Windows.Forms.Padding(14);
-            this.searchresultscontainer.Size = new System.Drawing.Size(885, 460);
-            this.searchresultscontainer.TabIndex = 4;
-            this.searchresultscontainer.Paint += new System.Windows.Forms.PaintEventHandler(this.searchresultscontainer_Paint);
-            // 
-            // removevhclbtn
-            // 
-            this.removevhclbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.removevhclbtn.BackColor = System.Drawing.Color.Transparent;
-            this.removevhclbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.removevhclbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.removevhclbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.removevhclbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.removevhclbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.removevhclbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.removevhclbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.removevhclbtn.EnabledCalc = true;
-            this.removevhclbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.removevhclbtn.ForeColor = System.Drawing.Color.White;
-            this.removevhclbtn.Location = new System.Drawing.Point(167, 404);
-            this.removevhclbtn.Name = "removevhclbtn";
-            this.removevhclbtn.OverColor = System.Drawing.Color.Black;
-            this.removevhclbtn.Size = new System.Drawing.Size(175, 36);
-            this.removevhclbtn.TabIndex = 12;
-            this.removevhclbtn.Text = "Remove Vehicle -";
-            // 
-            // addvehiclebtn
-            // 
-            this.addvehiclebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addvehiclebtn.BackColor = System.Drawing.Color.Transparent;
-            this.addvehiclebtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.addvehiclebtn.BorderColor = System.Drawing.Color.Transparent;
-            this.addvehiclebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addvehiclebtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.addvehiclebtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.addvehiclebtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.addvehiclebtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.addvehiclebtn.EnabledCalc = true;
-            this.addvehiclebtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.addvehiclebtn.ForeColor = System.Drawing.Color.White;
-            this.addvehiclebtn.Location = new System.Drawing.Point(17, 404);
-            this.addvehiclebtn.Name = "addvehiclebtn";
-            this.addvehiclebtn.OverColor = System.Drawing.Color.Black;
-            this.addvehiclebtn.Size = new System.Drawing.Size(144, 36);
-            this.addvehiclebtn.TabIndex = 11;
-            this.addvehiclebtn.Text = "Add Vehicle +";
-            this.addvehiclebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addvehiclebtn_Click);
-            // 
-            // newjoborderbtn
-            // 
-            this.newjoborderbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.newjoborderbtn.BackColor = System.Drawing.Color.Transparent;
-            this.newjoborderbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
-            this.newjoborderbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.newjoborderbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.newjoborderbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.newjoborderbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.newjoborderbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.newjoborderbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.newjoborderbtn.EnabledCalc = true;
-            this.newjoborderbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.newjoborderbtn.ForeColor = System.Drawing.Color.White;
-            this.newjoborderbtn.Location = new System.Drawing.Point(692, 404);
-            this.newjoborderbtn.Name = "newjoborderbtn";
-            this.newjoborderbtn.OverColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
-            this.newjoborderbtn.Size = new System.Drawing.Size(176, 36);
-            this.newjoborderbtn.TabIndex = 10;
-            this.newjoborderbtn.Text = "New Job Order";
-            this.newjoborderbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton2_Click_1);
-            // 
-            // vhcleditinfo
-            // 
-            this.vhcleditinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.vhcleditinfo.BackColor = System.Drawing.Color.Transparent;
-            this.vhcleditinfo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.vhcleditinfo.BorderColor = System.Drawing.Color.Transparent;
-            this.vhcleditinfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.vhcleditinfo.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.vhcleditinfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.vhcleditinfo.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.vhcleditinfo.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.vhcleditinfo.EnabledCalc = true;
-            this.vhcleditinfo.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.vhcleditinfo.ForeColor = System.Drawing.Color.White;
-            this.vhcleditinfo.Location = new System.Drawing.Point(457, 404);
-            this.vhcleditinfo.Name = "vhcleditinfo";
-            this.vhcleditinfo.OverColor = System.Drawing.Color.Black;
-            this.vhcleditinfo.Size = new System.Drawing.Size(229, 36);
-            this.vhcleditinfo.TabIndex = 9;
-            this.vhcleditinfo.Text = "Edit Vehicle Info.";
-            this.vhcleditinfo.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.vhcleditinfo_Click);
-            // 
-            // cxeditinfo
-            // 
-            this.cxeditinfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cxeditinfo.BackColor = System.Drawing.Color.Transparent;
-            this.cxeditinfo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.cxeditinfo.BorderColor = System.Drawing.Color.Transparent;
-            this.cxeditinfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cxeditinfo.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.cxeditinfo.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.cxeditinfo.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.cxeditinfo.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.cxeditinfo.EnabledCalc = true;
-            this.cxeditinfo.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.cxeditinfo.ForeColor = System.Drawing.Color.White;
-            this.cxeditinfo.Location = new System.Drawing.Point(641, 16);
-            this.cxeditinfo.Name = "cxeditinfo";
-            this.cxeditinfo.OverColor = System.Drawing.Color.Black;
-            this.cxeditinfo.Size = new System.Drawing.Size(229, 36);
-            this.cxeditinfo.TabIndex = 5;
-            this.cxeditinfo.Text = "Edit Customer Info.";
-            this.cxeditinfo.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.foxButton2_Click);
-            // 
-            // vhclsownedgrid
-            // 
-            this.vhclsownedgrid.AllowUserToAddRows = false;
-            this.vhclsownedgrid.AllowUserToDeleteRows = false;
-            this.vhclsownedgrid.AllowUserToResizeColumns = false;
-            this.vhclsownedgrid.AllowUserToResizeRows = false;
-            this.vhclsownedgrid.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vhclsownedgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.vhclsownedgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.vhclsownedgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.vhclsownedgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vhclsownedgrid.Location = new System.Drawing.Point(17, 194);
-            this.vhclsownedgrid.Name = "vhclsownedgrid";
-            this.vhclsownedgrid.ReadOnly = true;
-            this.vhclsownedgrid.RowHeadersVisible = false;
-            this.vhclsownedgrid.RowHeadersWidth = 51;
-            this.vhclsownedgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.vhclsownedgrid.Size = new System.Drawing.Size(851, 204);
-            this.vhclsownedgrid.TabIndex = 8;
-            this.vhclsownedgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellContentClick);
-            this.vhclsownedgrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vhclsownedgrid_CellDoubleClick);
-            // 
-            // foxLabel4
-            // 
-            this.foxLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel4.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.foxLabel4.Location = new System.Drawing.Point(17, 165);
-            this.foxLabel4.Name = "foxLabel4";
-            this.foxLabel4.Size = new System.Drawing.Size(188, 23);
-            this.foxLabel4.TabIndex = 7;
-            this.foxLabel4.Text = "Vehicles Owned";
-            // 
-            // cxdetailsgrid
-            // 
-            this.cxdetailsgrid.AllowUserToAddRows = false;
-            this.cxdetailsgrid.AllowUserToDeleteRows = false;
-            this.cxdetailsgrid.AllowUserToResizeColumns = false;
-            this.cxdetailsgrid.AllowUserToResizeRows = false;
-            this.cxdetailsgrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cxdetailsgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.cxdetailsgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.cxdetailsgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cxdetailsgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cxdetailsgrid.Location = new System.Drawing.Point(17, 58);
-            this.cxdetailsgrid.Name = "cxdetailsgrid";
-            this.cxdetailsgrid.ReadOnly = true;
-            this.cxdetailsgrid.RowHeadersVisible = false;
-            this.cxdetailsgrid.RowHeadersWidth = 51;
-            this.cxdetailsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cxdetailsgrid.Size = new System.Drawing.Size(851, 94);
-            this.cxdetailsgrid.TabIndex = 6;
-            // 
-            // foxLabel3
-            // 
-            this.foxLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.foxLabel3.Location = new System.Drawing.Point(17, 27);
-            this.foxLabel3.Name = "foxLabel3";
-            this.foxLabel3.Size = new System.Drawing.Size(188, 23);
-            this.foxLabel3.TabIndex = 5;
-            this.foxLabel3.Text = "Customer Details";
-            this.foxLabel3.Click += new System.EventHandler(this.foxLabel3_Click);
-            // 
-            // foxLabel2
-            // 
-            this.foxLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel2.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxLabel2.ForeColor = System.Drawing.Color.White;
-            this.foxLabel2.Location = new System.Drawing.Point(203, 101);
-            this.foxLabel2.Name = "foxLabel2";
-            this.foxLabel2.Size = new System.Drawing.Size(75, 23);
-            this.foxLabel2.TabIndex = 3;
-            this.foxLabel2.Text = "Results";
-            // 
-            // foxLabel1
-            // 
-            this.foxLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.foxLabel1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxLabel1.ForeColor = System.Drawing.Color.White;
-            this.foxLabel1.Location = new System.Drawing.Point(203, 12);
-            this.foxLabel1.Name = "foxLabel1";
-            this.foxLabel1.Size = new System.Drawing.Size(761, 23);
-            this.foxLabel1.TabIndex = 2;
-            this.foxLabel1.Text = "Search a plate number of a customer’s vehicle to view full customer and vehicle i" +
-    "nformation.";
-            // 
-            // searchbtn
-            // 
-            this.searchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchbtn.BackColor = System.Drawing.Color.Transparent;
-            this.searchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.searchbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.searchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.searchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.searchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.searchbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.searchbtn.EnabledCalc = true;
-            this.searchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.searchbtn.ForeColor = System.Drawing.Color.White;
-            this.searchbtn.Location = new System.Drawing.Point(578, 41);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.OverColor = System.Drawing.Color.Black;
-            this.searchbtn.Size = new System.Drawing.Size(120, 36);
-            this.searchbtn.TabIndex = 1;
-            this.searchbtn.Text = "Search";
-            this.searchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.searchbtn_Click);
-            // 
-            // search_txtbox
-            // 
-            this.search_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.search_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.search_txtbox.BorderColor = System.Drawing.Color.Transparent;
-            this.search_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.search_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.search_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.search_txtbox.Location = new System.Drawing.Point(203, 41);
-            this.search_txtbox.MaxLength = 32767;
-            this.search_txtbox.Multiline = false;
-            this.search_txtbox.Name = "search_txtbox";
-            this.search_txtbox.ReadOnly = false;
-            this.search_txtbox.Size = new System.Drawing.Size(369, 36);
-            this.search_txtbox.TabIndex = 0;
-            this.search_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.search_txtbox.UseSystemPasswordChar = false;
-            // 
             // rgstrcontainer
             // 
             this.rgstrcontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
@@ -1467,6 +1468,10 @@
             this.navbar.ResumeLayout(false);
             this.btncontainer.ResumeLayout(false);
             this.main_cont.ResumeLayout(false);
+            this.srvclgscontainer.ResumeLayout(false);
+            this.searchresultscontainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).EndInit();
             this.homecontainer.ResumeLayout(false);
             this.materialCard3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
@@ -1478,10 +1483,6 @@
             this.cstmrscontainer.ResumeLayout(false);
             this.finishedjobgrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
-            this.srvclgscontainer.ResumeLayout(false);
-            this.searchresultscontainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).EndInit();
             this.rgstrcontainer.ResumeLayout(false);
             this.rgstrcontainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

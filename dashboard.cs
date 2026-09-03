@@ -503,9 +503,36 @@ namespace Olvarra_Capstone
         //=======================
         private void addvehiclebtn_Click(object sender, EventArgs e)
         {
-            AddVehicle addvhcl = new AddVehicle();
-            addvhcl.ShowDialog();
+            // Ensure there is a customer loaded in the grid before trying to add a vehicle
+            if (cxdetailsgrid.SelectedRows.Count == 0 && cxdetailsgrid.Rows.Count > 0)
+            {
+                // If they didn't explicitly click a row but data is there, default to the first row
+                cxdetailsgrid.Rows[0].Selected = true;
+            }
+            else if (cxdetailsgrid.Rows.Count == 0)
+            {
+                MessageBox.Show("Please search for a valid customer first before adding a vehicle.", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Safely extract the CustomerID to link the new vehicle
+            DataGridViewRow selectedCustomerRow = cxdetailsgrid.SelectedRows[0];
+            int customerID = Convert.ToInt32(selectedCustomerRow.Cells["CustomerID"].Value);
+
+            // Open the AddVehicle form, passing the CustomerID
+            using (AddVehicle addForm = new AddVehicle(customerID))
+            {
+                if (addForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Automatically search for the newly added vehicle's plate number 
+                    // so it instantly loads into the DataGridViews
+                    search_txtbox.Text = addForm.NewPlateNumber;
+                    searchbtn_Click(sender, e);
+                }
+            }
         }
+
+
 
 
         //======================
@@ -521,37 +548,59 @@ namespace Olvarra_Capstone
                 return;
             }
 
+            // 1. Customer Query remains the same
             string customerQuery = @"
-            SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
-            FROM CustomerInfo c
-            INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
-            WHERE v.PlateNumber = @PlateNumber";
+        SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
+        FROM CustomerInfo c
+        INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
+        WHERE v.PlateNumber = @PlateNumber";
 
+            // 2. Fixed Vehicle Query: Uses a subquery to find all vehicles owned by the customer
             string vehicleQuery = @"
-            SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
-            FROM VehicleInfo
-            WHERE PlateNumber = @PlateNumber";
-
+        SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
+        FROM VehicleInfo
+        WHERE CustomerID = (
+            SELECT CustomerID 
+            FROM VehicleInfo 
+            WHERE PlateNumber = @PlateNumber
+        )";
 
             SqlParameter[] parameters = {
-            new SqlParameter("@PlateNumber", plateNumberToSearch)
-            };
+        new SqlParameter("@PlateNumber", plateNumberToSearch)
+    };
 
+            // Execute Customer query first
             DataTable dtCustomer = DatabaseHelper.GetTable(customerQuery, parameters);
-            DataTable dtVehicle = DatabaseHelper.GetTable(vehicleQuery, parameters);
 
-            cxdetailsgrid.DataSource = dtCustomer;
-            vhclsownedgrid.DataSource = dtVehicle;
-            SetupCustomerAndVehicleDetailGridStyle();
-
+            // 3. Fix: Stop execution and clear grids if no records are found
             if (dtCustomer.Rows.Count == 0)
             {
                 MessageBox.Show("No records found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cxdetailsgrid.DataSource = null;
+                vhclsownedgrid.DataSource = null;
+                return;
             }
+
+            // Execute Vehicle query only if the customer exists
+            DataTable dtVehicle = DatabaseHelper.GetTable(vehicleQuery, parameters);
+
+            // Bind data to the DataGridViews
+            cxdetailsgrid.DataSource = dtCustomer;
+            vhclsownedgrid.DataSource = dtVehicle;
+
+            // 4. Fix: Automatically select the first row in the customer grid 
+            // so your Edit and Add buttons work immediately without requiring a manual click
+            if (cxdetailsgrid.Rows.Count > 0)
+            {
+                cxdetailsgrid.ClearSelection();
+                cxdetailsgrid.Rows[0].Selected = true;
+            }
+
+            SetupCustomerAndVehicleDetailGridStyle();
         }
 
 
-       private void SetupCustomerAndVehicleDetailGridStyle ()
+        private void SetupCustomerAndVehicleDetailGridStyle ()
         {
             cxdetailsgrid.BackgroundColor = Color.White;
             cxdetailsgrid.BorderStyle = BorderStyle.None;
@@ -559,7 +608,7 @@ namespace Olvarra_Capstone
             cxdetailsgrid.RowHeadersVisible = false;
             cxdetailsgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             cxdetailsgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            cxdetailsgrid.MultiSelect = true;
+            cxdetailsgrid.MultiSelect = false;
             cxdetailsgrid.ReadOnly = true;
             cxdetailsgrid.AllowUserToAddRows = false;
             cxdetailsgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
@@ -582,7 +631,7 @@ namespace Olvarra_Capstone
             vhclsownedgrid.RowHeadersVisible = false;
             vhclsownedgrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             vhclsownedgrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            vhclsownedgrid.MultiSelect = true;
+            vhclsownedgrid.MultiSelect = false;
             vhclsownedgrid.ReadOnly = true;
             vhclsownedgrid.AllowUserToAddRows = false;
             vhclsownedgrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);

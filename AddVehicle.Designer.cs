@@ -33,7 +33,7 @@
             this.model_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.platenum_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.createjoborderbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.addbtn = new ReaLTaiizor.Controls.FoxButton();
             this.SuspendLayout();
             // 
             // foxbutton
@@ -95,7 +95,7 @@
             this.foxLabel2.Name = "foxLabel2";
             this.foxLabel2.Size = new System.Drawing.Size(137, 23);
             this.foxLabel2.TabIndex = 10;
-            this.foxLabel2.Text = "Vehicle Model";
+            this.foxLabel2.Text = "Plate Number";
             // 
             // platenum_txtbox
             // 
@@ -117,26 +117,27 @@
             this.platenum_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.platenum_txtbox.UseSystemPasswordChar = false;
             // 
-            // createjoborderbtn
+            // addbtn
             // 
-            this.createjoborderbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.createjoborderbtn.BackColor = System.Drawing.Color.Transparent;
-            this.createjoborderbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.createjoborderbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.createjoborderbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.createjoborderbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.createjoborderbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.createjoborderbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.createjoborderbtn.DownColor = System.Drawing.Color.Silver;
-            this.createjoborderbtn.EnabledCalc = true;
-            this.createjoborderbtn.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createjoborderbtn.ForeColor = System.Drawing.Color.White;
-            this.createjoborderbtn.Location = new System.Drawing.Point(83, 227);
-            this.createjoborderbtn.Name = "createjoborderbtn";
-            this.createjoborderbtn.OverColor = System.Drawing.Color.Black;
-            this.createjoborderbtn.Size = new System.Drawing.Size(185, 49);
-            this.createjoborderbtn.TabIndex = 13;
-            this.createjoborderbtn.Text = "Add +";
+            this.addbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.addbtn.BackColor = System.Drawing.Color.Transparent;
+            this.addbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.addbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.addbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.addbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.addbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.addbtn.DownColor = System.Drawing.Color.Silver;
+            this.addbtn.EnabledCalc = true;
+            this.addbtn.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbtn.ForeColor = System.Drawing.Color.White;
+            this.addbtn.Location = new System.Drawing.Point(83, 227);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.OverColor = System.Drawing.Color.Black;
+            this.addbtn.Size = new System.Drawing.Size(185, 49);
+            this.addbtn.TabIndex = 13;
+            this.addbtn.Text = "Add +";
+            this.addbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addbtn_Click);
             // 
             // AddVehicle
             // 
@@ -144,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(369, 309);
-            this.Controls.Add(this.createjoborderbtn);
+            this.Controls.Add(this.addbtn);
             this.Controls.Add(this.platenum_txtbox);
             this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.model_txtbox);
@@ -154,6 +155,7 @@
             this.MinimizeBox = false;
             this.Name = "AddVehicle";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.AddVehicle_Load);
             this.ResumeLayout(false);
 
         }
@@ -165,6 +167,6 @@
         private ReaLTaiizor.Controls.DungeonTextBox model_txtbox;
         private ReaLTaiizor.Controls.FoxLabel foxLabel2;
         private ReaLTaiizor.Controls.DungeonTextBox platenum_txtbox;
-        private ReaLTaiizor.Controls.FoxButton createjoborderbtn;
+        private ReaLTaiizor.Controls.FoxButton addbtn;
     }
 }
