@@ -320,7 +320,8 @@ namespace Olvarra_Capstone
 
         private void editinventorybtn_Click(object sender, EventArgs e)
         {
-
+            EditInventory editinv = new EditInventory();
+            editinv.ShowDialog();
         }
 
 

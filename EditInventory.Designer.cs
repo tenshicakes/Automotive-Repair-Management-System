@@ -45,6 +45,7 @@
             // inventorygrid
             // 
             this.inventorygrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inventorygrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.inventorygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventorygrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inventorygrid.Location = new System.Drawing.Point(14, 14);
@@ -222,6 +223,7 @@
             this.MinimizeBox = false;
             this.Name = "EditInventory";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.EditInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.ResumeLayout(false);
