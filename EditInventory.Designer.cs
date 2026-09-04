@@ -183,6 +183,7 @@
             this.addnewbtn.Size = new System.Drawing.Size(385, 56);
             this.addnewbtn.TabIndex = 21;
             this.addnewbtn.Text = "Add New +";
+            this.addnewbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addnewbtn_Click);
             // 
             // foxBigLabel3
             // 

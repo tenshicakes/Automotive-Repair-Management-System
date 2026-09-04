@@ -158,5 +158,10 @@ namespace Olvarra_Capstone
                 }
             }
         }
+
+        private void addnewbtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
