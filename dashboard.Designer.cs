@@ -1088,7 +1088,7 @@
             this.finishedjobgrid.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.finishedjobgrid.Name = "finishedjobgrid";
             this.finishedjobgrid.Padding = new System.Windows.Forms.Padding(14);
-            this.finishedjobgrid.Size = new System.Drawing.Size(904, 387);
+            this.finishedjobgrid.Size = new System.Drawing.Size(904, 503);
             this.finishedjobgrid.TabIndex = 4;
             // 
             // customeraccsgrid
@@ -1109,7 +1109,7 @@
             this.customeraccsgrid.RowHeadersVisible = false;
             this.customeraccsgrid.RowHeadersWidth = 51;
             this.customeraccsgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.customeraccsgrid.Size = new System.Drawing.Size(876, 359);
+            this.customeraccsgrid.Size = new System.Drawing.Size(876, 475);
             this.customeraccsgrid.TabIndex = 11;
             // 
             // cxsearchbtn
