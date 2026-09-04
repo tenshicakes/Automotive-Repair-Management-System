@@ -100,9 +100,12 @@ namespace Olvarra_Capstone
             srvclgscontainer.Refresh();
             SetupCustomerAndVehicleDetailGridStyle();
 
-            
+            LoadUsersToGrid();
+            SetupUserGridStyle();
 
-            
+
+
+
         }
 
 
@@ -825,10 +828,47 @@ namespace Olvarra_Capstone
         {
             ActiveButton(accbtn);
             ShowPanel(accscontainer);
+            LoadUsersToGrid();
+            SetupUserGridStyle();
         }
 
 
+        private void LoadUsersToGrid()
+        {
+            string query = @"Select UserID, Username, Password, Role from Users";
+            DataTable dt = DatabaseHelper.GetTable(query);
+            usergrid.DataSource = dt;
+            usergrid.Columns["UserID"].HeaderText = "User ID";
+            usergrid.Columns["Username"].HeaderText = "Username";
+            usergrid.Columns["Password"].HeaderText = "Password";
+            usergrid.Columns["Role"].HeaderText = "Role";
 
+        }
+
+        private void SetupUserGridStyle()
+        {
+            usergrid.BackgroundColor = Color.White;
+            usergrid.BorderStyle = BorderStyle.None;
+            usergrid.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            usergrid.RowHeadersVisible = false;
+            usergrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            usergrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            usergrid.MultiSelect = false;
+            usergrid.ReadOnly = true;
+            usergrid.AllowUserToAddRows = false;
+            usergrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
+            usergrid.DefaultCellStyle.BackColor = Color.White;
+            usergrid.DefaultCellStyle.ForeColor = Color.Black;
+            usergrid.DefaultCellStyle.SelectionBackColor = Color.Black;
+            usergrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            usergrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
+            usergrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
+            usergrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
+            usergrid.ColumnHeadersDefaultCellStyle.SelectionBackColor = Color.White;
+            usergrid.ColumnHeadersDefaultCellStyle.SelectionForeColor = Color.Black;
+            usergrid.EnableHeadersVisualStyles = false;
+            usergrid.RowTemplate.Height = 40;
+        }
 
 
 

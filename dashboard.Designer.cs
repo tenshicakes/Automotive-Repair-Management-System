@@ -106,6 +106,13 @@
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.materialCard4 = new ReaLTaiizor.Controls.MaterialCard();
+            this.usergrid = new System.Windows.Forms.DataGridView();
+            this.edituserbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.foxBigLabel10 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.foxBigLabel11 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.deleteuserbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.adduserbtn = new ReaLTaiizor.Controls.FoxButton();
             this.navbar.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
@@ -129,6 +136,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.rgstrnewcontainer.SuspendLayout();
             this.accscontainer.SuspendLayout();
+            this.materialCard4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usergrid)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -312,11 +321,11 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
-            this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_cont.Location = new System.Drawing.Point(0, 0);
             this.main_cont.Name = "main_cont";
@@ -1436,6 +1445,13 @@
             // 
             // accscontainer
             // 
+            this.accscontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.accscontainer.Controls.Add(this.adduserbtn);
+            this.accscontainer.Controls.Add(this.deleteuserbtn);
+            this.accscontainer.Controls.Add(this.foxBigLabel11);
+            this.accscontainer.Controls.Add(this.foxBigLabel10);
+            this.accscontainer.Controls.Add(this.edituserbtn);
+            this.accscontainer.Controls.Add(this.materialCard4);
             this.accscontainer.Controls.Add(this.foxBigLabel2);
             this.accscontainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.accscontainer.Location = new System.Drawing.Point(0, 0);
@@ -1447,14 +1463,14 @@
             // 
             this.foxBigLabel2.BackColor = System.Drawing.Color.Transparent;
             this.foxBigLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
-            this.foxBigLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(88)))), ((int)(((byte)(100)))));
+            this.foxBigLabel2.ForeColor = System.Drawing.Color.White;
             this.foxBigLabel2.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.foxBigLabel2.Location = new System.Drawing.Point(449, 303);
+            this.foxBigLabel2.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel2.Location = new System.Drawing.Point(193, 20);
             this.foxBigLabel2.Name = "foxBigLabel2";
-            this.foxBigLabel2.Size = new System.Drawing.Size(213, 46);
+            this.foxBigLabel2.Size = new System.Drawing.Size(242, 46);
             this.foxBigLabel2.TabIndex = 1;
-            this.foxBigLabel2.Text = " Accounts";
+            this.foxBigLabel2.Text = "User Management";
             // 
             // label6
             // 
@@ -1479,6 +1495,136 @@
             this.label7.Size = new System.Drawing.Size(215, 29);
             this.label7.TabIndex = 14;
             this.label7.Text = "Vehicle Information";
+            // 
+            // materialCard4
+            // 
+            this.materialCard4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard4.Controls.Add(this.usergrid);
+            this.materialCard4.Depth = 0;
+            this.materialCard4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard4.Location = new System.Drawing.Point(195, 76);
+            this.materialCard4.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard4.Name = "materialCard4";
+            this.materialCard4.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard4.Size = new System.Drawing.Size(904, 398);
+            this.materialCard4.TabIndex = 5;
+            // 
+            // usergrid
+            // 
+            this.usergrid.AllowUserToAddRows = false;
+            this.usergrid.AllowUserToDeleteRows = false;
+            this.usergrid.AllowUserToResizeColumns = false;
+            this.usergrid.AllowUserToResizeRows = false;
+            this.usergrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.usergrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.usergrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usergrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usergrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usergrid.Location = new System.Drawing.Point(14, 14);
+            this.usergrid.MultiSelect = false;
+            this.usergrid.Name = "usergrid";
+            this.usergrid.ReadOnly = true;
+            this.usergrid.RowHeadersVisible = false;
+            this.usergrid.RowHeadersWidth = 51;
+            this.usergrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.usergrid.Size = new System.Drawing.Size(876, 370);
+            this.usergrid.TabIndex = 11;
+            // 
+            // edituserbtn
+            // 
+            this.edituserbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.edituserbtn.BackColor = System.Drawing.Color.Transparent;
+            this.edituserbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.edituserbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.edituserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.edituserbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.edituserbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.edituserbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.edituserbtn.DownColor = System.Drawing.Color.Silver;
+            this.edituserbtn.EnabledCalc = true;
+            this.edituserbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.edituserbtn.ForeColor = System.Drawing.Color.White;
+            this.edituserbtn.Location = new System.Drawing.Point(195, 560);
+            this.edituserbtn.Name = "edituserbtn";
+            this.edituserbtn.OverColor = System.Drawing.Color.Silver;
+            this.edituserbtn.Size = new System.Drawing.Size(230, 62);
+            this.edituserbtn.TabIndex = 6;
+            this.edituserbtn.Text = "Edit Info";
+            // 
+            // foxBigLabel10
+            // 
+            this.foxBigLabel10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.foxBigLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel10.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
+            this.foxBigLabel10.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel10.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel10.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel10.Location = new System.Drawing.Point(195, 484);
+            this.foxBigLabel10.Name = "foxBigLabel10";
+            this.foxBigLabel10.Size = new System.Drawing.Size(242, 46);
+            this.foxBigLabel10.TabIndex = 7;
+            this.foxBigLabel10.Text = "Action Buttons";
+            // 
+            // foxBigLabel11
+            // 
+            this.foxBigLabel11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.foxBigLabel11.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel11.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel11.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel11.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel11.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel11.Location = new System.Drawing.Point(195, 526);
+            this.foxBigLabel11.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
+            this.foxBigLabel11.Name = "foxBigLabel11";
+            this.foxBigLabel11.Size = new System.Drawing.Size(488, 28);
+            this.foxBigLabel11.TabIndex = 20;
+            this.foxBigLabel11.Text = "Select a row above and click a butt on to perform desired action.";
+            // 
+            // deleteuserbtn
+            // 
+            this.deleteuserbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.deleteuserbtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteuserbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.deleteuserbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.deleteuserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteuserbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.deleteuserbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.deleteuserbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.deleteuserbtn.DownColor = System.Drawing.Color.Silver;
+            this.deleteuserbtn.EnabledCalc = true;
+            this.deleteuserbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.deleteuserbtn.ForeColor = System.Drawing.Color.White;
+            this.deleteuserbtn.Location = new System.Drawing.Point(441, 560);
+            this.deleteuserbtn.Name = "deleteuserbtn";
+            this.deleteuserbtn.OverColor = System.Drawing.Color.Silver;
+            this.deleteuserbtn.Size = new System.Drawing.Size(230, 62);
+            this.deleteuserbtn.TabIndex = 21;
+            this.deleteuserbtn.Text = "Delete User";
+            // 
+            // adduserbtn
+            // 
+            this.adduserbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.adduserbtn.BackColor = System.Drawing.Color.Transparent;
+            this.adduserbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.adduserbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.adduserbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.adduserbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.adduserbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.adduserbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.adduserbtn.DownColor = System.Drawing.Color.Silver;
+            this.adduserbtn.EnabledCalc = true;
+            this.adduserbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.adduserbtn.ForeColor = System.Drawing.Color.White;
+            this.adduserbtn.Location = new System.Drawing.Point(869, 560);
+            this.adduserbtn.Name = "adduserbtn";
+            this.adduserbtn.OverColor = System.Drawing.Color.Silver;
+            this.adduserbtn.Size = new System.Drawing.Size(230, 62);
+            this.adduserbtn.TabIndex = 22;
+            this.adduserbtn.Text = "Add User";
             // 
             // dashboard
             // 
@@ -1520,6 +1666,8 @@
             this.rgstrnewcontainer.ResumeLayout(false);
             this.rgstrnewcontainer.PerformLayout();
             this.accscontainer.ResumeLayout(false);
+            this.materialCard4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.usergrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1603,5 +1751,12 @@
         private ReaLTaiizor.Controls.FoxButton removevhclbtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel10;
+        private ReaLTaiizor.Controls.FoxButton edituserbtn;
+        private ReaLTaiizor.Controls.MaterialCard materialCard4;
+        private System.Windows.Forms.DataGridView usergrid;
+        private ReaLTaiizor.Controls.FoxButton adduserbtn;
+        private ReaLTaiizor.Controls.FoxButton deleteuserbtn;
+        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel11;
     }
 }
