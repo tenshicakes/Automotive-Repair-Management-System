@@ -322,6 +322,7 @@ namespace Olvarra_Capstone
         {
             EditInventory editinv = new EditInventory();
             editinv.ShowDialog();
+            LoadProductsToInventoryGrid();
         }
 
 

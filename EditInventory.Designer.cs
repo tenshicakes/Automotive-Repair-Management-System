@@ -103,6 +103,7 @@
             this.addstockbtn.Size = new System.Drawing.Size(385, 56);
             this.addstockbtn.TabIndex = 14;
             this.addstockbtn.Text = "Add Stock +";
+            this.addstockbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addstockbtn_Click);
             // 
             // reducestockbtn
             // 
@@ -124,6 +125,7 @@
             this.reducestockbtn.Size = new System.Drawing.Size(385, 56);
             this.reducestockbtn.TabIndex = 15;
             this.reducestockbtn.Text = "Reduce Stock -";
+            this.reducestockbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.reducestockbtn_Click);
             // 
             // foxBigLabel2
             // 
@@ -220,9 +222,12 @@
             this.Controls.Add(this.foxBigLabel1);
             this.Controls.Add(this.materialCard1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(881, 564);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(881, 564);
             this.Name = "EditInventory";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.EditInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
             this.materialCard1.ResumeLayout(false);
