@@ -24,6 +24,8 @@ namespace Olvarra_Capstone
             SetupInventoryGridStyle();
         }
 
+
+        //========= STOCKS FUNCTION ==============
         private void LoadProductsToInventoryGrid()
         {
             string query = "SELECT PartID, PartName, StockQuantity, Price FROM SpareParts";
@@ -122,10 +124,39 @@ namespace Olvarra_Capstone
 
 
 
-
+        //========= EDIT INFORMATION BUTTON =========
         private void editinfobtn_Click(object sender, EventArgs e)
         {
+            if (inventorygrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select at least one item to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // Prepare a DataTable to pass the exact selected data to the EditForm
+            DataTable dtSelected = new DataTable();
+            dtSelected.Columns.Add("PartID", typeof(int));
+            dtSelected.Columns.Add("PartName", typeof(string));
+            dtSelected.Columns.Add("StockQuantity", typeof(int));
+            dtSelected.Columns.Add("Price", typeof(decimal));
+
+            foreach (DataGridViewRow row in inventorygrid.SelectedRows)
+            {
+                dtSelected.Rows.Add(
+                    row.Cells["PartID"].Value,
+                    row.Cells["PartName"].Value,
+                    row.Cells["StockQuantity"].Value,
+                    row.Cells["Price"].Value
+                );
+            }
+
+            using (EditForm editForm = new EditForm(dtSelected))
+            {
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadProductsToInventoryGrid();
+                }
+            }
         }
     }
 }

@@ -54,7 +54,7 @@
             this.inventorygrid.ReadOnly = true;
             this.inventorygrid.RowHeadersVisible = false;
             this.inventorygrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventorygrid.Size = new System.Drawing.Size(424, 395);
+            this.inventorygrid.Size = new System.Drawing.Size(500, 395);
             this.inventorygrid.TabIndex = 0;
             // 
             // materialCard1
@@ -68,7 +68,7 @@
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(452, 423);
+            this.materialCard1.Size = new System.Drawing.Size(528, 423);
             this.materialCard1.TabIndex = 1;
             // 
             // foxBigLabel1
@@ -98,7 +98,7 @@
             this.addstockbtn.EnabledCalc = true;
             this.addstockbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addstockbtn.ForeColor = System.Drawing.Color.White;
-            this.addstockbtn.Location = new System.Drawing.Point(471, 125);
+            this.addstockbtn.Location = new System.Drawing.Point(551, 125);
             this.addstockbtn.Name = "addstockbtn";
             this.addstockbtn.OverColor = System.Drawing.Color.Black;
             this.addstockbtn.Size = new System.Drawing.Size(385, 56);
@@ -120,7 +120,7 @@
             this.reducestockbtn.EnabledCalc = true;
             this.reducestockbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.reducestockbtn.ForeColor = System.Drawing.Color.White;
-            this.reducestockbtn.Location = new System.Drawing.Point(471, 187);
+            this.reducestockbtn.Location = new System.Drawing.Point(551, 187);
             this.reducestockbtn.Name = "reducestockbtn";
             this.reducestockbtn.OverColor = System.Drawing.Color.Black;
             this.reducestockbtn.Size = new System.Drawing.Size(385, 56);
@@ -155,7 +155,7 @@
             this.editinfobtn.EnabledCalc = true;
             this.editinfobtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.editinfobtn.ForeColor = System.Drawing.Color.White;
-            this.editinfobtn.Location = new System.Drawing.Point(471, 322);
+            this.editinfobtn.Location = new System.Drawing.Point(551, 322);
             this.editinfobtn.Name = "editinfobtn";
             this.editinfobtn.OverColor = System.Drawing.Color.Black;
             this.editinfobtn.Size = new System.Drawing.Size(385, 56);
@@ -177,7 +177,7 @@
             this.addnewbtn.EnabledCalc = true;
             this.addnewbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.addnewbtn.ForeColor = System.Drawing.Color.Black;
-            this.addnewbtn.Location = new System.Drawing.Point(471, 457);
+            this.addnewbtn.Location = new System.Drawing.Point(551, 457);
             this.addnewbtn.Name = "addnewbtn";
             this.addnewbtn.OverColor = System.Drawing.Color.Black;
             this.addnewbtn.Size = new System.Drawing.Size(385, 56);
@@ -191,7 +191,7 @@
             this.foxBigLabel3.ForeColor = System.Drawing.Color.White;
             this.foxBigLabel3.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
             this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel3.Location = new System.Drawing.Point(471, 91);
+            this.foxBigLabel3.Location = new System.Drawing.Point(551, 91);
             this.foxBigLabel3.Name = "foxBigLabel3";
             this.foxBigLabel3.Size = new System.Drawing.Size(158, 28);
             this.foxBigLabel3.TabIndex = 22;
@@ -204,7 +204,7 @@
             this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
             this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
             this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel4.Location = new System.Drawing.Point(471, 288);
+            this.foxBigLabel4.Location = new System.Drawing.Point(551, 288);
             this.foxBigLabel4.Name = "foxBigLabel4";
             this.foxBigLabel4.Size = new System.Drawing.Size(171, 28);
             this.foxBigLabel4.TabIndex = 23;
@@ -217,7 +217,7 @@
             this.foxBigLabel5.ForeColor = System.Drawing.Color.White;
             this.foxBigLabel5.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
             this.foxBigLabel5.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel5.Location = new System.Drawing.Point(471, 423);
+            this.foxBigLabel5.Location = new System.Drawing.Point(551, 423);
             this.foxBigLabel5.Name = "foxBigLabel5";
             this.foxBigLabel5.Size = new System.Drawing.Size(171, 28);
             this.foxBigLabel5.TabIndex = 24;
@@ -228,7 +228,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.ClientSize = new System.Drawing.Size(865, 525);
+            this.ClientSize = new System.Drawing.Size(945, 525);
             this.Controls.Add(this.foxBigLabel5);
             this.Controls.Add(this.foxBigLabel4);
             this.Controls.Add(this.foxBigLabel3);
@@ -240,9 +240,9 @@
             this.Controls.Add(this.foxBigLabel1);
             this.Controls.Add(this.materialCard1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(881, 564);
+            this.MaximumSize = new System.Drawing.Size(961, 564);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(881, 564);
+            this.MinimumSize = new System.Drawing.Size(961, 564);
             this.Name = "EditInventory";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

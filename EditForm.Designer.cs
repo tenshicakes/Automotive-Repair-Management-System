@@ -110,6 +110,7 @@
             this.editinfobtn.Size = new System.Drawing.Size(514, 70);
             this.editinfobtn.TabIndex = 18;
             this.editinfobtn.Text = "Save Changes";
+            this.editinfobtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.editinfobtn_Click);
             // 
             // EditForm
             // 
