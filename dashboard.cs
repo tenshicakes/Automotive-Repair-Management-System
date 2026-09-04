@@ -871,6 +871,82 @@ namespace Olvarra_Capstone
         }
 
 
+        private void edituserbtn_Click(object sender, EventArgs e)
+        {
+            if (usergrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow selectedRow = usergrid.SelectedRows[0];
+
+            // Extract the hidden UserID anchor and existing data
+            int userId = Convert.ToInt32(selectedRow.Cells["UserID"].Value);
+            string username = selectedRow.Cells["Username"].Value?.ToString() ?? "";
+            string password = selectedRow.Cells["Password"].Value?.ToString() ?? "";
+            string role = selectedRow.Cells["Role"].Value?.ToString() ?? "";
+
+            using (EditUser editForm = new EditUser(userId, username, password, role))
+            {
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadUsersToGrid();
+                }
+            }
+        }
+
+        private void deleteuserbtn_Click(object sender, EventArgs e)
+        {
+            if (usergrid.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a user to delete.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DataGridViewRow selectedRow = usergrid.SelectedRows[0];
+            int userId = Convert.ToInt32(selectedRow.Cells["UserID"].Value);
+            string role = selectedRow.Cells["Role"].Value?.ToString() ?? "";
+            string username = selectedRow.Cells["Username"].Value?.ToString() ?? "";
+
+            // Prevent deletion of Administrator accounts
+            if (role.Equals("Administrator", StringComparison.OrdinalIgnoreCase))
+            {
+                MessageBox.Show("Administrator accounts cannot be deleted from the system.", "Action Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+
+           
+            DialogResult result = MessageBox.Show($"Are you sure you want to permanently delete the user '{username}'?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    string deleteQuery = "DELETE FROM Users WHERE UserID = @UserID";
+                    SqlParameter[] parameters = {
+                        new SqlParameter("@UserID", userId)
+                    };
+
+                    int rowsAffected = DatabaseHelper.ExecuteQuery(deleteQuery, parameters);
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("User deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadUsersToGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to delete user. The record may have already been removed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Database error: " + ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
 
 

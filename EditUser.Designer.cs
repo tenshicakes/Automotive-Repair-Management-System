@@ -60,6 +60,7 @@
             this.savebtn.Size = new System.Drawing.Size(541, 56);
             this.savebtn.TabIndex = 38;
             this.savebtn.Text = "Save Changes";
+            this.savebtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.savebtn_Click);
             // 
             // confpass_txtbox
             // 
@@ -79,7 +80,7 @@
             this.confpass_txtbox.Size = new System.Drawing.Size(541, 36);
             this.confpass_txtbox.TabIndex = 37;
             this.confpass_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.confpass_txtbox.UseSystemPasswordChar = false;
+            this.confpass_txtbox.UseSystemPasswordChar = true;
             // 
             // foxBigLabel4
             // 
@@ -112,7 +113,7 @@
             this.password_txtbox.Size = new System.Drawing.Size(541, 36);
             this.password_txtbox.TabIndex = 35;
             this.password_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.password_txtbox.UseSystemPasswordChar = false;
+            this.password_txtbox.UseSystemPasswordChar = true;
             // 
             // foxBigLabel3
             // 
@@ -187,7 +188,7 @@
             this.role_combo.ColorI = System.Drawing.Color.Black;
             this.role_combo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.role_combo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.role_combo.DropDownHeight = 100;
+            this.role_combo.DropDownHeight = 400;
             this.role_combo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.role_combo.Font = new System.Drawing.Font("Candara", 18F);
             this.role_combo.ForeColor = System.Drawing.Color.Black;
@@ -196,6 +197,7 @@
             this.role_combo.IntegralHeight = false;
             this.role_combo.ItemHeight = 20;
             this.role_combo.Location = new System.Drawing.Point(12, 427);
+            this.role_combo.MaxDropDownItems = 4;
             this.role_combo.MinimumSize = new System.Drawing.Size(243, 0);
             this.role_combo.Name = "role_combo";
             this.role_combo.Size = new System.Drawing.Size(243, 26);
@@ -235,6 +237,7 @@
             this.MinimizeBox = false;
             this.Name = "EditUser";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.EditUser_Load);
             this.ResumeLayout(false);
 
         }
