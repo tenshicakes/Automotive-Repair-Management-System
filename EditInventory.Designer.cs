@@ -35,9 +35,10 @@
             this.reducestockbtn = new ReaLTaiizor.Controls.FoxButton();
             this.foxBigLabel2 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.editinfobtn = new ReaLTaiizor.Controls.FoxButton();
-            this.foxBigLabel3 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.label1 = new System.Windows.Forms.Label();
             this.addnewbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.foxBigLabel3 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).BeginInit();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
@@ -154,36 +155,13 @@
             this.editinfobtn.EnabledCalc = true;
             this.editinfobtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.editinfobtn.ForeColor = System.Drawing.Color.White;
-            this.editinfobtn.Location = new System.Drawing.Point(471, 334);
+            this.editinfobtn.Location = new System.Drawing.Point(471, 322);
             this.editinfobtn.Name = "editinfobtn";
             this.editinfobtn.OverColor = System.Drawing.Color.Black;
             this.editinfobtn.Size = new System.Drawing.Size(385, 56);
             this.editinfobtn.TabIndex = 17;
             this.editinfobtn.Text = "Edit Information";
-            // 
-            // foxBigLabel3
-            // 
-            this.foxBigLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel3.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel3.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel3.Location = new System.Drawing.Point(471, 91);
-            this.foxBigLabel3.Name = "foxBigLabel3";
-            this.foxBigLabel3.Size = new System.Drawing.Size(385, 28);
-            this.foxBigLabel3.TabIndex = 18;
-            this.foxBigLabel3.Text = "Select rows to add or reduce stocks.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Candara", 14.25F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(467, 276);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(335, 46);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Select only one row to edit information. \r\n(last row selected will be chosen)";
+            this.editinfobtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.editinfobtn_Click);
             // 
             // addnewbtn
             // 
@@ -204,7 +182,46 @@
             this.addnewbtn.OverColor = System.Drawing.Color.Black;
             this.addnewbtn.Size = new System.Drawing.Size(385, 56);
             this.addnewbtn.TabIndex = 21;
-            this.addnewbtn.Text = "Add New Product";
+            this.addnewbtn.Text = "Add New +";
+            // 
+            // foxBigLabel3
+            // 
+            this.foxBigLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel3.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel3.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel3.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel3.Location = new System.Drawing.Point(471, 91);
+            this.foxBigLabel3.Name = "foxBigLabel3";
+            this.foxBigLabel3.Size = new System.Drawing.Size(158, 28);
+            this.foxBigLabel3.TabIndex = 22;
+            this.foxBigLabel3.Text = "Stock Adjustment";
+            // 
+            // foxBigLabel4
+            // 
+            this.foxBigLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel4.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel4.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel4.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel4.Location = new System.Drawing.Point(471, 288);
+            this.foxBigLabel4.Name = "foxBigLabel4";
+            this.foxBigLabel4.Size = new System.Drawing.Size(171, 28);
+            this.foxBigLabel4.TabIndex = 23;
+            this.foxBigLabel4.Text = "Edit Product Details";
+            // 
+            // foxBigLabel5
+            // 
+            this.foxBigLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel5.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel5.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel5.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel5.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel5.Location = new System.Drawing.Point(471, 423);
+            this.foxBigLabel5.Name = "foxBigLabel5";
+            this.foxBigLabel5.Size = new System.Drawing.Size(171, 28);
+            this.foxBigLabel5.TabIndex = 24;
+            this.foxBigLabel5.Text = "Add More Products";
             // 
             // EditInventory
             // 
@@ -212,9 +229,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(865, 525);
-            this.Controls.Add(this.addnewbtn);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.foxBigLabel5);
+            this.Controls.Add(this.foxBigLabel4);
             this.Controls.Add(this.foxBigLabel3);
+            this.Controls.Add(this.addnewbtn);
             this.Controls.Add(this.editinfobtn);
             this.Controls.Add(this.foxBigLabel2);
             this.Controls.Add(this.reducestockbtn);
@@ -232,7 +250,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
             this.materialCard1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -245,8 +262,9 @@
         private ReaLTaiizor.Controls.FoxButton reducestockbtn;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel2;
         private ReaLTaiizor.Controls.FoxButton editinfobtn;
-        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel3;
-        private System.Windows.Forms.Label label1;
         private ReaLTaiizor.Controls.FoxButton addnewbtn;
+        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel3;
+        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel4;
+        private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel5;
     }
 }

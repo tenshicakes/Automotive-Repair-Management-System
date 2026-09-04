@@ -117,5 +117,15 @@ namespace Olvarra_Capstone
                 }
             }
         }
+
+
+
+
+
+
+        private void editinfobtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -186,6 +186,9 @@
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditForm.resx">
+      <DependentUpon>EditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditInventory.resx">
       <DependentUpon>EditInventory.cs</DependentUpon>
     </EmbeddedResource>

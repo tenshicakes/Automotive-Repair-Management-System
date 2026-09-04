@@ -92,6 +92,9 @@
             this.ClientSize = new System.Drawing.Size(478, 523);
             this.Controls.Add(this.submitbtn);
             this.Controls.Add(this.materialCard1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(494, 562);
+            this.MinimumSize = new System.Drawing.Size(494, 562);
             this.Name = "StockForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
