@@ -161,7 +161,13 @@ namespace Olvarra_Capstone
 
         private void addnewbtn_Click(object sender, EventArgs e)
         {
-
+            using (AddForm addForm = new AddForm())
+            {
+                if (addForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadProductsToInventoryGrid();
+                }
+            }
         }
     }
 }
