@@ -31,6 +31,7 @@
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
             this.inventoryGrid = new System.Windows.Forms.DataGridView();
             this.submitbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.stockaction = new ReaLTaiizor.Controls.FoxBigLabel();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGrid)).BeginInit();
             this.SuspendLayout();
@@ -41,12 +42,12 @@
             this.materialCard1.Controls.Add(this.inventoryGrid);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(23, 23);
+            this.materialCard1.Location = new System.Drawing.Point(23, 58);
             this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
             this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(432, 377);
+            this.materialCard1.Size = new System.Drawing.Size(432, 380);
             this.materialCard1.TabIndex = 2;
             // 
             // inventoryGrid
@@ -59,7 +60,7 @@
             this.inventoryGrid.Name = "inventoryGrid";
             this.inventoryGrid.RowHeadersVisible = false;
             this.inventoryGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventoryGrid.Size = new System.Drawing.Size(404, 349);
+            this.inventoryGrid.Size = new System.Drawing.Size(404, 352);
             this.inventoryGrid.TabIndex = 0;
             // 
             // submitbtn
@@ -76,13 +77,26 @@
             this.submitbtn.EnabledCalc = true;
             this.submitbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.submitbtn.ForeColor = System.Drawing.Color.White;
-            this.submitbtn.Location = new System.Drawing.Point(37, 435);
+            this.submitbtn.Location = new System.Drawing.Point(23, 455);
             this.submitbtn.Name = "submitbtn";
             this.submitbtn.OverColor = System.Drawing.Color.Black;
-            this.submitbtn.Size = new System.Drawing.Size(404, 56);
+            this.submitbtn.Size = new System.Drawing.Size(432, 56);
             this.submitbtn.TabIndex = 15;
             this.submitbtn.Text = "Submit";
             this.submitbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.submitbtn_Click);
+            // 
+            // stockaction
+            // 
+            this.stockaction.BackColor = System.Drawing.Color.Transparent;
+            this.stockaction.Font = new System.Drawing.Font("Candara", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockaction.ForeColor = System.Drawing.Color.White;
+            this.stockaction.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.stockaction.LineColor = System.Drawing.Color.Transparent;
+            this.stockaction.Location = new System.Drawing.Point(23, 12);
+            this.stockaction.Name = "stockaction";
+            this.stockaction.Size = new System.Drawing.Size(206, 41);
+            this.stockaction.TabIndex = 3;
+            this.stockaction.Text = "Stock Action";
             // 
             // StockForm
             // 
@@ -90,6 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(478, 523);
+            this.Controls.Add(this.stockaction);
             this.Controls.Add(this.submitbtn);
             this.Controls.Add(this.materialCard1);
             this.MaximizeBox = false;
@@ -110,5 +125,6 @@
         private ReaLTaiizor.Controls.MaterialCard materialCard1;
         private System.Windows.Forms.DataGridView inventoryGrid;
         private ReaLTaiizor.Controls.FoxButton submitbtn;
+        private ReaLTaiizor.Controls.FoxBigLabel stockaction;
     }
 }

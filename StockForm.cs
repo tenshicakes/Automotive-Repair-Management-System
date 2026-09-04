@@ -26,10 +26,19 @@ namespace Olvarra_Capstone
 
 
         }
-
+        
         private void StockForm_Load(object sender, EventArgs e)
         {
             SetupGrid();
+
+            if (_actionType == "IN")
+            {
+                stockaction.Text = "Stock In";
+            }
+            else if (_actionType == "OUT")
+            {
+                stockaction.Text = "Stock Out";
+            }
         }
 
         private void SetupGrid()

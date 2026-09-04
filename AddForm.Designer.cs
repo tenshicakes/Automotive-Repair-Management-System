@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AddForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AddForm";
+            this.ClientSize = new System.Drawing.Size(565, 450);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "AddForm";
+            this.ShowIcon = false;
+            this.ResumeLayout(false);
+
         }
 
         #endregion
