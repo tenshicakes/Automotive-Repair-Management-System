@@ -138,7 +138,6 @@
             this.Name = "UnpaidJob";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UnpaidJob";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.UnpaidJob_Load);
             this.materialCard1.ResumeLayout(false);

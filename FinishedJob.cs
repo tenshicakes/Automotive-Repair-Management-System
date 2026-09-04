@@ -15,6 +15,7 @@ namespace Olvarra_Capstone
         public FinishedJob()
         {
             InitializeComponent();
+            SetupFinishedJobOrderStyle();
         }
 
         private void FinishedJob_Load(object sender, EventArgs e)

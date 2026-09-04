@@ -15,6 +15,7 @@ namespace Olvarra_Capstone
         public UnpaidJob()
         {
             InitializeComponent();
+            SetupUnpaidJobGridStyle();
         }
 
         private void UnpaidJob_Load(object sender, EventArgs e)

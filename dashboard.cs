@@ -236,8 +236,8 @@ namespace Olvarra_Capstone
             inventorygrid.DefaultCellStyle.Font = new Font("Candara", 12, FontStyle.Regular);
             inventorygrid.DefaultCellStyle.BackColor = Color.White;
             inventorygrid.DefaultCellStyle.ForeColor = Color.Black;
-            inventorygrid.DefaultCellStyle.SelectionBackColor = Color.Black;
-            inventorygrid.DefaultCellStyle.SelectionForeColor = Color.White;
+            inventorygrid.DefaultCellStyle.SelectionBackColor = Color.White;
+            inventorygrid.DefaultCellStyle.SelectionForeColor = Color.Black;
             inventorygrid.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 13, FontStyle.Bold);
             inventorygrid.ColumnHeadersDefaultCellStyle.BackColor = Color.White;
             inventorygrid.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black;
@@ -250,7 +250,7 @@ namespace Olvarra_Capstone
         private void homesearchbtn_Click(object sender, EventArgs e)
         {
             // ==========================================
-            // PHASE 2: CLEAR MODE LOGIC
+            // CLEAR MODE LOGIC
             // ==========================================
             if (homesearchbtn.Text == "Clear")
             {
@@ -261,20 +261,20 @@ namespace Olvarra_Capstone
                 searchjob_txtbox.Text = "";
 
                 // 3. Reset the ReaLTaiizor FoxButton appearance to original
-                homesearchbtn.Text = "Search"; // Assuming your original text was "Search"
+                homesearchbtn.Text = "Search"; 
                 homesearchbtn.BaseColor = Color.Black;
                 homesearchbtn.ForeColor = Color.White;
 
-                // Exit the method so it doesn't execute the search logic below
+               
                 return;
             }
 
             // ==========================================
-            // PHASE 1: SEARCH MODE LOGIC
+            // SEARCH MODE LOGIC
             // ==========================================
             string plateToSearch = searchjob_txtbox.Text.Trim();
 
-            // Flaw Address 1: Prevent empty searches
+            // FPrevent empty searches
             if (string.IsNullOrEmpty(plateToSearch))
             {
                 MessageBox.Show("Please enter a plate number to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -294,11 +294,11 @@ namespace Olvarra_Capstone
 
             DataTable dt = DatabaseHelper.GetTable(filteredQuery, parameters);
 
-            // Flaw Address 2: Prevent empty grids on failed searches
+            //Prevent empty grids on failed searches
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("No pending jobs found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return; // Stops execution so the button doesn't turn into "Clear" unnecessarily
+                return; 
             }
 
             // Bind the successful search to the grid
@@ -314,7 +314,7 @@ namespace Olvarra_Capstone
             // Transform the button into "Clear" mode
             homesearchbtn.Text = "Clear";
             homesearchbtn.BaseColor = Color.Silver;
-            homesearchbtn.ForeColor = Color.Black; // Swapped to black for better contrast on a silver background
+            homesearchbtn.ForeColor = Color.Black; 
         }
 
 
@@ -470,7 +470,70 @@ namespace Olvarra_Capstone
 
         private void cxsearchbtn_Click(object sender, EventArgs e)
         {
+            // ==========================================
+            // CLEAR MODE LOGIC
+            // ==========================================
+            if (cxsearchbtn.Text == "Clear")
+            {
+                // 1. Reload the original unfiltered data
+                LoadCustomerAccsToGrid();
 
+                // 2. Clear the textbox for the next search
+                cxsearch_txtbox.Text = "";
+
+                // 3. Reset the ReaLTaiizor FoxButton appearance to original
+                cxsearchbtn.Text = "Search";
+                cxsearchbtn.BaseColor = Color.Black;
+                cxsearchbtn.ForeColor = Color.White;
+
+
+                return;
+            }
+
+            // ==========================================
+            // SEARCH MODE LOGIC
+            // ==========================================
+            string cxToSearch = cxsearch_txtbox.Text.Trim();
+
+            // FPrevent empty searches
+            if (string.IsNullOrEmpty(cxToSearch))
+            {
+                MessageBox.Show("Please enter a customer name to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Execute the filtered query using the exact same JOIN structure, but adding the PlateNumber condition
+            string filteredQuery = @"
+                SELECT CustomerID, Fullname , PhoneNumber, Address 
+                FROM CustomerInfo 
+                WHERE Fullname LIKE @CustomerName";
+
+            SqlParameter[] parameters = {
+                new SqlParameter("@CustomerName", "%" + cxToSearch + "%")
+            };
+
+            DataTable dt = DatabaseHelper.GetTable(filteredQuery, parameters);
+
+            //Prevent empty grids on failed searches
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("No customers found for that name.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // Bind the successful search to the grid
+            customeraccsgrid.DataSource = dt;
+
+            // Reapply your column headers since a new DataSource resets them
+            customeraccsgrid.Columns["CustomerID"].HeaderText = "Customer ID";
+            customeraccsgrid.Columns["Fullname"].HeaderText = "Full Name";
+            customeraccsgrid.Columns["PhoneNumber"].HeaderText = "Phone Number";
+            customeraccsgrid.Columns["Address"].HeaderText = "Address";
+
+            // Transform the button into "Clear" mode
+            cxsearchbtn.Text = "Clear";
+            cxsearchbtn.BaseColor = Color.Silver;
+            cxsearchbtn.ForeColor = Color.Black;
         }
 
 

@@ -312,10 +312,10 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
-            this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_cont.Location = new System.Drawing.Point(0, 0);
@@ -1122,14 +1122,14 @@
             this.cxsearchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.cxsearchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.cxsearchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.cxsearchbtn.DownColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.cxsearchbtn.DownColor = System.Drawing.Color.Silver;
             this.cxsearchbtn.EnabledCalc = true;
             this.cxsearchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
             this.cxsearchbtn.ForeColor = System.Drawing.Color.White;
             this.cxsearchbtn.Location = new System.Drawing.Point(728, 23);
             this.cxsearchbtn.Name = "cxsearchbtn";
-            this.cxsearchbtn.OverColor = System.Drawing.Color.Black;
-            this.cxsearchbtn.Size = new System.Drawing.Size(120, 43);
+            this.cxsearchbtn.OverColor = System.Drawing.Color.Silver;
+            this.cxsearchbtn.Size = new System.Drawing.Size(120, 36);
             this.cxsearchbtn.TabIndex = 3;
             this.cxsearchbtn.Text = "Search";
             this.cxsearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.cxsearchbtn_Click);
