@@ -1,16 +1,25 @@
-﻿using ReaLTaiizor.Controls;
+﻿
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Borders;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using ReaLTaiizor.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using WinPanel = System.Windows.Forms.Panel;
 
 namespace Olvarra_Capstone
@@ -814,7 +823,182 @@ namespace Olvarra_Capstone
         }
 
 
+        private void reportbtn_Click(object sender, EventArgs e)
+        {
+            // 1. Guardrail: Ensure a customer is actually loaded
+            if (cxdetailsgrid.Rows.Count == 0 || cxdetailsgrid.CurrentRow == null)
+            {
+                MessageBox.Show("Please search and select a customer first before generating a report.", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            // 2. Extract Customer Data
+            DataGridViewRow cxRow = cxdetailsgrid.CurrentRow;
+            string cxName = cxRow.Cells["FullName"].Value?.ToString() ?? "Unknown";
+            string cxPhone = cxRow.Cells["PhoneNumber"].Value?.ToString() ?? "N/A";
+            string cxAddress = cxRow.Cells["Address"].Value?.ToString() ?? "N/A";
+
+            // 3. Setup Save Dialog
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            {
+                sfd.Filter = "PDF Document (*.pdf)|*.pdf";
+                sfd.FileName = $"ServiceReport_{cxName.Replace(" ", "")}_{DateTime.Now:yyyyMMdd}.pdf";
+                sfd.Title = "Save Customer Report";
+
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        // Initialize iText7 PDF Writer
+                        using (PdfWriter writer = new PdfWriter(sfd.FileName))
+                        using (PdfDocument pdf = new PdfDocument(writer))
+                        using (Document document = new Document(pdf))
+                        {
+                            iText.Kernel.Font.PdfFont italicFont = iText.Kernel.Font.PdfFontFactory.CreateFont(iText.IO.Font.Constants.StandardFonts.HELVETICA_OBLIQUE);
+                            iText.Kernel.Font.PdfFont boldFont = iText.Kernel.Font.PdfFontFactory.CreateFont(iText.IO.Font.Constants.StandardFonts.HELVETICA_BOLD);
+                            // ==========================================
+                            // SECTION 1: HEADER & CUSTOMER PROFILE
+                            // ==========================================
+                            document.Add(new Paragraph("PRO77 Auto Shop")
+                                .SetTextAlignment(TextAlignment.CENTER)
+                                .SetFontSize(18)
+                                .SetFont(boldFont));
+
+                            document.Add(new Paragraph("Customer Service & Billing History")
+                                .SetTextAlignment(TextAlignment.CENTER)
+                                .SetFontSize(12)
+                                .SetMarginBottom(20));
+
+                            // Customer Info 
+                            Table cxTable = new Table(new float[] { 1, 3 }).UseAllAvailableWidth().SetMarginBottom(20);
+
+                            cxTable.AddCell(new Cell().Add(new Paragraph("Customer Name:")).SetBorder(Border.NO_BORDER).SetFont(boldFont));
+                            cxTable.AddCell(new Cell().Add(new Paragraph(cxName)).SetBorder(Border.NO_BORDER));
+
+                            cxTable.AddCell(new Cell().Add(new Paragraph("Contact:")).SetBorder(Border.NO_BORDER).SetFont(boldFont));
+                            cxTable.AddCell(new Cell().Add(new Paragraph(cxPhone)).SetBorder(Border.NO_BORDER));
+
+                            cxTable.AddCell(new Cell().Add(new Paragraph("Address:")).SetBorder(Border.NO_BORDER).SetFont(boldFont));
+                            cxTable.AddCell(new Cell().Add(new Paragraph(cxAddress)).SetBorder(Border.NO_BORDER));
+
+                            cxTable.AddCell(new Cell().Add(new Paragraph("Date Generated:")).SetBorder(Border.NO_BORDER).SetFont(boldFont));
+                            cxTable.AddCell(new Cell().Add(new Paragraph(DateTime.Now.ToString("MMMM dd, yyyy h:mm tt"))).SetBorder(Border.NO_BORDER));
+
+                            document.Add(cxTable);
+                            document.Add(new Paragraph(new string('_', 80)).SetMarginBottom(15));
+
+                            // ==========================================
+                            // SECTION 2: VEHICLE & SERVICE LOGS LOOP
+                            // ==========================================
+                            decimal grandTotal = 0;
+                            bool hasAnyFinishedJobs = false;
+
+                            foreach (DataGridViewRow vRow in vhclsownedgrid.Rows)
+                            {
+                                int vehicleId = Convert.ToInt32(vRow.Cells["VehicleID"].Value);
+                                string model = vRow.Cells["VehicleModel"].Value?.ToString() ?? "Unknown Model";
+                                string plate = vRow.Cells["PlateNumber"].Value?.ToString() ?? "Unknown Plate";
+
+                                string logQuery = @"
+            SELECT s.DateFinished, s.Issue, s.PartsUsed, s.FixedBy, ISNULL(p.TotalAmount, 0) AS TotalAmount
+            FROM ServiceLogs s
+            LEFT JOIN PaymentLogs p ON s.LogID = p.LogID
+            WHERE s.VehicleID = @VehicleID AND s.Status = 'Finished'
+            ORDER BY s.DateFinished DESC";
+
+                                SqlParameter[] p = { new SqlParameter("@VehicleID", vehicleId) };
+                                DataTable dtLogs = DatabaseHelper.GetTable(logQuery, p);
+
+                                if (dtLogs.Rows.Count > 0)
+                                {
+                                    hasAnyFinishedJobs = true;
+                                    decimal vehicleSubtotal = 0;
+
+                        
+                                    document.Add(new Paragraph($"Vehicle: {model} | Plate: {plate}")
+                                        .SetFontSize(11)
+                                        .SetFont(boldFont)
+                                        .SetBackgroundColor(iText.Kernel.Colors.ColorConstants.LIGHT_GRAY)
+                                        .SetPadding(3)
+                                        .SetMarginBottom(5));
+
+                                    Table svcTable = new Table(new float[] { 2, 4, 3, 2, 2 }).UseAllAvailableWidth().SetMarginBottom(15);
+
+                                    string[] headers = { "Date Finished", "Service / Issue", "Parts Used", "Mechanic", "Cost" };
+                                    foreach (string head in headers)
+                                    {
+                                        svcTable.AddHeaderCell(new Cell().Add(new Paragraph(head).SetFont(boldFont).SetFontSize(10)));
+                                    }
+
+                                    foreach (DataRow logRow in dtLogs.Rows)
+                                    {
+                                        string dateStr = logRow["DateFinished"] != DBNull.Value
+                                            ? Convert.ToDateTime(logRow["DateFinished"]).ToString("MM/dd/yyyy")
+                                            : "N/A";
+
+                                        decimal cost = Convert.ToDecimal(logRow["TotalAmount"]);
+                                        vehicleSubtotal += cost;
+
+                                        svcTable.AddCell(new Cell().Add(new Paragraph(dateStr).SetFontSize(9)));
+                                        svcTable.AddCell(new Cell().Add(new Paragraph(logRow["Issue"].ToString()).SetFontSize(9)));
+                                        svcTable.AddCell(new Cell().Add(new Paragraph(logRow["PartsUsed"].ToString()).SetFontSize(9)));
+                                        svcTable.AddCell(new Cell().Add(new Paragraph(logRow["FixedBy"].ToString()).SetFontSize(9)));
+                                        svcTable.AddCell(new Cell().Add(new Paragraph("PHP " + cost.ToString("N2")).SetFontSize(9).SetTextAlignment(TextAlignment.RIGHT)));
+                                    }
+
+                                    Cell blankCells = new Cell(1, 3).SetBorder(Border.NO_BORDER);
+                                    svcTable.AddCell(blankCells);
+                                    svcTable.AddCell(new Cell().Add(new Paragraph("Subtotal:").SetFont(boldFont).SetFontSize(9).SetTextAlignment(TextAlignment.RIGHT)));
+                                    svcTable.AddCell(new Cell().Add(new Paragraph("PHP " + vehicleSubtotal.ToString("N2")).SetFont(boldFont).SetFontSize(9).SetTextAlignment(TextAlignment.RIGHT)));
+
+                                    document.Add(svcTable);
+                                    grandTotal += vehicleSubtotal;
+                                }
+                            }
+
+                            if (!hasAnyFinishedJobs)
+                            {
+                                document.Add(new Paragraph("No completed service records found for this customer's vehicles.")
+                                    .SetFont(italicFont)
+                                    .SetMarginBottom(15));
+                            }
+
+                            // ==========================================
+                            // SECTION 3: SUMMARY & FOOTER
+                            // ==========================================
+                            document.Add(new Paragraph(new string('_', 80)).SetMarginBottom(5));
+
+                            document.Add(new Paragraph($"GRAND TOTAL: PHP {grandTotal:N2}")
+                                .SetTextAlignment(TextAlignment.RIGHT)
+                                .SetFontSize(12)
+                                .SetFont(boldFont)
+                                .SetMarginBottom(30));
+
+                            document.Add(new Paragraph("Generated By: __________________________")
+                                .SetFontSize(10)
+                                .SetMarginBottom(5));
+
+                            // Fully qualified iText color
+                            document.Add(new Paragraph("(Authorized Shop Personnel)")
+                                .SetFontSize(9)
+                                .SetFontColor(iText.Kernel.Colors.ColorConstants.GRAY));
+                        }
+
+                        // Automatically open the PDF for the user to view/print
+                        MessageBox.Show("Report successfully generated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Process.Start(new ProcessStartInfo(sfd.FileName) { UseShellExecute = true });
+                    }
+                    catch (IOException)
+                    {
+                        MessageBox.Show("Cannot overwrite the PDF because it is currently open in another program (like Adobe Acrobat or Edge). Please close it and try again.", "File In Use", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while generating the PDF: " + ex.Message, "Generation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
 
 
 
@@ -839,9 +1023,9 @@ namespace Olvarra_Capstone
             string query = @"Select UserID, Username, Password, Role from Users";
             DataTable dt = DatabaseHelper.GetTable(query);
             usergrid.DataSource = dt;
+            usergrid.Columns["Password"].Visible = false;
             usergrid.Columns["UserID"].HeaderText = "User ID";
             usergrid.Columns["Username"].HeaderText = "Username";
-            usergrid.Columns["Password"].HeaderText = "Password";
             usergrid.Columns["Role"].HeaderText = "Role";
 
         }
@@ -882,7 +1066,7 @@ namespace Olvarra_Capstone
 
             DataGridViewRow selectedRow = usergrid.SelectedRows[0];
 
-            // Extract the hidden UserID anchor and existing data
+    
             int userId = Convert.ToInt32(selectedRow.Cells["UserID"].Value);
             string username = selectedRow.Cells["Username"].Value?.ToString() ?? "";
             string password = selectedRow.Cells["Password"].Value?.ToString() ?? "";
@@ -952,7 +1136,11 @@ namespace Olvarra_Capstone
 
         private void adduserbtn_Click(object sender, EventArgs e)
         {
-
+            AddUser adduser = new AddUser();
+            adduser.ShowDialog();
+       
+            RefreshAllGrids();
+            
         }
 
 

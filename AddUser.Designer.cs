@@ -74,12 +74,12 @@
             this.role_combo.FormattingEnabled = true;
             this.role_combo.HoverSelectionColor = System.Drawing.Color.Gray;
             this.role_combo.IntegralHeight = false;
-            this.role_combo.ItemHeight = 20;
+            this.role_combo.ItemHeight = 40;
             this.role_combo.Location = new System.Drawing.Point(12, 424);
             this.role_combo.MaxDropDownItems = 4;
             this.role_combo.MinimumSize = new System.Drawing.Size(243, 0);
             this.role_combo.Name = "role_combo";
-            this.role_combo.Size = new System.Drawing.Size(243, 26);
+            this.role_combo.Size = new System.Drawing.Size(243, 46);
             this.role_combo.StartIndex = 0;
             this.role_combo.TabIndex = 49;
             // 
@@ -103,6 +103,7 @@
             this.addbtn.Size = new System.Drawing.Size(541, 56);
             this.addbtn.TabIndex = 48;
             this.addbtn.Text = "Add User";
+            this.addbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.addbtn_Click);
             // 
             // confpass_txtbox
             // 
@@ -237,6 +238,7 @@
             this.Name = "AddUser";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddUser_Load);
             this.ResumeLayout(false);
 
         }

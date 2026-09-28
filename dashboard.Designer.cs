@@ -333,11 +333,11 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
             this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
-            this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_cont.Location = new System.Drawing.Point(0, 0);
             this.main_cont.Name = "main_cont";
@@ -1372,6 +1372,7 @@
             this.reportbtn.Size = new System.Drawing.Size(196, 36);
             this.reportbtn.TabIndex = 5;
             this.reportbtn.Text = "Generate Report";
+            this.reportbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.reportbtn_Click);
             // 
             // searchresultscontainer
             // 
