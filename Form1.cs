@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Security.Cryptography; 
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace Olvarra_Capstone
         private int lockoutTime = 30; // 30 seconds lockout
         private Timer lockoutTimer = new Timer();
         private bool isLockedOut = false;
+  
         public Form1()
         {
             InitializeComponent();
@@ -55,84 +57,95 @@ namespace Olvarra_Capstone
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            /// 1. New Gatekeeper: If locked, do nothing
+            // 1. Gatekeeper: If locked, do nothing
             if (isLockedOut) return;
 
-            if (string.IsNullOrWhiteSpace(username_txt.Text) || string.IsNullOrWhiteSpace(password_txt.Text))
+            string inputUsername = username_txt.Text.Trim();
+            string plainPassword = password_txt.Text;
+
+            if (string.IsNullOrWhiteSpace(inputUsername) || string.IsNullOrWhiteSpace(plainPassword))
             {
                 MessageBox.Show("Please enter both username and password.", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // The universal connection string for a local .mdf file
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\olvarraDB.mdf;Integrated Security=True;Connect Timeout=30";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                try
+                // 2. Hash the inputted password BEFORE sending it to the database
+                string hashedInputPassword = HashPassword(plainPassword);
+
+                // 3. Query the Users table via DatabaseHelper
+                string query = "SELECT Role FROM Users WHERE Username = @username AND Password = @password";
+
+                SqlParameter[] parameters = new SqlParameter[]
                 {
-                    conn.Open();
+                    new SqlParameter("@username", inputUsername),
+                    new SqlParameter("@password", hashedInputPassword)
+                };
 
-                    // We ask the database to return the 'Role' if the username AND password match
-                    string query = "SELECT Role FROM Users WHERE Username = @username AND Password = @password";
+                // ExecuteScalar grabs the single value (Role) if a match is found
+                object result = DatabaseHelper.ExecuteScalar(query, parameters);
 
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                if (result != null)
+                {
+                    string userRole = result.ToString();
+                    failedAttempts = 0; // Reset attempts on a successful login
+
+                    MessageBox.Show($"Login Successful! Welcome, {userRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Pass the role into the Dashboard
+                    dashboard dash = new dashboard(userRole);
+                    dash.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    // INCREASE FAILED ATTEMPTS
+                    failedAttempts++;
+                    int attemptsLeft = maxAttempts - failedAttempts;
+
+                    if (failedAttempts >= maxAttempts)
                     {
-                        // This prevents SQL injection hacks!
-                        cmd.Parameters.AddWithValue("@username", username_txt.Text.Trim());
-                        cmd.Parameters.AddWithValue("@password", password_txt.Text);
+                        isLockedOut = true;
+                        MessageBox.Show($"Too many failed attempts. Please wait {lockoutTime} seconds.", "System Locked", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        // ExecuteScalar grabs the single value we asked for (the Role)
-                        object result = cmd.ExecuteScalar();
+                        // Visual Lockout
+                        username_txt.Enabled = false;
+                        password_txt.Enabled = false;
 
-                        if (result != null)
-                        {
-                            string userRole = result.ToString();
-                            failedAttempts = 0; // Reset attempts on a successful login!
+                        loginbtn.BaseColor = Color.DimGray;
+                        loginbtn.Text = $"Locked ({lockoutTime}s)";
 
-                            MessageBox.Show($"Login Successful! Welcome, {userRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // Open Dashboard code goes here...
-                           
-
-            
-
-                                // Pass the role into the Dashboard
-                                dashboard dash = new dashboard(userRole);
-                                dash.Show();
-                                this.Hide();
-                            }
-                        else
-                        {
-                            // INCREASE FAILED ATTEMPTS
-                            failedAttempts++;
-                            int attemptsLeft = maxAttempts - failedAttempts;
-
-                            if (failedAttempts >= maxAttempts)
-                            {
-                                isLockedOut = true; // Set our flag
-                                MessageBox.Show($"Too many failed attempts. Please wait {lockoutTime} seconds.", "System Locked", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                // Visual Lockout
-                                username_txt.Enabled = false;
-                                password_txt.Enabled = false;
-
-                                // Make the button LOOK disabled without actually disabling it
-                                loginbtn.BaseColor = Color.DimGray;
-                                loginbtn.Text = $"Locked ({lockoutTime}s)";
-
-                                lockoutTimer.Start();
-                            }
-                            else
-                            {
-                                MessageBox.Show($"Invalid username or password. You have {attemptsLeft} attempts left.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                        }
+                        lockoutTimer.Start();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Invalid username or password. You have {attemptsLeft} attempts left.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database Connection Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // ==========================================
+        // SHA256 PASSWORD HASHING UTILITY
+        // ==========================================
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha256.ComputeHash(bytes);
+
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in hashBytes)
                 {
-                    MessageBox.Show("Database Connection Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    sb.Append(b.ToString("x2")); // Convert byte to hex string
                 }
+                return sb.ToString();
             }
         }
 
@@ -241,6 +254,11 @@ namespace Olvarra_Capstone
             {
                 e.Graphics.FillRectangle(brush, this.leftpanel.ClientRectangle);
             }
+        }
+
+        private void loginform_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

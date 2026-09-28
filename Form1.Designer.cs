@@ -68,6 +68,7 @@
             this.loginform.Text = "Login";
             this.loginform.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.loginform.Transparent = false;
+            this.loginform.Click += new System.EventHandler(this.loginform_Click);
             // 
             // rightpanel
             // 

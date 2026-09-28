@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
             this.navbar = new System.Windows.Forms.Panel();
+            this.logoandusercont = new System.Windows.Forms.Panel();
+            this.adminlabel = new ReaLTaiizor.Controls.FoxBigLabel();
             this.logoutbtn = new ReaLTaiizor.Controls.FoxButton();
             this.btncontainer = new System.Windows.Forms.Panel();
-            this.adminlabel = new ReaLTaiizor.Controls.FoxBigLabel();
             this.accbtn = new ReaLTaiizor.Controls.FoxButton();
             this.srlogsbtn = new ReaLTaiizor.Controls.FoxButton();
             this.cxbtn = new ReaLTaiizor.Controls.FoxButton();
@@ -113,8 +114,8 @@
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.searchbtn = new ReaLTaiizor.Controls.FoxButton();
             this.search_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.logoandusercont = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
+            this.logoandusercont.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
             this.accscontainer.SuspendLayout();
@@ -139,7 +140,6 @@
             this.searchresultscontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).BeginInit();
-            this.logoandusercont.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
@@ -154,6 +154,29 @@
             this.navbar.Name = "navbar";
             this.navbar.Size = new System.Drawing.Size(182, 652);
             this.navbar.TabIndex = 0;
+            // 
+            // logoandusercont
+            // 
+            this.logoandusercont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoandusercont.Controls.Add(this.adminlabel);
+            this.logoandusercont.Location = new System.Drawing.Point(3, 437);
+            this.logoandusercont.Name = "logoandusercont";
+            this.logoandusercont.Size = new System.Drawing.Size(176, 153);
+            this.logoandusercont.TabIndex = 8;
+            // 
+            // adminlabel
+            // 
+            this.adminlabel.BackColor = System.Drawing.Color.Transparent;
+            this.adminlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminlabel.ForeColor = System.Drawing.Color.White;
+            this.adminlabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.adminlabel.LineColor = System.Drawing.Color.Transparent;
+            this.adminlabel.Location = new System.Drawing.Point(9, 110);
+            this.adminlabel.Name = "adminlabel";
+            this.adminlabel.Size = new System.Drawing.Size(157, 29);
+            this.adminlabel.TabIndex = 7;
+            this.adminlabel.Text = "Administrator";
             // 
             // logoutbtn
             // 
@@ -192,19 +215,6 @@
             this.btncontainer.Padding = new System.Windows.Forms.Padding(5);
             this.btncontainer.Size = new System.Drawing.Size(182, 324);
             this.btncontainer.TabIndex = 0;
-            // 
-            // adminlabel
-            // 
-            this.adminlabel.BackColor = System.Drawing.Color.Transparent;
-            this.adminlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminlabel.ForeColor = System.Drawing.Color.White;
-            this.adminlabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.adminlabel.LineColor = System.Drawing.Color.Transparent;
-            this.adminlabel.Location = new System.Drawing.Point(9, 110);
-            this.adminlabel.Name = "adminlabel";
-            this.adminlabel.Size = new System.Drawing.Size(157, 29);
-            this.adminlabel.TabIndex = 7;
-            this.adminlabel.Text = "Administrator";
             // 
             // accbtn
             // 
@@ -370,6 +380,7 @@
             this.adduserbtn.Size = new System.Drawing.Size(230, 62);
             this.adduserbtn.TabIndex = 22;
             this.adduserbtn.Text = "Add User";
+            this.adduserbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.adduserbtn_Click);
             // 
             // deleteuserbtn
             // 
@@ -1630,16 +1641,6 @@
             this.search_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.search_txtbox.UseSystemPasswordChar = false;
             // 
-            // logoandusercont
-            // 
-            this.logoandusercont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoandusercont.Controls.Add(this.adminlabel);
-            this.logoandusercont.Location = new System.Drawing.Point(3, 437);
-            this.logoandusercont.Name = "logoandusercont";
-            this.logoandusercont.Size = new System.Drawing.Size(176, 153);
-            this.logoandusercont.TabIndex = 8;
-            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1656,6 +1657,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dashboard_FormClosing);
             this.Load += new System.EventHandler(this.dashboard_Load);
             this.navbar.ResumeLayout(false);
+            this.logoandusercont.ResumeLayout(false);
             this.btncontainer.ResumeLayout(false);
             this.main_cont.ResumeLayout(false);
             this.accscontainer.ResumeLayout(false);
@@ -1682,7 +1684,6 @@
             this.searchresultscontainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cxdetailsgrid)).EndInit();
-            this.logoandusercont.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
