@@ -27,14 +27,18 @@ namespace Olvarra_Capstone
     public partial class dashboard : Form
     {
         public string currentUserRole = "";
-        public dashboard(string role)
+        public string currentUsername = "";
+        public dashboard(string role, string username)
         {
             InitializeComponent();
             currentUserRole = role;
+            currentUsername = username;
         }
 
         private void dashboard_Load(object sender, EventArgs e)
         {
+            rolelabel.Text = currentUserRole + ":";
+            adminlabel.Text = currentUsername;
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
 
@@ -45,6 +49,8 @@ namespace Olvarra_Capstone
             SetupInventoryGridStyle();
 
             RefreshAllGrids();
+
+            RBAC();
         }
 
         private void dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +58,20 @@ namespace Olvarra_Capstone
             Application.Exit(); 
         }
 
+        private void logoutbtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Logout Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.Yes)
+            {
+               Application.Exit();
+            }
+        }
 
         private FoxButton activeButton = null;
         private void ActiveButton(FoxButton clickedBtn)
@@ -118,7 +138,23 @@ namespace Olvarra_Capstone
 
         private void RBAC()
         {
+            if (currentUserRole == "Secretary")
+            {
+                editinventorybtn.Visible = false;
+                updatejobbtn.Visible = false;
+                accbtn.Visible = false;
+            }
 
+            else if (currentUserRole == "Mechanic")
+            {
+                editinventorybtn.Visible = false;
+                registerbtn.Visible = false;
+                srlogsbtn.Visible = false;
+                cxbtn.Visible = false;
+                accbtn.Visible = false;
+                viewunpaidjob.Enabled = false;
+                viewfinishjob.Enabled = false;
+            }
         }
 
 
@@ -1231,6 +1267,6 @@ namespace Olvarra_Capstone
 
         }
 
-        
+       
     }
 }

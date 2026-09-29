@@ -45,6 +45,10 @@
             // 
             // inventorygrid
             // 
+            this.inventorygrid.AllowUserToAddRows = false;
+            this.inventorygrid.AllowUserToResizeColumns = false;
+            this.inventorygrid.AllowUserToResizeRows = false;
+            this.inventorygrid.BackgroundColor = System.Drawing.Color.White;
             this.inventorygrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.inventorygrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.inventorygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

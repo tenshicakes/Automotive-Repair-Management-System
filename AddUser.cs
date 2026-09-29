@@ -15,7 +15,7 @@ namespace Olvarra_Capstone
 
             role_combo.DropDownStyle = ComboBoxStyle.DropDownList;
             role_combo.Items.Clear();
-            role_combo.Items.AddRange(new string[] { "Administrator", "Owner", "Staff", "Mechanic" });
+            role_combo.Items.AddRange(new string[] { "Administrator", "Owner", "Secretary", "Mechanic" });
         }
 
         private void AddUser_Load(object sender, EventArgs e)

@@ -65,7 +65,7 @@
             this.loginform.SmartBounds = true;
             this.loginform.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.loginform.TabIndex = 0;
-            this.loginform.Text = "Login";
+            this.loginform.Text = "Login to your account";
             this.loginform.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.loginform.Transparent = false;
             this.loginform.Click += new System.EventHandler(this.loginform_Click);

@@ -113,6 +113,8 @@
             this.fname_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.rgstrnewlabel = new System.Windows.Forms.Label();
+            this.rolelabel = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.materialCard5 = new ReaLTaiizor.Controls.MaterialCard();
             this.navbar.SuspendLayout();
             this.logoandusercont.SuspendLayout();
             this.btncontainer.SuspendLayout();
@@ -139,6 +141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.rgstrnewcontainer.SuspendLayout();
+            this.materialCard5.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
@@ -158,7 +161,8 @@
             // 
             this.logoandusercont.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoandusercont.Controls.Add(this.adminlabel);
+            this.logoandusercont.Controls.Add(this.rolelabel);
+            this.logoandusercont.Controls.Add(this.materialCard5);
             this.logoandusercont.Location = new System.Drawing.Point(3, 437);
             this.logoandusercont.Name = "logoandusercont";
             this.logoandusercont.Size = new System.Drawing.Size(176, 153);
@@ -166,14 +170,16 @@
             // 
             // adminlabel
             // 
+            this.adminlabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.adminlabel.BackColor = System.Drawing.Color.Transparent;
-            this.adminlabel.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminlabel.ForeColor = System.Drawing.Color.White;
+            this.adminlabel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminlabel.ForeColor = System.Drawing.Color.Black;
             this.adminlabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
             this.adminlabel.LineColor = System.Drawing.Color.Transparent;
-            this.adminlabel.Location = new System.Drawing.Point(9, 110);
+            this.adminlabel.Location = new System.Drawing.Point(12, 7);
             this.adminlabel.Name = "adminlabel";
-            this.adminlabel.Size = new System.Drawing.Size(157, 29);
+            this.adminlabel.Size = new System.Drawing.Size(134, 29);
             this.adminlabel.TabIndex = 7;
             this.adminlabel.Text = "Administrator";
             // 
@@ -198,6 +204,7 @@
             this.logoutbtn.Size = new System.Drawing.Size(158, 40);
             this.logoutbtn.TabIndex = 7;
             this.logoutbtn.Text = "Logout";
+            this.logoutbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.logoutbtn_Click);
             // 
             // btncontainer
             // 
@@ -332,10 +339,10 @@
             // 
             // main_cont
             // 
+            this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.srvclgscontainer);
             this.main_cont.Controls.Add(this.accscontainer);
             this.main_cont.Controls.Add(this.cstmrscontainer);
-            this.main_cont.Controls.Add(this.homecontainer);
             this.main_cont.Controls.Add(this.rgstrcontainer);
             this.main_cont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_cont.Location = new System.Drawing.Point(0, 0);
@@ -1619,6 +1626,33 @@
             this.rgstrnewlabel.Text = "REGISTER CUSTOMER AND VEHICLE";
             this.rgstrnewlabel.Click += new System.EventHandler(this.rgstrnewlabel_Click);
             // 
+            // rolelabel
+            // 
+            this.rolelabel.BackColor = System.Drawing.Color.Transparent;
+            this.rolelabel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolelabel.ForeColor = System.Drawing.Color.White;
+            this.rolelabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.rolelabel.LineColor = System.Drawing.Color.Transparent;
+            this.rolelabel.Location = new System.Drawing.Point(8, 68);
+            this.rolelabel.Name = "rolelabel";
+            this.rolelabel.Size = new System.Drawing.Size(157, 29);
+            this.rolelabel.TabIndex = 8;
+            this.rolelabel.Text = "Role:";
+            // 
+            // materialCard5
+            // 
+            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.adminlabel);
+            this.materialCard5.Depth = 0;
+            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard5.Location = new System.Drawing.Point(8, 103);
+            this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard5.Name = "materialCard5";
+            this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard5.Size = new System.Drawing.Size(158, 44);
+            this.materialCard5.TabIndex = 10;
+            // 
             // dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1631,6 +1665,7 @@
             this.Name = "dashboard";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PRO77 Auto Shop";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dashboard_FormClosing);
             this.Load += new System.EventHandler(this.dashboard_Load);
@@ -1662,6 +1697,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.rgstrnewcontainer.ResumeLayout(false);
             this.rgstrnewcontainer.PerformLayout();
+            this.materialCard5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1752,5 +1788,7 @@
         private ReaLTaiizor.Controls.FoxButton deleteuserbtn;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel11;
         private System.Windows.Forms.Panel logoandusercont;
+        private ReaLTaiizor.Controls.FoxBigLabel rolelabel;
+        private ReaLTaiizor.Controls.MaterialCard materialCard5;
     }
 }

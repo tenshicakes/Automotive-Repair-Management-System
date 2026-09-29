@@ -57,7 +57,7 @@ namespace Olvarra_Capstone
 
         private void loginbtn_Click(object sender, EventArgs e)
         {
-            // 1. Gatekeeper: If locked, do nothing
+           
             if (isLockedOut) return;
 
             string inputUsername = username_txt.Text.Trim();
@@ -71,11 +71,11 @@ namespace Olvarra_Capstone
 
             try
             {
-                // 2. Hash the inputted password BEFORE sending it to the database
+         
                 string hashedInputPassword = HashPassword(plainPassword);
 
-                // 3. Query the Users table via DatabaseHelper
-                string query = "SELECT Role FROM Users WHERE Username = @username AND Password = @password";
+
+                string query = "SELECT Role, Username FROM Users WHERE Username = @username AND Password = @password";
 
                 SqlParameter[] parameters = new SqlParameter[]
                 {
@@ -83,18 +83,19 @@ namespace Olvarra_Capstone
                     new SqlParameter("@password", hashedInputPassword)
                 };
 
-                // ExecuteScalar grabs the single value (Role) if a match is found
-                object result = DatabaseHelper.ExecuteScalar(query, parameters);
 
-                if (result != null)
+                DataTable result = DatabaseHelper.GetTable(query, parameters);
+
+                if (result.Rows.Count > 0)
                 {
-                    string userRole = result.ToString();
-                    failedAttempts = 0; // Reset attempts on a successful login
+                    string userRole = result.Rows[0]["Role"].ToString();
+                    string dbUsername = result.Rows[0]["Username"].ToString();
+                    failedAttempts = 0; 
 
-                    MessageBox.Show($"Login Successful! Welcome, {userRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Welcome, {userRole}.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Pass the role into the Dashboard
-                    dashboard dash = new dashboard(userRole);
+        
+                    dashboard dash = new dashboard(userRole, dbUsername);
                     dash.Show();
                     this.Hide();
                 }
