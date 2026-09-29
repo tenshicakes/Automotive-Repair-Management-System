@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.serviceloggrid = new System.Windows.Forms.DataGridView();
             this.foxLabel2 = new ReaLTaiizor.Controls.FoxLabel();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.foxLabel3 = new ReaLTaiizor.Controls.FoxLabel();
-            this.serviceloggrid = new System.Windows.Forms.DataGridView();
             this.materialCard1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.serviceloggrid)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,25 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(795, 294);
             this.materialCard1.TabIndex = 0;
+            // 
+            // serviceloggrid
+            // 
+            this.serviceloggrid.AllowUserToAddRows = false;
+            this.serviceloggrid.AllowUserToDeleteRows = false;
+            this.serviceloggrid.AllowUserToResizeColumns = false;
+            this.serviceloggrid.AllowUserToResizeRows = false;
+            this.serviceloggrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.serviceloggrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.serviceloggrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.serviceloggrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.serviceloggrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.serviceloggrid.Location = new System.Drawing.Point(14, 14);
+            this.serviceloggrid.Name = "serviceloggrid";
+            this.serviceloggrid.ReadOnly = true;
+            this.serviceloggrid.RowHeadersVisible = false;
+            this.serviceloggrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.serviceloggrid.Size = new System.Drawing.Size(767, 266);
+            this.serviceloggrid.TabIndex = 11;
             // 
             // foxLabel2
             // 
@@ -93,25 +112,6 @@
             this.foxLabel3.TabIndex = 8;
             this.foxLabel3.Text = "NEO 2125";
             // 
-            // serviceloggrid
-            // 
-            this.serviceloggrid.AllowUserToAddRows = false;
-            this.serviceloggrid.AllowUserToDeleteRows = false;
-            this.serviceloggrid.AllowUserToResizeColumns = false;
-            this.serviceloggrid.AllowUserToResizeRows = false;
-            this.serviceloggrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.serviceloggrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.serviceloggrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.serviceloggrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.serviceloggrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.serviceloggrid.Location = new System.Drawing.Point(14, 14);
-            this.serviceloggrid.Name = "serviceloggrid";
-            this.serviceloggrid.ReadOnly = true;
-            this.serviceloggrid.RowHeadersVisible = false;
-            this.serviceloggrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.serviceloggrid.Size = new System.Drawing.Size(767, 266);
-            this.serviceloggrid.TabIndex = 11;
-            // 
             // Fulldetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,7 +123,9 @@
             this.Controls.Add(this.foxLabel2);
             this.Controls.Add(this.materialCard1);
             this.Name = "Fulldetails";
+            this.ShowIcon = false;
             this.Text = " ";
+            this.Load += new System.EventHandler(this.Fulldetails_Load);
             this.materialCard1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.serviceloggrid)).EndInit();
             this.ResumeLayout(false);

@@ -21,13 +21,9 @@ namespace Olvarra_Capstone
         {
             InitializeComponent();
             _customerID = customerId;
-
-            // Lock in original values for comparison
             _originalName = name;
             _originalPhone = phone;
             _originalAddress = address;
-
-            // Populate the textboxes
             editname_txtbox.Text = name;
             editphone_txtbox.Text = phone;
             editaddress_txtbox.Text = address;
@@ -82,7 +78,7 @@ namespace Olvarra_Capstone
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Customer information updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.DialogResult = DialogResult.OK; // Triggers UI reload in dashboard
+                    this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
                 else

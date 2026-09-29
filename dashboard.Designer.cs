@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
             this.navbar = new System.Windows.Forms.Panel();
             this.logoandusercont = new System.Windows.Forms.Panel();
+            this.rolelabel = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.materialCard5 = new ReaLTaiizor.Controls.MaterialCard();
             this.adminlabel = new ReaLTaiizor.Controls.FoxBigLabel();
             this.logoutbtn = new ReaLTaiizor.Controls.FoxButton();
             this.btncontainer = new System.Windows.Forms.Panel();
@@ -40,6 +43,29 @@
             this.registerbtn = new ReaLTaiizor.Controls.FoxButton();
             this.homebtn = new ReaLTaiizor.Controls.FoxButton();
             this.main_cont = new System.Windows.Forms.Panel();
+            this.homecontainer = new System.Windows.Forms.Panel();
+            this.editinventorybtn = new ReaLTaiizor.Controls.FoxButton();
+            this.materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
+            this.inventorygrid = new System.Windows.Forms.DataGridView();
+            this.foxBigLabel9 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
+            this.unpaidjobcounter = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.viewunpaidjob = new ReaLTaiizor.Controls.FoxButton();
+            this.foxBigLabel7 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.finishjobcounter = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.viewfinishjob = new ReaLTaiizor.Controls.FoxButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.foxBigLabel3 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.foxBigLabel8 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.homesearchbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.searchjob_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.foxBigLabel6 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.updatejobbtn = new ReaLTaiizor.Controls.FoxButton();
+            this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
+            this.pendingjobgrid = new System.Windows.Forms.DataGridView();
+            this.foxBigLabel1 = new ReaLTaiizor.Controls.FoxBigLabel();
+            this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.srvclgscontainer = new System.Windows.Forms.Panel();
             this.reportbtn = new ReaLTaiizor.Controls.FoxButton();
             this.searchresultscontainer = new ReaLTaiizor.Controls.MaterialCard();
@@ -70,31 +96,6 @@
             this.cxsearchbtn = new ReaLTaiizor.Controls.FoxButton();
             this.cxsearch_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.foxBigLabel4 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.homecontainer = new System.Windows.Forms.Panel();
-            this.editinventorybtn = new ReaLTaiizor.Controls.FoxButton();
-            this.materialCard3 = new ReaLTaiizor.Controls.MaterialCard();
-            this.inventorygrid = new System.Windows.Forms.DataGridView();
-            this.foxBigLabel9 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.materialCard2 = new ReaLTaiizor.Controls.MaterialCard();
-            this.setdate = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.settime = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.unpaidjobcounter = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.viewunpaidjob = new ReaLTaiizor.Controls.FoxButton();
-            this.foxBigLabel7 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.finishjobcounter = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.viewfinishjob = new ReaLTaiizor.Controls.FoxButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.foxBigLabel3 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.foxBigLabel8 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.homesearchbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.searchjob_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
-            this.foxBigLabel6 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.updatejobbtn = new ReaLTaiizor.Controls.FoxButton();
-            this.materialCard1 = new ReaLTaiizor.Controls.MaterialCard();
-            this.pendingjobgrid = new System.Windows.Forms.DataGridView();
-            this.foxBigLabel1 = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.foxBigLabel5 = new ReaLTaiizor.Controls.FoxBigLabel();
             this.rgstrcontainer = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -113,12 +114,23 @@
             this.fname_txtbox = new ReaLTaiizor.Controls.DungeonTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.rgstrnewlabel = new System.Windows.Forms.Label();
-            this.rolelabel = new ReaLTaiizor.Controls.FoxBigLabel();
-            this.materialCard5 = new ReaLTaiizor.Controls.MaterialCard();
+            this.clocktimer = new System.Windows.Forms.Timer(this.components);
+            this.settime = new System.Windows.Forms.Label();
+            this.setdate = new System.Windows.Forms.Label();
+            this.materialCard6 = new ReaLTaiizor.Controls.MaterialCard();
             this.navbar.SuspendLayout();
             this.logoandusercont.SuspendLayout();
+            this.materialCard5.SuspendLayout();
             this.btncontainer.SuspendLayout();
             this.main_cont.SuspendLayout();
+            this.homecontainer.SuspendLayout();
+            this.materialCard3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).BeginInit();
+            this.materialCard2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).BeginInit();
             this.srvclgscontainer.SuspendLayout();
             this.searchresultscontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).BeginInit();
@@ -129,19 +141,11 @@
             this.cstmrscontainer.SuspendLayout();
             this.finishedjobgrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).BeginInit();
-            this.homecontainer.SuspendLayout();
-            this.materialCard3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).BeginInit();
-            this.materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.materialCard1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).BeginInit();
             this.rgstrcontainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.rgstrnewcontainer.SuspendLayout();
-            this.materialCard5.SuspendLayout();
+            this.materialCard6.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
@@ -167,6 +171,33 @@
             this.logoandusercont.Name = "logoandusercont";
             this.logoandusercont.Size = new System.Drawing.Size(176, 153);
             this.logoandusercont.TabIndex = 8;
+            // 
+            // rolelabel
+            // 
+            this.rolelabel.BackColor = System.Drawing.Color.Transparent;
+            this.rolelabel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolelabel.ForeColor = System.Drawing.Color.White;
+            this.rolelabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.rolelabel.LineColor = System.Drawing.Color.Transparent;
+            this.rolelabel.Location = new System.Drawing.Point(8, 68);
+            this.rolelabel.Name = "rolelabel";
+            this.rolelabel.Size = new System.Drawing.Size(157, 29);
+            this.rolelabel.TabIndex = 8;
+            this.rolelabel.Text = "Role:";
+            // 
+            // materialCard5
+            // 
+            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard5.Controls.Add(this.adminlabel);
+            this.materialCard5.Depth = 0;
+            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard5.Location = new System.Drawing.Point(8, 103);
+            this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard5.Name = "materialCard5";
+            this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard5.Size = new System.Drawing.Size(158, 44);
+            this.materialCard5.TabIndex = 10;
             // 
             // adminlabel
             // 
@@ -349,6 +380,409 @@
             this.main_cont.Name = "main_cont";
             this.main_cont.Size = new System.Drawing.Size(1111, 652);
             this.main_cont.TabIndex = 1;
+            // 
+            // homecontainer
+            // 
+            this.homecontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
+            this.homecontainer.Controls.Add(this.editinventorybtn);
+            this.homecontainer.Controls.Add(this.materialCard3);
+            this.homecontainer.Controls.Add(this.foxBigLabel9);
+            this.homecontainer.Controls.Add(this.materialCard2);
+            this.homecontainer.Controls.Add(this.foxBigLabel8);
+            this.homecontainer.Controls.Add(this.homesearchbtn);
+            this.homecontainer.Controls.Add(this.searchjob_txtbox);
+            this.homecontainer.Controls.Add(this.foxBigLabel6);
+            this.homecontainer.Controls.Add(this.updatejobbtn);
+            this.homecontainer.Controls.Add(this.materialCard1);
+            this.homecontainer.Controls.Add(this.foxBigLabel1);
+            this.homecontainer.Controls.Add(this.foxBigLabel5);
+            this.homecontainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homecontainer.Location = new System.Drawing.Point(0, 0);
+            this.homecontainer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
+            this.homecontainer.Name = "homecontainer";
+            this.homecontainer.Size = new System.Drawing.Size(1111, 652);
+            this.homecontainer.TabIndex = 1;
+            // 
+            // editinventorybtn
+            // 
+            this.editinventorybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.editinventorybtn.BackColor = System.Drawing.Color.Transparent;
+            this.editinventorybtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.editinventorybtn.BorderColor = System.Drawing.Color.Transparent;
+            this.editinventorybtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.editinventorybtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.editinventorybtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.editinventorybtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.editinventorybtn.DownColor = System.Drawing.Color.Silver;
+            this.editinventorybtn.EnabledCalc = true;
+            this.editinventorybtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.editinventorybtn.ForeColor = System.Drawing.Color.White;
+            this.editinventorybtn.Location = new System.Drawing.Point(944, 437);
+            this.editinventorybtn.Name = "editinventorybtn";
+            this.editinventorybtn.OverColor = System.Drawing.Color.Black;
+            this.editinventorybtn.Size = new System.Drawing.Size(155, 39);
+            this.editinventorybtn.TabIndex = 27;
+            this.editinventorybtn.Text = "Edit Inventory";
+            this.editinventorybtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.editinventorybtn_Click);
+            // 
+            // materialCard3
+            // 
+            this.materialCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard3.Controls.Add(this.inventorygrid);
+            this.materialCard3.Depth = 0;
+            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard3.Location = new System.Drawing.Point(688, 484);
+            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard3.Name = "materialCard3";
+            this.materialCard3.Padding = new System.Windows.Forms.Padding(7);
+            this.materialCard3.Size = new System.Drawing.Size(411, 155);
+            this.materialCard3.TabIndex = 10;
+            // 
+            // inventorygrid
+            // 
+            this.inventorygrid.AllowUserToAddRows = false;
+            this.inventorygrid.AllowUserToDeleteRows = false;
+            this.inventorygrid.AllowUserToResizeColumns = false;
+            this.inventorygrid.AllowUserToResizeRows = false;
+            this.inventorygrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.inventorygrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.inventorygrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.inventorygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventorygrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inventorygrid.Location = new System.Drawing.Point(7, 7);
+            this.inventorygrid.MultiSelect = false;
+            this.inventorygrid.Name = "inventorygrid";
+            this.inventorygrid.ReadOnly = true;
+            this.inventorygrid.RowHeadersVisible = false;
+            this.inventorygrid.RowHeadersWidth = 51;
+            this.inventorygrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.inventorygrid.Size = new System.Drawing.Size(397, 141);
+            this.inventorygrid.TabIndex = 9;
+            // 
+            // foxBigLabel9
+            // 
+            this.foxBigLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.foxBigLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel9.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel9.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel9.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel9.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel9.Location = new System.Drawing.Point(688, 448);
+            this.foxBigLabel9.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
+            this.foxBigLabel9.Name = "foxBigLabel9";
+            this.foxBigLabel9.Size = new System.Drawing.Size(259, 28);
+            this.foxBigLabel9.TabIndex = 24;
+            this.foxBigLabel9.Text = "Items in the Inventory";
+            // 
+            // materialCard2
+            // 
+            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.Controls.Add(this.materialCard6);
+            this.materialCard2.Controls.Add(this.unpaidjobcounter);
+            this.materialCard2.Controls.Add(this.viewunpaidjob);
+            this.materialCard2.Controls.Add(this.foxBigLabel7);
+            this.materialCard2.Controls.Add(this.pictureBox2);
+            this.materialCard2.Controls.Add(this.finishjobcounter);
+            this.materialCard2.Controls.Add(this.viewfinishjob);
+            this.materialCard2.Controls.Add(this.pictureBox1);
+            this.materialCard2.Controls.Add(this.foxBigLabel3);
+            this.materialCard2.Depth = 0;
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.Location = new System.Drawing.Point(193, 46);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard2.Name = "materialCard2";
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Size = new System.Drawing.Size(904, 118);
+            this.materialCard2.TabIndex = 23;
+            // 
+            // unpaidjobcounter
+            // 
+            this.unpaidjobcounter.BackColor = System.Drawing.Color.Transparent;
+            this.unpaidjobcounter.BorderColor = System.Drawing.Color.Transparent;
+            this.unpaidjobcounter.EdgeColor = System.Drawing.Color.White;
+            this.unpaidjobcounter.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unpaidjobcounter.ForeColor = System.Drawing.Color.Black;
+            this.unpaidjobcounter.Location = new System.Drawing.Point(475, 46);
+            this.unpaidjobcounter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.unpaidjobcounter.MaxLength = 32767;
+            this.unpaidjobcounter.Multiline = false;
+            this.unpaidjobcounter.Name = "unpaidjobcounter";
+            this.unpaidjobcounter.ReadOnly = true;
+            this.unpaidjobcounter.Size = new System.Drawing.Size(155, 30);
+            this.unpaidjobcounter.TabIndex = 23;
+            this.unpaidjobcounter.Text = "123";
+            this.unpaidjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.unpaidjobcounter.UseSystemPasswordChar = false;
+            // 
+            // viewunpaidjob
+            // 
+            this.viewunpaidjob.BackColor = System.Drawing.Color.Transparent;
+            this.viewunpaidjob.BaseColor = System.Drawing.Color.White;
+            this.viewunpaidjob.BorderColor = System.Drawing.Color.Transparent;
+            this.viewunpaidjob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewunpaidjob.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.viewunpaidjob.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.viewunpaidjob.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.viewunpaidjob.DownColor = System.Drawing.Color.White;
+            this.viewunpaidjob.EnabledCalc = true;
+            this.viewunpaidjob.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.viewunpaidjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
+            this.viewunpaidjob.Location = new System.Drawing.Point(475, 80);
+            this.viewunpaidjob.Name = "viewunpaidjob";
+            this.viewunpaidjob.OverColor = System.Drawing.Color.White;
+            this.viewunpaidjob.Size = new System.Drawing.Size(155, 28);
+            this.viewunpaidjob.TabIndex = 21;
+            this.viewunpaidjob.Text = "View";
+            this.viewunpaidjob.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.viewunpaidjob_Click);
+            // 
+            // foxBigLabel7
+            // 
+            this.foxBigLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel7.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel7.ForeColor = System.Drawing.Color.Black;
+            this.foxBigLabel7.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel7.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel7.Location = new System.Drawing.Point(464, 9);
+            this.foxBigLabel7.Name = "foxBigLabel7";
+            this.foxBigLabel7.Size = new System.Drawing.Size(220, 28);
+            this.foxBigLabel7.TabIndex = 22;
+            this.foxBigLabel7.Text = "Unpaid Job Orders";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(358, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 102);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
+            // finishjobcounter
+            // 
+            this.finishjobcounter.BackColor = System.Drawing.Color.Transparent;
+            this.finishjobcounter.BorderColor = System.Drawing.Color.Transparent;
+            this.finishjobcounter.EdgeColor = System.Drawing.Color.White;
+            this.finishjobcounter.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finishjobcounter.ForeColor = System.Drawing.Color.Black;
+            this.finishjobcounter.Location = new System.Drawing.Point(129, 48);
+            this.finishjobcounter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.finishjobcounter.MaxLength = 32767;
+            this.finishjobcounter.Multiline = false;
+            this.finishjobcounter.Name = "finishjobcounter";
+            this.finishjobcounter.ReadOnly = true;
+            this.finishjobcounter.Size = new System.Drawing.Size(155, 30);
+            this.finishjobcounter.TabIndex = 20;
+            this.finishjobcounter.Text = "123";
+            this.finishjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.finishjobcounter.UseSystemPasswordChar = false;
+            // 
+            // viewfinishjob
+            // 
+            this.viewfinishjob.BackColor = System.Drawing.Color.Transparent;
+            this.viewfinishjob.BaseColor = System.Drawing.Color.White;
+            this.viewfinishjob.BorderColor = System.Drawing.Color.Transparent;
+            this.viewfinishjob.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.viewfinishjob.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.viewfinishjob.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.viewfinishjob.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.viewfinishjob.DownColor = System.Drawing.Color.White;
+            this.viewfinishjob.EnabledCalc = true;
+            this.viewfinishjob.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.viewfinishjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
+            this.viewfinishjob.Location = new System.Drawing.Point(129, 80);
+            this.viewfinishjob.Name = "viewfinishjob";
+            this.viewfinishjob.OverColor = System.Drawing.Color.White;
+            this.viewfinishjob.Size = new System.Drawing.Size(155, 28);
+            this.viewfinishjob.TabIndex = 19;
+            this.viewfinishjob.Text = "View";
+            this.viewfinishjob.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.viewfinishjob_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(10, 9);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // foxBigLabel3
+            // 
+            this.foxBigLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel3.ForeColor = System.Drawing.Color.Black;
+            this.foxBigLabel3.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel3.Location = new System.Drawing.Point(116, 9);
+            this.foxBigLabel3.Name = "foxBigLabel3";
+            this.foxBigLabel3.Size = new System.Drawing.Size(236, 28);
+            this.foxBigLabel3.TabIndex = 4;
+            this.foxBigLabel3.Text = "Finished Job Orders";
+            // 
+            // foxBigLabel8
+            // 
+            this.foxBigLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.foxBigLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel8.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel8.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel8.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel8.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel8.Location = new System.Drawing.Point(193, 460);
+            this.foxBigLabel8.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
+            this.foxBigLabel8.Name = "foxBigLabel8";
+            this.foxBigLabel8.Size = new System.Drawing.Size(374, 28);
+            this.foxBigLabel8.TabIndex = 18;
+            this.foxBigLabel8.Text = "Search a plate number to view a specific job order.";
+            this.foxBigLabel8.Click += new System.EventHandler(this.foxBigLabel8_Click);
+            // 
+            // homesearchbtn
+            // 
+            this.homesearchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.homesearchbtn.BackColor = System.Drawing.Color.Transparent;
+            this.homesearchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.homesearchbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.homesearchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homesearchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.homesearchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.homesearchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.homesearchbtn.DownColor = System.Drawing.Color.Silver;
+            this.homesearchbtn.EnabledCalc = true;
+            this.homesearchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.homesearchbtn.ForeColor = System.Drawing.Color.White;
+            this.homesearchbtn.Location = new System.Drawing.Point(496, 418);
+            this.homesearchbtn.Name = "homesearchbtn";
+            this.homesearchbtn.OverColor = System.Drawing.Color.Silver;
+            this.homesearchbtn.Size = new System.Drawing.Size(155, 36);
+            this.homesearchbtn.TabIndex = 17;
+            this.homesearchbtn.Text = "Search";
+            this.homesearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.homesearchbtn_Click);
+            // 
+            // searchjob_txtbox
+            // 
+            this.searchjob_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.searchjob_txtbox.BackColor = System.Drawing.Color.Transparent;
+            this.searchjob_txtbox.BorderColor = System.Drawing.Color.Transparent;
+            this.searchjob_txtbox.EdgeColor = System.Drawing.Color.White;
+            this.searchjob_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.searchjob_txtbox.ForeColor = System.Drawing.Color.Black;
+            this.searchjob_txtbox.Location = new System.Drawing.Point(193, 418);
+            this.searchjob_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
+            this.searchjob_txtbox.MaxLength = 32767;
+            this.searchjob_txtbox.Multiline = false;
+            this.searchjob_txtbox.Name = "searchjob_txtbox";
+            this.searchjob_txtbox.ReadOnly = false;
+            this.searchjob_txtbox.Size = new System.Drawing.Size(294, 36);
+            this.searchjob_txtbox.TabIndex = 16;
+            this.searchjob_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.searchjob_txtbox.UseSystemPasswordChar = false;
+            // 
+            // foxBigLabel6
+            // 
+            this.foxBigLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel6.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel6.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel6.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel6.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel6.Location = new System.Drawing.Point(193, 204);
+            this.foxBigLabel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
+            this.foxBigLabel6.Name = "foxBigLabel6";
+            this.foxBigLabel6.Size = new System.Drawing.Size(379, 28);
+            this.foxBigLabel6.TabIndex = 14;
+            this.foxBigLabel6.Text = "Select a row and click the button to update.";
+            // 
+            // updatejobbtn
+            // 
+            this.updatejobbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.updatejobbtn.BackColor = System.Drawing.Color.Transparent;
+            this.updatejobbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.updatejobbtn.BorderColor = System.Drawing.Color.Transparent;
+            this.updatejobbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updatejobbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.updatejobbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.updatejobbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
+            this.updatejobbtn.DownColor = System.Drawing.Color.Silver;
+            this.updatejobbtn.EnabledCalc = true;
+            this.updatejobbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
+            this.updatejobbtn.ForeColor = System.Drawing.Color.White;
+            this.updatejobbtn.Location = new System.Drawing.Point(914, 192);
+            this.updatejobbtn.Name = "updatejobbtn";
+            this.updatejobbtn.OverColor = System.Drawing.Color.Black;
+            this.updatejobbtn.Size = new System.Drawing.Size(185, 40);
+            this.updatejobbtn.TabIndex = 13;
+            this.updatejobbtn.Text = "Update";
+            this.updatejobbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.updatejobbtn_Click);
+            // 
+            // materialCard1
+            // 
+            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard1.Controls.Add(this.pendingjobgrid);
+            this.materialCard1.Depth = 0;
+            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard1.Location = new System.Drawing.Point(193, 235);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard1.Name = "materialCard1";
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Size = new System.Drawing.Size(906, 166);
+            this.materialCard1.TabIndex = 3;
+            // 
+            // pendingjobgrid
+            // 
+            this.pendingjobgrid.AllowUserToAddRows = false;
+            this.pendingjobgrid.AllowUserToDeleteRows = false;
+            this.pendingjobgrid.AllowUserToResizeColumns = false;
+            this.pendingjobgrid.AllowUserToResizeRows = false;
+            this.pendingjobgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.pendingjobgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.pendingjobgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pendingjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pendingjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pendingjobgrid.Location = new System.Drawing.Point(14, 14);
+            this.pendingjobgrid.MultiSelect = false;
+            this.pendingjobgrid.Name = "pendingjobgrid";
+            this.pendingjobgrid.ReadOnly = true;
+            this.pendingjobgrid.RowHeadersVisible = false;
+            this.pendingjobgrid.RowHeadersWidth = 51;
+            this.pendingjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pendingjobgrid.Size = new System.Drawing.Size(878, 138);
+            this.pendingjobgrid.TabIndex = 9;
+            // 
+            // foxBigLabel1
+            // 
+            this.foxBigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel1.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel1.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel1.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel1.Location = new System.Drawing.Point(193, 172);
+            this.foxBigLabel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
+            this.foxBigLabel1.Name = "foxBigLabel1";
+            this.foxBigLabel1.Size = new System.Drawing.Size(232, 28);
+            this.foxBigLabel1.TabIndex = 2;
+            this.foxBigLabel1.Text = "Pending Job Orders";
+            // 
+            // foxBigLabel5
+            // 
+            this.foxBigLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel5.ForeColor = System.Drawing.Color.White;
+            this.foxBigLabel5.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel5.LineColor = System.Drawing.Color.Transparent;
+            this.foxBigLabel5.Location = new System.Drawing.Point(193, 9);
+            this.foxBigLabel5.Name = "foxBigLabel5";
+            this.foxBigLabel5.Size = new System.Drawing.Size(271, 31);
+            this.foxBigLabel5.TabIndex = 1;
+            this.foxBigLabel5.Text = "Dashboard Overview";
             // 
             // srvclgscontainer
             // 
@@ -900,440 +1334,6 @@
             this.foxBigLabel4.TabIndex = 1;
             this.foxBigLabel4.Text = "Customer Accounts";
             // 
-            // homecontainer
-            // 
-            this.homecontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
-            this.homecontainer.Controls.Add(this.editinventorybtn);
-            this.homecontainer.Controls.Add(this.materialCard3);
-            this.homecontainer.Controls.Add(this.foxBigLabel9);
-            this.homecontainer.Controls.Add(this.materialCard2);
-            this.homecontainer.Controls.Add(this.foxBigLabel8);
-            this.homecontainer.Controls.Add(this.homesearchbtn);
-            this.homecontainer.Controls.Add(this.searchjob_txtbox);
-            this.homecontainer.Controls.Add(this.foxBigLabel6);
-            this.homecontainer.Controls.Add(this.updatejobbtn);
-            this.homecontainer.Controls.Add(this.materialCard1);
-            this.homecontainer.Controls.Add(this.foxBigLabel1);
-            this.homecontainer.Controls.Add(this.foxBigLabel5);
-            this.homecontainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homecontainer.Location = new System.Drawing.Point(0, 0);
-            this.homecontainer.Margin = new System.Windows.Forms.Padding(3, 1, 3, 3);
-            this.homecontainer.Name = "homecontainer";
-            this.homecontainer.Size = new System.Drawing.Size(1111, 652);
-            this.homecontainer.TabIndex = 1;
-            // 
-            // editinventorybtn
-            // 
-            this.editinventorybtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.editinventorybtn.BackColor = System.Drawing.Color.Transparent;
-            this.editinventorybtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.editinventorybtn.BorderColor = System.Drawing.Color.Transparent;
-            this.editinventorybtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.editinventorybtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.editinventorybtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.editinventorybtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.editinventorybtn.DownColor = System.Drawing.Color.Silver;
-            this.editinventorybtn.EnabledCalc = true;
-            this.editinventorybtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.editinventorybtn.ForeColor = System.Drawing.Color.White;
-            this.editinventorybtn.Location = new System.Drawing.Point(944, 437);
-            this.editinventorybtn.Name = "editinventorybtn";
-            this.editinventorybtn.OverColor = System.Drawing.Color.Black;
-            this.editinventorybtn.Size = new System.Drawing.Size(155, 39);
-            this.editinventorybtn.TabIndex = 27;
-            this.editinventorybtn.Text = "Edit Inventory";
-            this.editinventorybtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.editinventorybtn_Click);
-            // 
-            // materialCard3
-            // 
-            this.materialCard3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard3.Controls.Add(this.inventorygrid);
-            this.materialCard3.Depth = 0;
-            this.materialCard3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard3.Location = new System.Drawing.Point(688, 484);
-            this.materialCard3.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialCard3.Name = "materialCard3";
-            this.materialCard3.Padding = new System.Windows.Forms.Padding(7);
-            this.materialCard3.Size = new System.Drawing.Size(411, 155);
-            this.materialCard3.TabIndex = 10;
-            // 
-            // inventorygrid
-            // 
-            this.inventorygrid.AllowUserToAddRows = false;
-            this.inventorygrid.AllowUserToDeleteRows = false;
-            this.inventorygrid.AllowUserToResizeColumns = false;
-            this.inventorygrid.AllowUserToResizeRows = false;
-            this.inventorygrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventorygrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.inventorygrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.inventorygrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventorygrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.inventorygrid.Location = new System.Drawing.Point(7, 7);
-            this.inventorygrid.MultiSelect = false;
-            this.inventorygrid.Name = "inventorygrid";
-            this.inventorygrid.ReadOnly = true;
-            this.inventorygrid.RowHeadersVisible = false;
-            this.inventorygrid.RowHeadersWidth = 51;
-            this.inventorygrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.inventorygrid.Size = new System.Drawing.Size(397, 141);
-            this.inventorygrid.TabIndex = 9;
-            // 
-            // foxBigLabel9
-            // 
-            this.foxBigLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.foxBigLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel9.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel9.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel9.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel9.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel9.Location = new System.Drawing.Point(688, 448);
-            this.foxBigLabel9.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
-            this.foxBigLabel9.Name = "foxBigLabel9";
-            this.foxBigLabel9.Size = new System.Drawing.Size(259, 28);
-            this.foxBigLabel9.TabIndex = 24;
-            this.foxBigLabel9.Text = "Items in the Inventory";
-            // 
-            // materialCard2
-            // 
-            this.materialCard2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.setdate);
-            this.materialCard2.Controls.Add(this.settime);
-            this.materialCard2.Controls.Add(this.unpaidjobcounter);
-            this.materialCard2.Controls.Add(this.viewunpaidjob);
-            this.materialCard2.Controls.Add(this.foxBigLabel7);
-            this.materialCard2.Controls.Add(this.pictureBox2);
-            this.materialCard2.Controls.Add(this.finishjobcounter);
-            this.materialCard2.Controls.Add(this.viewfinishjob);
-            this.materialCard2.Controls.Add(this.pictureBox1);
-            this.materialCard2.Controls.Add(this.foxBigLabel3);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(193, 46);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(904, 118);
-            this.materialCard2.TabIndex = 23;
-            // 
-            // setdate
-            // 
-            this.setdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.setdate.BackColor = System.Drawing.Color.Transparent;
-            this.setdate.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setdate.ForeColor = System.Drawing.Color.Black;
-            this.setdate.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.setdate.LineColor = System.Drawing.Color.Transparent;
-            this.setdate.Location = new System.Drawing.Point(733, 63);
-            this.setdate.Name = "setdate";
-            this.setdate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.setdate.Size = new System.Drawing.Size(159, 32);
-            this.setdate.TabIndex = 25;
-            this.setdate.Text = "12/23/2026";
-            // 
-            // settime
-            // 
-            this.settime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.settime.BackColor = System.Drawing.Color.Transparent;
-            this.settime.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settime.ForeColor = System.Drawing.Color.Black;
-            this.settime.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.settime.LineColor = System.Drawing.Color.Transparent;
-            this.settime.Location = new System.Drawing.Point(733, 25);
-            this.settime.Name = "settime";
-            this.settime.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.settime.Size = new System.Drawing.Size(159, 32);
-            this.settime.TabIndex = 24;
-            this.settime.Text = "10:34:12 PM";
-            // 
-            // unpaidjobcounter
-            // 
-            this.unpaidjobcounter.BackColor = System.Drawing.Color.Transparent;
-            this.unpaidjobcounter.BorderColor = System.Drawing.Color.Transparent;
-            this.unpaidjobcounter.EdgeColor = System.Drawing.Color.White;
-            this.unpaidjobcounter.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unpaidjobcounter.ForeColor = System.Drawing.Color.Black;
-            this.unpaidjobcounter.Location = new System.Drawing.Point(475, 46);
-            this.unpaidjobcounter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.unpaidjobcounter.MaxLength = 32767;
-            this.unpaidjobcounter.Multiline = false;
-            this.unpaidjobcounter.Name = "unpaidjobcounter";
-            this.unpaidjobcounter.ReadOnly = true;
-            this.unpaidjobcounter.Size = new System.Drawing.Size(155, 30);
-            this.unpaidjobcounter.TabIndex = 23;
-            this.unpaidjobcounter.Text = "123";
-            this.unpaidjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.unpaidjobcounter.UseSystemPasswordChar = false;
-            // 
-            // viewunpaidjob
-            // 
-            this.viewunpaidjob.BackColor = System.Drawing.Color.Transparent;
-            this.viewunpaidjob.BaseColor = System.Drawing.Color.White;
-            this.viewunpaidjob.BorderColor = System.Drawing.Color.Transparent;
-            this.viewunpaidjob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewunpaidjob.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.viewunpaidjob.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.viewunpaidjob.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.viewunpaidjob.DownColor = System.Drawing.Color.White;
-            this.viewunpaidjob.EnabledCalc = true;
-            this.viewunpaidjob.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.viewunpaidjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
-            this.viewunpaidjob.Location = new System.Drawing.Point(475, 80);
-            this.viewunpaidjob.Name = "viewunpaidjob";
-            this.viewunpaidjob.OverColor = System.Drawing.Color.White;
-            this.viewunpaidjob.Size = new System.Drawing.Size(155, 28);
-            this.viewunpaidjob.TabIndex = 21;
-            this.viewunpaidjob.Text = "View";
-            this.viewunpaidjob.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.viewunpaidjob_Click);
-            // 
-            // foxBigLabel7
-            // 
-            this.foxBigLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel7.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel7.ForeColor = System.Drawing.Color.Black;
-            this.foxBigLabel7.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel7.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel7.Location = new System.Drawing.Point(464, 9);
-            this.foxBigLabel7.Name = "foxBigLabel7";
-            this.foxBigLabel7.Size = new System.Drawing.Size(220, 28);
-            this.foxBigLabel7.TabIndex = 22;
-            this.foxBigLabel7.Text = "Unpaid Job Orders";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(358, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 102);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // finishjobcounter
-            // 
-            this.finishjobcounter.BackColor = System.Drawing.Color.Transparent;
-            this.finishjobcounter.BorderColor = System.Drawing.Color.Transparent;
-            this.finishjobcounter.EdgeColor = System.Drawing.Color.White;
-            this.finishjobcounter.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.finishjobcounter.ForeColor = System.Drawing.Color.Black;
-            this.finishjobcounter.Location = new System.Drawing.Point(129, 48);
-            this.finishjobcounter.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.finishjobcounter.MaxLength = 32767;
-            this.finishjobcounter.Multiline = false;
-            this.finishjobcounter.Name = "finishjobcounter";
-            this.finishjobcounter.ReadOnly = true;
-            this.finishjobcounter.Size = new System.Drawing.Size(155, 30);
-            this.finishjobcounter.TabIndex = 20;
-            this.finishjobcounter.Text = "123";
-            this.finishjobcounter.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.finishjobcounter.UseSystemPasswordChar = false;
-            // 
-            // viewfinishjob
-            // 
-            this.viewfinishjob.BackColor = System.Drawing.Color.Transparent;
-            this.viewfinishjob.BaseColor = System.Drawing.Color.White;
-            this.viewfinishjob.BorderColor = System.Drawing.Color.Transparent;
-            this.viewfinishjob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.viewfinishjob.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.viewfinishjob.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.viewfinishjob.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.viewfinishjob.DownColor = System.Drawing.Color.White;
-            this.viewfinishjob.EnabledCalc = true;
-            this.viewfinishjob.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.viewfinishjob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(8)))), ((int)(((byte)(28)))));
-            this.viewfinishjob.Location = new System.Drawing.Point(129, 80);
-            this.viewfinishjob.Name = "viewfinishjob";
-            this.viewfinishjob.OverColor = System.Drawing.Color.White;
-            this.viewfinishjob.Size = new System.Drawing.Size(155, 28);
-            this.viewfinishjob.TabIndex = 19;
-            this.viewfinishjob.Text = "View";
-            this.viewfinishjob.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.viewfinishjob_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(10, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // foxBigLabel3
-            // 
-            this.foxBigLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel3.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel3.ForeColor = System.Drawing.Color.Black;
-            this.foxBigLabel3.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel3.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel3.Location = new System.Drawing.Point(116, 9);
-            this.foxBigLabel3.Name = "foxBigLabel3";
-            this.foxBigLabel3.Size = new System.Drawing.Size(236, 28);
-            this.foxBigLabel3.TabIndex = 4;
-            this.foxBigLabel3.Text = "Finished Job Orders";
-            // 
-            // foxBigLabel8
-            // 
-            this.foxBigLabel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.foxBigLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel8.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel8.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel8.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel8.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel8.Location = new System.Drawing.Point(193, 460);
-            this.foxBigLabel8.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
-            this.foxBigLabel8.Name = "foxBigLabel8";
-            this.foxBigLabel8.Size = new System.Drawing.Size(374, 28);
-            this.foxBigLabel8.TabIndex = 18;
-            this.foxBigLabel8.Text = "Search a plate number to view a specific job order.";
-            this.foxBigLabel8.Click += new System.EventHandler(this.foxBigLabel8_Click);
-            // 
-            // homesearchbtn
-            // 
-            this.homesearchbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.homesearchbtn.BackColor = System.Drawing.Color.Transparent;
-            this.homesearchbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.homesearchbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.homesearchbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homesearchbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.homesearchbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.homesearchbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.homesearchbtn.DownColor = System.Drawing.Color.Silver;
-            this.homesearchbtn.EnabledCalc = true;
-            this.homesearchbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.homesearchbtn.ForeColor = System.Drawing.Color.White;
-            this.homesearchbtn.Location = new System.Drawing.Point(496, 418);
-            this.homesearchbtn.Name = "homesearchbtn";
-            this.homesearchbtn.OverColor = System.Drawing.Color.Silver;
-            this.homesearchbtn.Size = new System.Drawing.Size(155, 36);
-            this.homesearchbtn.TabIndex = 17;
-            this.homesearchbtn.Text = "Search";
-            this.homesearchbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.homesearchbtn_Click);
-            // 
-            // searchjob_txtbox
-            // 
-            this.searchjob_txtbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.searchjob_txtbox.BackColor = System.Drawing.Color.Transparent;
-            this.searchjob_txtbox.BorderColor = System.Drawing.Color.Transparent;
-            this.searchjob_txtbox.EdgeColor = System.Drawing.Color.White;
-            this.searchjob_txtbox.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.searchjob_txtbox.ForeColor = System.Drawing.Color.Black;
-            this.searchjob_txtbox.Location = new System.Drawing.Point(193, 418);
-            this.searchjob_txtbox.Margin = new System.Windows.Forms.Padding(3, 3, 3, 25);
-            this.searchjob_txtbox.MaxLength = 32767;
-            this.searchjob_txtbox.Multiline = false;
-            this.searchjob_txtbox.Name = "searchjob_txtbox";
-            this.searchjob_txtbox.ReadOnly = false;
-            this.searchjob_txtbox.Size = new System.Drawing.Size(294, 36);
-            this.searchjob_txtbox.TabIndex = 16;
-            this.searchjob_txtbox.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.searchjob_txtbox.UseSystemPasswordChar = false;
-            // 
-            // foxBigLabel6
-            // 
-            this.foxBigLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel6.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel6.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel6.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel6.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel6.Location = new System.Drawing.Point(193, 204);
-            this.foxBigLabel6.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
-            this.foxBigLabel6.Name = "foxBigLabel6";
-            this.foxBigLabel6.Size = new System.Drawing.Size(379, 28);
-            this.foxBigLabel6.TabIndex = 14;
-            this.foxBigLabel6.Text = "Select a row and click the button to update.";
-            // 
-            // updatejobbtn
-            // 
-            this.updatejobbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.updatejobbtn.BackColor = System.Drawing.Color.Transparent;
-            this.updatejobbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.updatejobbtn.BorderColor = System.Drawing.Color.Transparent;
-            this.updatejobbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updatejobbtn.DisabledBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
-            this.updatejobbtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.updatejobbtn.DisabledTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(178)))), ((int)(((byte)(190)))));
-            this.updatejobbtn.DownColor = System.Drawing.Color.Silver;
-            this.updatejobbtn.EnabledCalc = true;
-            this.updatejobbtn.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold);
-            this.updatejobbtn.ForeColor = System.Drawing.Color.White;
-            this.updatejobbtn.Location = new System.Drawing.Point(914, 192);
-            this.updatejobbtn.Name = "updatejobbtn";
-            this.updatejobbtn.OverColor = System.Drawing.Color.Black;
-            this.updatejobbtn.Size = new System.Drawing.Size(185, 40);
-            this.updatejobbtn.TabIndex = 13;
-            this.updatejobbtn.Text = "Update";
-            this.updatejobbtn.Click += new ReaLTaiizor.Util.FoxBase.ButtonFoxBase.ClickEventHandler(this.updatejobbtn_Click);
-            // 
-            // materialCard1
-            // 
-            this.materialCard1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard1.Controls.Add(this.pendingjobgrid);
-            this.materialCard1.Depth = 0;
-            this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(193, 235);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(906, 166);
-            this.materialCard1.TabIndex = 3;
-            // 
-            // pendingjobgrid
-            // 
-            this.pendingjobgrid.AllowUserToAddRows = false;
-            this.pendingjobgrid.AllowUserToDeleteRows = false;
-            this.pendingjobgrid.AllowUserToResizeColumns = false;
-            this.pendingjobgrid.AllowUserToResizeRows = false;
-            this.pendingjobgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.pendingjobgrid.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.pendingjobgrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pendingjobgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pendingjobgrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pendingjobgrid.Location = new System.Drawing.Point(14, 14);
-            this.pendingjobgrid.MultiSelect = false;
-            this.pendingjobgrid.Name = "pendingjobgrid";
-            this.pendingjobgrid.ReadOnly = true;
-            this.pendingjobgrid.RowHeadersVisible = false;
-            this.pendingjobgrid.RowHeadersWidth = 51;
-            this.pendingjobgrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pendingjobgrid.Size = new System.Drawing.Size(878, 138);
-            this.pendingjobgrid.TabIndex = 9;
-            // 
-            // foxBigLabel1
-            // 
-            this.foxBigLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel1.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel1.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel1.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel1.Location = new System.Drawing.Point(193, 172);
-            this.foxBigLabel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 1);
-            this.foxBigLabel1.Name = "foxBigLabel1";
-            this.foxBigLabel1.Size = new System.Drawing.Size(232, 28);
-            this.foxBigLabel1.TabIndex = 2;
-            this.foxBigLabel1.Text = "Pending Job Orders";
-            // 
-            // foxBigLabel5
-            // 
-            this.foxBigLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel5.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel5.ForeColor = System.Drawing.Color.White;
-            this.foxBigLabel5.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel5.LineColor = System.Drawing.Color.Transparent;
-            this.foxBigLabel5.Location = new System.Drawing.Point(193, 9);
-            this.foxBigLabel5.Name = "foxBigLabel5";
-            this.foxBigLabel5.Size = new System.Drawing.Size(271, 31);
-            this.foxBigLabel5.TabIndex = 1;
-            this.foxBigLabel5.Text = "Dashboard Overview";
-            // 
             // rgstrcontainer
             // 
             this.rgstrcontainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(107)))), ((int)(((byte)(109)))));
@@ -1626,32 +1626,51 @@
             this.rgstrnewlabel.Text = "REGISTER CUSTOMER AND VEHICLE";
             this.rgstrnewlabel.Click += new System.EventHandler(this.rgstrnewlabel_Click);
             // 
-            // rolelabel
+            // clocktimer
             // 
-            this.rolelabel.BackColor = System.Drawing.Color.Transparent;
-            this.rolelabel.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rolelabel.ForeColor = System.Drawing.Color.White;
-            this.rolelabel.Line = ReaLTaiizor.Controls.FoxBigLabel.Direction.Bottom;
-            this.rolelabel.LineColor = System.Drawing.Color.Transparent;
-            this.rolelabel.Location = new System.Drawing.Point(8, 68);
-            this.rolelabel.Name = "rolelabel";
-            this.rolelabel.Size = new System.Drawing.Size(157, 29);
-            this.rolelabel.TabIndex = 8;
-            this.rolelabel.Text = "Role:";
+            this.clocktimer.Enabled = true;
+            this.clocktimer.Interval = 1000;
+            this.clocktimer.Tick += new System.EventHandler(this.clocktimer_Tick);
             // 
-            // materialCard5
+            // settime
             // 
-            this.materialCard5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard5.Controls.Add(this.adminlabel);
-            this.materialCard5.Depth = 0;
-            this.materialCard5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard5.Location = new System.Drawing.Point(8, 103);
-            this.materialCard5.Margin = new System.Windows.Forms.Padding(14);
-            this.materialCard5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.materialCard5.Name = "materialCard5";
-            this.materialCard5.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard5.Size = new System.Drawing.Size(158, 44);
-            this.materialCard5.TabIndex = 10;
+            this.settime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.settime.AutoSize = true;
+            this.settime.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.settime.Location = new System.Drawing.Point(10, 15);
+            this.settime.Name = "settime";
+            this.settime.Size = new System.Drawing.Size(60, 23);
+            this.settime.TabIndex = 24;
+            this.settime.Text = "label8";
+            this.settime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // setdate
+            // 
+            this.setdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.setdate.AutoSize = true;
+            this.setdate.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setdate.Location = new System.Drawing.Point(10, 57);
+            this.setdate.Name = "setdate";
+            this.setdate.Size = new System.Drawing.Size(60, 23);
+            this.setdate.TabIndex = 25;
+            this.setdate.Text = "label8";
+            this.setdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // materialCard6
+            // 
+            this.materialCard6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialCard6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard6.Controls.Add(this.settime);
+            this.materialCard6.Controls.Add(this.setdate);
+            this.materialCard6.Depth = 0;
+            this.materialCard6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard6.Location = new System.Drawing.Point(662, 11);
+            this.materialCard6.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard6.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialCard6.Name = "materialCard6";
+            this.materialCard6.Padding = new System.Windows.Forms.Padding(14);
+            this.materialCard6.Size = new System.Drawing.Size(233, 100);
+            this.materialCard6.TabIndex = 26;
             // 
             // dashboard
             // 
@@ -1671,8 +1690,17 @@
             this.Load += new System.EventHandler(this.dashboard_Load);
             this.navbar.ResumeLayout(false);
             this.logoandusercont.ResumeLayout(false);
+            this.materialCard5.ResumeLayout(false);
             this.btncontainer.ResumeLayout(false);
             this.main_cont.ResumeLayout(false);
+            this.homecontainer.ResumeLayout(false);
+            this.materialCard3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
+            this.materialCard2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.materialCard1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).EndInit();
             this.srvclgscontainer.ResumeLayout(false);
             this.searchresultscontainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vhclsownedgrid)).EndInit();
@@ -1683,21 +1711,14 @@
             this.cstmrscontainer.ResumeLayout(false);
             this.finishedjobgrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.customeraccsgrid)).EndInit();
-            this.homecontainer.ResumeLayout(false);
-            this.materialCard3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inventorygrid)).EndInit();
-            this.materialCard2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.materialCard1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pendingjobgrid)).EndInit();
             this.rgstrcontainer.ResumeLayout(false);
             this.rgstrcontainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.rgstrnewcontainer.ResumeLayout(false);
             this.rgstrnewcontainer.PerformLayout();
-            this.materialCard5.ResumeLayout(false);
+            this.materialCard6.ResumeLayout(false);
+            this.materialCard6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1765,8 +1786,6 @@
         private ReaLTaiizor.Controls.DungeonTextBox unpaidjobcounter;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel7;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private ReaLTaiizor.Controls.FoxBigLabel setdate;
-        private ReaLTaiizor.Controls.FoxBigLabel settime;
         private ReaLTaiizor.Controls.FoxBigLabel foxBigLabel9;
         private ReaLTaiizor.Controls.FoxButton addvehiclebtn;
         private ReaLTaiizor.Controls.MaterialCard materialCard3;
@@ -1790,5 +1809,9 @@
         private System.Windows.Forms.Panel logoandusercont;
         private ReaLTaiizor.Controls.FoxBigLabel rolelabel;
         private ReaLTaiizor.Controls.MaterialCard materialCard5;
+        private System.Windows.Forms.Timer clocktimer;
+        private System.Windows.Forms.Label setdate;
+        private System.Windows.Forms.Label settime;
+        private ReaLTaiizor.Controls.MaterialCard materialCard6;
     }
 }

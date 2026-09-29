@@ -18,14 +18,14 @@ namespace Olvarra_Capstone
     {
         private int failedAttempts = 0;
         private const int maxAttempts = 3; 
-        private int lockoutTime = 30; // 30 seconds lockout
+        private int lockoutTime = 30; 
         private Timer lockoutTimer = new Timer();
         private bool isLockedOut = false;
   
         public Form1()
         {
             InitializeComponent();
-            lockoutTimer.Interval = 1000; // 1000 milliseconds = 1 second
+            lockoutTimer.Interval = 1000; 
             lockoutTimer.Tick += LockoutTimer_Tick;
         }
 
@@ -101,7 +101,7 @@ namespace Olvarra_Capstone
                 }
                 else
                 {
-                    // INCREASE FAILED ATTEMPTS
+                    
                     failedAttempts++;
                     int attemptsLeft = maxAttempts - failedAttempts;
 
@@ -110,7 +110,6 @@ namespace Olvarra_Capstone
                         isLockedOut = true;
                         MessageBox.Show($"Too many failed attempts. Please wait {lockoutTime} seconds.", "System Locked", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                        // Visual Lockout
                         username_txt.Enabled = false;
                         password_txt.Enabled = false;
 
@@ -131,9 +130,8 @@ namespace Olvarra_Capstone
             }
         }
 
-        // ==========================================
-        // SHA256 PASSWORD HASHING UTILITY
-        // ==========================================
+        // SHA256 PASSWORD HASHING 
+     
         private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -144,7 +142,7 @@ namespace Olvarra_Capstone
                 StringBuilder sb = new StringBuilder();
                 foreach (byte b in hashBytes)
                 {
-                    sb.Append(b.ToString("x2")); // Convert byte to hex string
+                    sb.Append(b.ToString("x2")); 
                 }
                 return sb.ToString();
             }
@@ -154,22 +152,21 @@ namespace Olvarra_Capstone
         {
             lockoutTime--;
 
-            // Force the button to show the new text
+       
             loginbtn.Text = $"Locked ({lockoutTime}s)";
             loginbtn.Refresh();
 
             if (lockoutTime <= 0)
             {
                 lockoutTimer.Stop();
-                isLockedOut = false; // Lift the flag
+                isLockedOut = false; 
 
                 failedAttempts = 0;
                 lockoutTime = 30;
 
-                // Reset UI
                 username_txt.Enabled = true;
                 password_txt.Enabled = true;
-                loginbtn.BaseColor = originalBaseColor; // Return to black
+                loginbtn.BaseColor = originalBaseColor; 
                 loginbtn.Text = "Login";
 
                 password_txt.Text = "";
@@ -197,7 +194,7 @@ namespace Olvarra_Capstone
         private Color originalTextColor = Color.White;
         private void loginbtn_MouseEnter(object sender, EventArgs e)
         {
-            if (isLockedOut) return; // Don't highlight if locked!
+            if (isLockedOut) return; 
             loginbtn.BaseColor = Color.LightGray;
 
         }
@@ -206,7 +203,7 @@ namespace Olvarra_Capstone
         {
             if (isLockedOut)
             {
-                loginbtn.BaseColor = Color.DimGray; // Stay gray if locked
+                loginbtn.BaseColor = Color.DimGray; 
                 return;
             }
             loginbtn.BaseColor = originalBaseColor;
@@ -222,7 +219,7 @@ namespace Olvarra_Capstone
         {
             if (isLockedOut)
             {
-                // Keep it Gray if we are still in lockout mode
+        
                 loginbtn.BaseColor = Color.DimGray;
                 return;
             }
@@ -250,7 +247,7 @@ namespace Olvarra_Capstone
             Color color1 = Color.FromArgb(113, 107, 109); 
             Color color2 = Color.FromArgb(28, 28, 28); 
 
-            // Create the brush. LinearGradientMode.Vertical makes it fade top-to-bottom.
+         
             using (LinearGradientBrush brush = new LinearGradientBrush(this.leftpanel.ClientRectangle, color1, color2, LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(brush, this.leftpanel.ClientRectangle);

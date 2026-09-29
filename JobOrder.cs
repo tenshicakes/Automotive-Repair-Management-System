@@ -18,7 +18,6 @@ namespace Olvarra_Capstone
         {
             InitializeComponent();
             _vehicleID = vehicleID;
-            // Auto-change/display the labels based on the selected vehicle
             vehiclenamelbl.Text = vehicleModel;
             vehicleplatelbl.Text = plateNumber;
         }
@@ -29,14 +28,13 @@ namespace Olvarra_Capstone
             string issue = issue_textbox.Text.Trim();
             string status = statuslbl.Text.Trim();
 
-            // Validation
+          
             if (string.IsNullOrEmpty(loggedBy) || string.IsNullOrEmpty(issue))
             {
                 MessageBox.Show("Please fill in both the 'Logged by' and 'Issue' fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Query to insert into ServiceLogs table
             string query = @"
                 INSERT INTO ServiceLogs (VehicleID, LoggedBy, Issue, Status, DateLogged) 
                 VALUES (@VehicleID, @LoggedBy, @Issue, @Status, GETDATE())";
@@ -50,13 +48,13 @@ namespace Olvarra_Capstone
 
             try
             {
-                // Use your DatabaseHelper ExecuteQuery method for INSERT operations
+       
                 int rowsAffected = DatabaseHelper.ExecuteQuery(query, parameters);
 
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Job order created successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close(); // Close the popup form
+                    this.Close(); 
                 }
                 else
                 {
@@ -77,7 +75,7 @@ namespace Olvarra_Capstone
 
         private void cancelbtn_Click(object sender, EventArgs e)
         {
-            // Optional: Ask for confirmation if they typed something so they don't accidentally wipe it out
+
             DialogResult result = MessageBox.Show("Are you sure you want to cancel? Any unsaved changes will be lost.",
                                                   "Confirm Cancel",
                                                   MessageBoxButtons.YesNo,
@@ -85,7 +83,7 @@ namespace Olvarra_Capstone
 
             if (result == DialogResult.Yes)
             {
-                this.Close(); // Closes the popup form and returns to the main form without touching the database
+                this.Close(); 
             }
         }
     }

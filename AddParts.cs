@@ -33,18 +33,18 @@ namespace Olvarra_Capstone
             string query = "SELECT PartName, StockQuantity, Price FROM SpareParts";
             DataTable dt = DatabaseHelper.GetTable(query);
 
-            // 1. Add a custom interactive Quantity column to the DataTable if it doesn't already exist
+       
             if (!dt.Columns.Contains("Quantity"))
             {
                 DataColumn qtyColumn = new DataColumn("Quantity", typeof(int));
-                qtyColumn.DefaultValue = 1; // Default typed quantity
+                qtyColumn.DefaultValue = 1; 
                 dt.Columns.Add(qtyColumn);
             }
 
-            // 2. SET THE DATASOURCE FIRST so the columns are actually created in the grid
+        
             availpartsgrid.DataSource = dt;
 
-            // 3. NOW customize the column headers safely (using DataPropertyName or Column Name)
+            
             if (availpartsgrid.Columns["PartName"] != null)
                 availpartsgrid.Columns["PartName"].HeaderText = "Part Name";
 
@@ -56,15 +56,13 @@ namespace Olvarra_Capstone
 
             if (availpartsgrid.Columns["Quantity"] != null)
                 availpartsgrid.Columns["Quantity"].HeaderText = "Quantity";
-
-            // 4. Configure read-only and editable states
             availpartsgrid.ReadOnly = false;
             foreach (DataGridViewColumn col in availpartsgrid.Columns)
             {
                 if (col.Name == "Quantity" || col.DataPropertyName == "Quantity")
                 {
                     col.ReadOnly = false;
-                    col.DefaultCellStyle.BackColor = System.Drawing.Color.LightYellow; // Visual cue that it's editable
+                    col.DefaultCellStyle.BackColor = System.Drawing.Color.LightYellow; 
                 }
                 else
                 {
@@ -115,7 +113,7 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Loop through selected rows
+
             foreach (DataGridViewRow row in availpartsgrid.SelectedRows)
             {
                 if (row.IsNewRow) continue;
@@ -124,7 +122,7 @@ namespace Olvarra_Capstone
                 decimal price = Convert.ToDecimal(row.Cells["Price"].Value);
                 int stockQuantity = Convert.ToInt32(row.Cells["StockQuantity"].Value);
 
-                // 1. Validate that the quantity is a valid integer
+          
                 int qty = 1;
                 if (row.Cells["Quantity"].Value != null && int.TryParse(row.Cells["Quantity"].Value.ToString(), out int parsedQty))
                 {
@@ -133,24 +131,23 @@ namespace Olvarra_Capstone
                 else
                 {
                     MessageBox.Show($"Invalid quantity format entered for '{partName}'.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Stops execution completely
+                    return; 
                 }
 
-                // 2. Limiter: Prevent negative or zero numbers
                 if (qty <= 0)
                 {
                     MessageBox.Show($"Quantity for '{partName}' must be greater than zero.", "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Stops execution
+                    return;
                 }
 
-                // 3. Limiter: Prevent entering more than available StockQuantity
+
                 if (qty > stockQuantity)
                 {
                     MessageBox.Show($"Entered quantity ({qty}) for '{partName}' exceeds available stock ({stockQuantity}).", "Stock Limit Exceeded", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Stops execution
+                    return; 
                 }
 
-                // Check if part is already added to the local list, and make sure cumulative quantity doesn't exceed stock
+                
                 int existingQtyInList = 0;
                 DataRow targetExistingRow = null;
                 foreach (DataRow existingRow in _targetPartsUsedTable.Rows)

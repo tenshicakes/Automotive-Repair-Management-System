@@ -16,5 +16,10 @@ namespace Olvarra_Capstone
         {
             InitializeComponent();
         }
+
+        private void Fulldetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

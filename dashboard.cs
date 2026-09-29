@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -33,12 +34,16 @@ namespace Olvarra_Capstone
             InitializeComponent();
             currentUserRole = role;
             currentUsername = username;
+            clocktimer.Start();
         }
 
-        private void dashboard_Load(object sender, EventArgs e)
+        private void dashboard_Load(object sender, EventArgs e) 
         {
             rolelabel.Text = currentUserRole + ":";
             adminlabel.Text = currentUsername;
+
+            clocktimer.Start();
+            
             ActiveButton(homebtn);
             ShowPanel(homecontainer);
 
@@ -107,7 +112,11 @@ namespace Olvarra_Capstone
         }
 
 
-
+        private void clocktimer_Tick(object sender, EventArgs e)
+        {
+            settime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            setdate.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+        }
 
 
 
@@ -298,18 +307,16 @@ namespace Olvarra_Capstone
 
         private void homesearchbtn_Click(object sender, EventArgs e)
         {
-            // ==========================================
-            // CLEAR MODE LOGIC
-            // ==========================================
+
             if (homesearchbtn.Text == "Clear")
             {
-                // 1. Reload the original unfiltered data
+               
                 LoadPendingJobOrdersToGrid();
 
-                // 2. Clear the textbox for the next search
+   
                 searchjob_txtbox.Text = "";
 
-                // 3. Reset the ReaLTaiizor FoxButton appearance to original
+     
                 homesearchbtn.Text = "Search"; 
                 homesearchbtn.BaseColor = Color.Black;
                 homesearchbtn.ForeColor = Color.White;
@@ -318,19 +325,17 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // ==========================================
-            // SEARCH MODE LOGIC
-            // ==========================================
+ 
             string plateToSearch = searchjob_txtbox.Text.Trim();
 
-            // FPrevent empty searches
+      
             if (string.IsNullOrEmpty(plateToSearch))
             {
                 MessageBox.Show("Please enter a plate number to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Execute the filtered query using the exact same JOIN structure, but adding the PlateNumber condition
+           
             string filteredQuery = @"
                 SELECT s.LogID, v.VehicleModel, v.PlateNumber, s.Issue, s.LoggedBy, s.DateLogged 
                 FROM VehicleInfo v 
@@ -343,24 +348,22 @@ namespace Olvarra_Capstone
 
             DataTable dt = DatabaseHelper.GetTable(filteredQuery, parameters);
 
-            //Prevent empty grids on failed searches
+          
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("No pending jobs found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return; 
             }
 
-            // Bind the successful search to the grid
+            
             pendingjobgrid.DataSource = dt;
 
-            // Reapply your column headers since a new DataSource resets them
+  
             pendingjobgrid.Columns["VehicleModel"].HeaderText = "Vehicle Model";
             pendingjobgrid.Columns["PlateNumber"].HeaderText = "Plate Number";
             pendingjobgrid.Columns["Issue"].HeaderText = "Issue";
             pendingjobgrid.Columns["LoggedBy"].HeaderText = "Logged By";
             pendingjobgrid.Columns["DateLogged"].HeaderText = "Date Logged";
-
-            // Transform the button into "Clear" mode
             homesearchbtn.Text = "Clear";
             homesearchbtn.BaseColor = Color.Silver;
             homesearchbtn.ForeColor = Color.Black; 
@@ -436,7 +439,7 @@ namespace Olvarra_Capstone
             }
             catch (Exception ex)
             {
-                // Catch duplicate plate number or any other database error cleanly
+
                 if (ex.Message.Contains("Violation of UNIQUE KEY constraint") || ex.Message.Contains("PlateNumber"))
                 {
                     MessageBox.Show("This plate number is already registered in the system.", "Duplicate Plate", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -519,18 +522,14 @@ namespace Olvarra_Capstone
 
         private void cxsearchbtn_Click(object sender, EventArgs e)
         {
-            // ==========================================
-            // CLEAR MODE LOGIC
-            // ==========================================
+
             if (cxsearchbtn.Text == "Clear")
             {
-                // 1. Reload the original unfiltered data
+
                 LoadCustomerAccsToGrid();
 
-                // 2. Clear the textbox for the next search
                 cxsearch_txtbox.Text = "";
 
-                // 3. Reset the ReaLTaiizor FoxButton appearance to original
                 cxsearchbtn.Text = "Search";
                 cxsearchbtn.BaseColor = Color.Black;
                 cxsearchbtn.ForeColor = Color.White;
@@ -539,19 +538,17 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // ==========================================
-            // SEARCH MODE LOGIC
-            // ==========================================
+
             string cxToSearch = cxsearch_txtbox.Text.Trim();
 
-            // FPrevent empty searches
+
             if (string.IsNullOrEmpty(cxToSearch))
             {
                 MessageBox.Show("Please enter a customer name to search.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Execute the filtered query using the exact same JOIN structure, but adding the PlateNumber condition
+           
             string filteredQuery = @"
                 SELECT CustomerID, Fullname , PhoneNumber, Address 
                 FROM CustomerInfo 
@@ -563,23 +560,20 @@ namespace Olvarra_Capstone
 
             DataTable dt = DatabaseHelper.GetTable(filteredQuery, parameters);
 
-            //Prevent empty grids on failed searches
+
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("No customers found for that name.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            // Bind the successful search to the grid
+
             customeraccsgrid.DataSource = dt;
 
-            // Reapply your column headers since a new DataSource resets them
             customeraccsgrid.Columns["CustomerID"].HeaderText = "Customer ID";
             customeraccsgrid.Columns["Fullname"].HeaderText = "Full Name";
             customeraccsgrid.Columns["PhoneNumber"].HeaderText = "Phone Number";
             customeraccsgrid.Columns["Address"].HeaderText = "Address";
-
-            // Transform the button into "Clear" mode
             cxsearchbtn.Text = "Clear";
             cxsearchbtn.BaseColor = Color.Silver;
             cxsearchbtn.ForeColor = Color.Black;
@@ -603,7 +597,7 @@ namespace Olvarra_Capstone
         //======================
         private void foxButton2_Click(object sender, EventArgs e)
         {
-            // Prevent crash if grid is empty
+      
             if (cxdetailsgrid.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a customer to edit from the list.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -612,13 +606,12 @@ namespace Olvarra_Capstone
 
             DataGridViewRow selectedRow = cxdetailsgrid.SelectedRows[0];
 
-            // Extract the data, including the hidden CustomerID anchor
+    
             int customerID = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
             string currentName = selectedRow.Cells["FullName"].Value?.ToString() ?? "";
             string currentPhone = selectedRow.Cells["PhoneNumber"].Value?.ToString() ?? "";
             string currentAddress = selectedRow.Cells["Address"].Value?.ToString() ?? "";
 
-            // Pass the ID alongside the text values
             using (cxEditInfo editForm = new cxEditInfo(customerID, currentName, currentPhone, currentAddress))
             {
                 if (editForm.ShowDialog() == DialogResult.OK)
@@ -672,17 +665,15 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Get the selected row (handles full row select or cell select)
+
             int rowIndex = vhclsownedgrid.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = vhclsownedgrid.Rows[rowIndex];
 
-            // Extract the needed data (Make sure your column names match your database/grid columns)
+    
             string vehicleID = selectedRow.Cells["VehicleID"].Value.ToString();
             string vehicleModel = selectedRow.Cells["VehicleModel"].Value.ToString();
             string plateNumber = selectedRow.Cells["PlateNumber"].Value.ToString();
 
-            // Open the popup form and pass the data
-  
             JobOrder joborder = new JobOrder(vehicleID, vehicleModel, plateNumber);
             joborder.ShowDialog();
         }
@@ -692,10 +683,10 @@ namespace Olvarra_Capstone
         //=======================
         private void addvehiclebtn_Click(object sender, EventArgs e)
         {
-            // Ensure there is a customer loaded in the grid before trying to add a vehicle
+
             if (cxdetailsgrid.SelectedRows.Count == 0 && cxdetailsgrid.Rows.Count > 0)
             {
-                // If they didn't explicitly click a row but data is there, default to the first row
+          
                 cxdetailsgrid.Rows[0].Selected = true;
             }
             else if (cxdetailsgrid.Rows.Count == 0)
@@ -704,17 +695,13 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Safely extract the CustomerID to link the new vehicle
             DataGridViewRow selectedCustomerRow = cxdetailsgrid.SelectedRows[0];
             int customerID = Convert.ToInt32(selectedCustomerRow.Cells["CustomerID"].Value);
 
-            // Open the AddVehicle form, passing the CustomerID
             using (AddVehicle addForm = new AddVehicle(customerID))
             {
                 if (addForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Automatically search for the newly added vehicle's plate number 
-                    // so it instantly loads into the DataGridViews
                     search_txtbox.Text = addForm.NewPlateNumber;
                     searchbtn_Click(sender, e);
                 }
@@ -737,14 +724,13 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // 1. Customer Query remains the same
             string customerQuery = @"
         SELECT c.CustomerID, c.FullName, c.PhoneNumber, c.Address
         FROM CustomerInfo c
         INNER JOIN VehicleInfo v ON c.CustomerID = v.CustomerID
         WHERE v.PlateNumber = @PlateNumber";
 
-            // 2. Fixed Vehicle Query: Uses a subquery to find all vehicles owned by the customer
+
             string vehicleQuery = @"
         SELECT VehicleID, CustomerID, VehicleModel, PlateNumber
         FROM VehicleInfo
@@ -758,10 +744,10 @@ namespace Olvarra_Capstone
         new SqlParameter("@PlateNumber", plateNumberToSearch)
     };
 
-            // Execute Customer query first
+
             DataTable dtCustomer = DatabaseHelper.GetTable(customerQuery, parameters);
 
-            // 3. Fix: Stop execution and clear grids if no records are found
+  
             if (dtCustomer.Rows.Count == 0)
             {
                 MessageBox.Show("No records found for that plate number.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -770,15 +756,14 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Execute Vehicle query only if the customer exists
+     
             DataTable dtVehicle = DatabaseHelper.GetTable(vehicleQuery, parameters);
 
-            // Bind data to the DataGridViews
+  
             cxdetailsgrid.DataSource = dtCustomer;
             vhclsownedgrid.DataSource = dtVehicle;
 
-            // 4. Fix: Automatically select the first row in the customer grid 
-            // so your Edit and Add buttons work immediately without requiring a manual click
+
             if (cxdetailsgrid.Rows.Count > 0)
             {
                 cxdetailsgrid.ClearSelection();
@@ -841,18 +826,17 @@ namespace Olvarra_Capstone
 
         private void vhclsownedgrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Make sure they clicked an actual row and not the header
+  
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = vhclsownedgrid.Rows[e.RowIndex];
 
-                // Grab the necessary data from the clicked row 
-                // (Make sure these column names match your vhclsownedgrid's data source columns)
+
                 int vehicleId = Convert.ToInt32(row.Cells["VehicleID"].Value);
                 string vehicleModel = row.Cells["VehicleModel"].Value.ToString();
                 string plateNumber = row.Cells["PlateNumber"].Value.ToString();
 
-                // Open the ViewVehicleHistory form and pass the data into its constructor
+  
                 ViewVehicleHistory historyForm = new ViewVehicleHistory(vehicleId, vehicleModel, plateNumber);
                 historyForm.ShowDialog();
             }
@@ -861,20 +845,20 @@ namespace Olvarra_Capstone
 
         private void reportbtn_Click(object sender, EventArgs e)
         {
-            // 1. Guardrail: Ensure a customer is actually loaded
+
             if (cxdetailsgrid.Rows.Count == 0 || cxdetailsgrid.CurrentRow == null)
             {
                 MessageBox.Show("Please search and select a customer first before generating a report.", "Action Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Extract Customer Data
+
             DataGridViewRow cxRow = cxdetailsgrid.CurrentRow;
             string cxName = cxRow.Cells["FullName"].Value?.ToString() ?? "Unknown";
             string cxPhone = cxRow.Cells["PhoneNumber"].Value?.ToString() ?? "N/A";
             string cxAddress = cxRow.Cells["Address"].Value?.ToString() ?? "N/A";
 
-            // 3. Setup Save Dialog
+
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "PDF Document (*.pdf)|*.pdf";
@@ -885,7 +869,7 @@ namespace Olvarra_Capstone
                 {
                     try
                     {
-                        // Initialize iText7 PDF Writer
+     
                         using (PdfWriter writer = new PdfWriter(sfd.FileName))
                         using (PdfDocument pdf = new PdfDocument(writer))
                         using (Document document = new Document(pdf))
@@ -905,7 +889,7 @@ namespace Olvarra_Capstone
                                 .SetFontSize(12)
                                 .SetMarginBottom(20));
 
-                            // Customer Info 
+       
                             Table cxTable = new Table(new float[] { 1, 3 }).UseAllAvailableWidth().SetMarginBottom(20);
 
                             cxTable.AddCell(new Cell().Add(new Paragraph("Customer Name:")).SetBorder(Border.NO_BORDER).SetFont(boldFont));
@@ -1014,13 +998,13 @@ namespace Olvarra_Capstone
                                 .SetFontSize(10)
                                 .SetMarginBottom(5));
 
-                            // Fully qualified iText color
+
                             document.Add(new Paragraph("(Authorized Shop Personnel)")
                                 .SetFontSize(9)
                                 .SetFontColor(iText.Kernel.Colors.ColorConstants.GRAY));
                         }
 
-                        // Automatically open the PDF for the user to view/print
+   
                         MessageBox.Show("Report successfully generated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Process.Start(new ProcessStartInfo(sfd.FileName) { UseShellExecute = true });
                     }
@@ -1130,7 +1114,7 @@ namespace Olvarra_Capstone
             string role = selectedRow.Cells["Role"].Value?.ToString() ?? "";
             string username = selectedRow.Cells["Username"].Value?.ToString() ?? "";
 
-            // Prevent deletion of Administrator accounts
+
             if (role.Equals("Administrator", StringComparison.OrdinalIgnoreCase))
             {
                 MessageBox.Show("Administrator accounts cannot be deleted from the system.", "Action Denied", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -1267,6 +1251,6 @@ namespace Olvarra_Capstone
 
         }
 
-       
+        
     }
 }

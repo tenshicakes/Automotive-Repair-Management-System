@@ -43,7 +43,6 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // If nothing was changed, close silently and skip the database update
             if (newModel == _originalModel && newPlate == _originalPlateNumber)
             {
                 this.DialogResult = DialogResult.Cancel;
@@ -71,7 +70,7 @@ namespace Olvarra_Capstone
                     }
                 }
 
-                // Execute the update query using DatabaseHelper.ExecuteQuery
+
                 string updateQuery = "UPDATE VehicleInfo SET VehicleModel = @Model, PlateNumber = @NewPlate WHERE PlateNumber = @OriginalPlate";
                 SqlParameter[] updateParams = new SqlParameter[]
                 {

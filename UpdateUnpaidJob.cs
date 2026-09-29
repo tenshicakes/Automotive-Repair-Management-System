@@ -33,7 +33,7 @@ namespace Olvarra_Capstone
 
         private void CalculateAndDisplayTotal()
         {
-            // If no parts were used, total is 0
+   
             if (string.IsNullOrWhiteSpace(_partsUsedText))
             {
                 totalamountlbl.Text = "0.00";
@@ -43,8 +43,7 @@ namespace Olvarra_Capstone
 
             decimal grandTotal = 0;
 
-            // Parts are formatted like: "Oil Filter (Qty: 3), Air Filter (Qty: 2)"
-            // Split by comma to separate each individual part entry
+      
             string[] partEntries = _partsUsedText.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string entry in partEntries)
@@ -75,7 +74,7 @@ namespace Olvarra_Capstone
 
             object result = DatabaseHelper.ExecuteScalar(query, parameters);
 
-            // If the part exists, return its price; otherwise default to 0
+ 
             if (result != null && decimal.TryParse(result.ToString(), out decimal price))
             {
                 return price;
@@ -86,7 +85,7 @@ namespace Olvarra_Capstone
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            // 1. Validate Amount Paid textbox
+
             if (!decimal.TryParse(amountpaid_txtbox.Text.Trim(), out decimal amountPaid) || amountPaid <= 0 || amountpaid_txtbox.Text.Contains("-"))
             {
                 MessageBox.Show("Please enter a valid numeric amount paid.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -94,7 +93,6 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // 2. Validate Processed By textbox
             string processedBy = processby_txtbox.Text.Trim();
             if (string.IsNullOrEmpty(processedBy))
             {

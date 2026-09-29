@@ -47,14 +47,13 @@ namespace Olvarra_Capstone
             inventoryGrid.Columns.Clear();
             inventoryGrid.AllowUserToAddRows = false;
 
-            // Add PartID (Hidden)
+           
             inventoryGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PartID", DataPropertyName = "PartID", Visible = false });
 
-            // Add Read-Only Columns
             inventoryGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "PartName", HeaderText = "Part Name", DataPropertyName = "PartName", ReadOnly = true });
             inventoryGrid.Columns.Add(new DataGridViewTextBoxColumn { Name = "StockQuantity", HeaderText = "Current Stock", DataPropertyName = "StockQuantity", ReadOnly = true });
 
-            // Add Editable Quantity Column
+    
             DataGridViewTextBoxColumn qtyCol = new DataGridViewTextBoxColumn
             {
                 Name = "Quantity",
@@ -63,10 +62,8 @@ namespace Olvarra_Capstone
             };
             inventoryGrid.Columns.Add(qtyCol);
 
-            // Bind the passed data
             inventoryGrid.DataSource = _dtParts;
 
-            // Wire up essential validation events
             inventoryGrid.CurrentCellDirtyStateChanged += InventoryGrid_CurrentCellDirtyStateChanged;
             inventoryGrid.EditingControlShowing += InventoryGrid_EditingControlShowing;
             inventoryGrid.CellValidating += InventoryGrid_CellValidating;
@@ -101,7 +98,7 @@ namespace Olvarra_Capstone
         // GRID EDITING & VALIDATION FIXES
         // ==========================================
 
-        // Fixes the "Must Press Enter" issue by forcing an instant commit
+   
         private void InventoryGrid_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (inventoryGrid.IsCurrentCellDirty && inventoryGrid.CurrentCell.OwningColumn.Name == "Quantity")
@@ -110,18 +107,17 @@ namespace Olvarra_Capstone
             }
         }
 
-        // 2. Hooks into the text box of the cell to restrict keystrokes
         private void InventoryGrid_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (inventoryGrid.CurrentCell.OwningColumn.Name == "Quantity" && e.Control is TextBox tb)
             {
-                // Remove existing handlers to prevent stacking
+               
                 tb.KeyPress -= TextBox_KeyPress;
                 tb.KeyPress += TextBox_KeyPress;
             }
         }
 
-        // 3. Blocks letters, spaces, and negative signs
+
         private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -130,7 +126,7 @@ namespace Olvarra_Capstone
             }
         }
 
-        // 4. Validates final input (Checks Stock-Out limits)
+      
         private void InventoryGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             if (inventoryGrid.Columns[e.ColumnIndex].Name == "Quantity")
@@ -147,7 +143,7 @@ namespace Olvarra_Capstone
                         if (enteredQty > currentStock)
                         {
                             MessageBox.Show($"Cannot reduce more than the current stock ({currentStock}).", "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            e.Cancel = true; // Reverts the edit
+                            e.Cancel = true; 
                         }
                     }
                 }
@@ -156,7 +152,7 @@ namespace Olvarra_Capstone
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
-            // Stop any active editing to ensure the final value is captured
+        
             inventoryGrid.EndEdit();
 
             List<string> queries = new List<string>();
@@ -170,17 +166,17 @@ namespace Olvarra_Capstone
                     int.TryParse(row.Cells["Quantity"].Value.ToString(), out qty);
                 }
 
-                // Skip rows where the user left the quantity as 0
+           
                 if (qty > 0)
                 {
                     int currentStock = Convert.ToInt32(row.Cells["StockQuantity"].Value);
 
-                    // 2. New Guardrail: Final backend check to absolutely prevent negative stock
+                  
                     if (_actionType == "OUT" && qty > currentStock)
                     {
                         string partName = row.Cells["PartName"].Value?.ToString() ?? "An item";
                         MessageBox.Show($"Cannot reduce '{partName}' by {qty} because it only has {currentStock} in stock.", "Transaction Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return; // Halts the entire batch update
+                        return; 
                     }
 
                     int partId = Convert.ToInt32(row.Cells["PartID"].Value);
@@ -205,7 +201,7 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Execute all updates simultaneously via your DatabaseHelper Transaction
+   
             bool success = DatabaseHelper.ExecuteTransaction(queries.ToArray(), parametersList.ToArray());
 
             if (success)

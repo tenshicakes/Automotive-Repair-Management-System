@@ -190,6 +190,7 @@
             this.MinimizeBox = false;
             this.Name = "AddForm";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.AddForm_Load);
             this.ResumeLayout(false);
 
         }

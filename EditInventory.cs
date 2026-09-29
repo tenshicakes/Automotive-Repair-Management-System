@@ -81,7 +81,6 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Prevent 0-stock items from passing to a Stock-Out action
             if (actionType == "OUT")
             {
                 foreach (DataGridViewRow row in inventorygrid.SelectedRows)
@@ -91,12 +90,11 @@ namespace Olvarra_Capstone
                     {
                         string partName = row.Cells["PartName"].Value?.ToString() ?? "Selected item";
                         MessageBox.Show($"'{partName}' has 0 stock. You cannot perform a stock-out on depleted items. Please deselect it.", "Invalid Selection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return; // Aborts opening the form completely
+                        return; 
                     }
                 }
             }
 
-            // Create a temporary DataTable to hold the selected items to pass to the popup
             DataTable dtSelected = new DataTable();
             dtSelected.Columns.Add("PartID", typeof(int));
             dtSelected.Columns.Add("PartName", typeof(string));
@@ -133,7 +131,6 @@ namespace Olvarra_Capstone
                 return;
             }
 
-            // Prepare a DataTable to pass the exact selected data to the EditForm
             DataTable dtSelected = new DataTable();
             dtSelected.Columns.Add("PartID", typeof(int));
             dtSelected.Columns.Add("PartName", typeof(string));

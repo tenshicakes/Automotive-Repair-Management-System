@@ -30,26 +30,24 @@ namespace Olvarra_Capstone
         //==========================
         private void addbtn_Click(object sender, EventArgs e)
         {
-            // 1. Validate that a row is actually selected
+  
             if (unpaidjobgrid.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select an unpaid job order first.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Grab the selected row
             DataGridViewRow selectedRow = unpaidjobgrid.SelectedRows[0];
             if (selectedRow.IsNewRow) return;
 
-            // 3. Extract the PartsUsed string (safely handling nulls if no parts were used)
+    
             string partsUsed = selectedRow.Cells["PartsUsed"].Value?.ToString() ?? string.Empty;
-            string logID = selectedRow.Cells["LogID"].Value.ToString(); // You might also need LogID for saving payment later!
+            string logID = selectedRow.Cells["LogID"].Value.ToString(); 
 
-            // 4. Open UpdateUnpaidJob and pass the data
+     
             UpdateUnpaidJob updateForm = new UpdateUnpaidJob(logID, partsUsed);
             updateForm.ShowDialog();
 
-            // Optional: Refresh the grid after closing the form in case payment was saved
             LoadUnpaidJobsToGrid();
         }
         

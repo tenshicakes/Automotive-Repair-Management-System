@@ -19,13 +19,13 @@ namespace Olvarra_Capstone
         {
             InitializeComponent();
             _serviceLogID = serviceLogID;
-            // Auto-change labels
+          
             vhclmodellbl.Text = vehicleModel;
             platenumberlbl.Text = plateNumber;
             datefinishlbl.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
      
-            updatestatus.Text = "Finished"; // Default to Finished or Pending
+            updatestatus.Text = "Finished"; 
 
             dtPartsUsed.Columns.Add("PartName", typeof(string));
             dtPartsUsed.Columns.Add("Quantity", typeof(int));
@@ -61,7 +61,6 @@ namespace Olvarra_Capstone
         }
         
 
-        // Event handler for the "Add Parts" button click
         private void addpartsbtn_Click(object sender, EventArgs e)
         {
             AddParts addparts = new AddParts(dtPartsUsed);
@@ -69,15 +68,14 @@ namespace Olvarra_Capstone
         }
 
 
-        // Event handler for the "Save Job" button click
+   
         private void savejobbtn_Click(object sender, EventArgs e)
 {
     string status = updatestatus.Text;
     string solution = solution_txtbox.Text.Trim();
-    string fixedBy = fixedby_txtbox.Text.Trim(); // 1. Grab text from the new textbox
+    string fixedBy = fixedby_txtbox.Text.Trim(); 
     string dateFinished = datefinishlbl.Text;
 
-    // Compile parts used into a text string format (e.g., "Oil Filter x2, Spark Plug x4") or leave null if empty
     string partsUsedText = null;
     if (dtPartsUsed.Rows.Count > 0)
     {
@@ -92,11 +90,10 @@ namespace Olvarra_Capstone
         partsUsedText = string.Join(", ", partNamesList);
     }
 
-    // 1. Prepare queries for transaction (Update ServiceLogs AND Deduct SpareParts stock)
+ 
     List<string> queryList = new List<string>();
     List<SqlParameter[]> paramList = new List<SqlParameter[]>();
 
-    // Main update query for ServiceLogs (Added FixedBy = @FixedBy)
     string updateLogQuery = @"
         UPDATE ServiceLogs 
         SET Status = @Status, 
@@ -112,11 +109,10 @@ namespace Olvarra_Capstone
         new SqlParameter("@Solution", string.IsNullOrEmpty(solution) ? (object)DBNull.Value : solution),
         new SqlParameter("@PartsUsed", string.IsNullOrEmpty(partsUsedText) ? (object)DBNull.Value : partsUsedText),
         new SqlParameter("@DateFinished", dateFinished),
-        new SqlParameter("@FixedBy", string.IsNullOrEmpty(fixedBy) ? (object)DBNull.Value : fixedBy), // 2. Pass FixedBy parameter safely
+        new SqlParameter("@FixedBy", string.IsNullOrEmpty(fixedBy) ? (object)DBNull.Value : fixedBy), 
         new SqlParameter("@ServiceLogID", _serviceLogID)
     });
 
-    // Add queries to deduct stock quantities from SpareParts table for each part used
     foreach (DataRow row in dtPartsUsed.Rows)
     {
         string partName = row["PartName"].ToString();
@@ -134,7 +130,7 @@ namespace Olvarra_Capstone
         });
     }
 
-    // Execute via DatabaseHelper transaction
+
     bool success = DatabaseHelper.ExecuteTransaction(queryList.ToArray(), paramList.ToArray());
 
     if (success)
@@ -161,29 +157,28 @@ namespace Olvarra_Capstone
 
         private void removepartsbtn_Click(object sender, EventArgs e)
         {
-            // 1. Check if the user has selected any rows in the partsusedgrid
+        
             if (partsusedgrid.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select at least one part to remove.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Collect the rows into a temporary list first 
-            // (This prevents crashes while looping through SelectedRows in real-time)
+
+
             List<DataRow> rowsToRemove = new List<DataRow>();
 
             foreach (DataGridViewRow row in partsusedgrid.SelectedRows)
             {
                 if (row.IsNewRow) continue;
 
-                // Extract the underlying DataRow backing this specific grid row
                 if (row.DataBoundItem is DataRowView drv)
                 {
                     rowsToRemove.Add(drv.Row);
                 }
             }
 
-            // 3. Remove them from the DataTable that powers your partsusedgrid
+       
             foreach (DataRow dr in rowsToRemove)
             {
                 dr.Table.Rows.Remove(dr);

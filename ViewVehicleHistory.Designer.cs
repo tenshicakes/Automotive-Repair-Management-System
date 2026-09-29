@@ -85,7 +85,7 @@
             this.vehiclenamelbl.Name = "vehiclenamelbl";
             this.vehiclenamelbl.Size = new System.Drawing.Size(271, 31);
             this.vehiclenamelbl.TabIndex = 5;
-            this.vehiclenamelbl.Text = "Dashboard Overview";
+            this.vehiclenamelbl.Text = "Initial";
             // 
             // vehicleplatelbl
             // 
@@ -98,7 +98,7 @@
             this.vehicleplatelbl.Name = "vehicleplatelbl";
             this.vehicleplatelbl.Size = new System.Drawing.Size(271, 31);
             this.vehicleplatelbl.TabIndex = 6;
-            this.vehicleplatelbl.Text = "Dashboard Overview";
+            this.vehicleplatelbl.Text = "Initial";
             // 
             // ViewVehicleHistory
             // 

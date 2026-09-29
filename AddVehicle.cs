@@ -15,7 +15,7 @@ namespace Olvarra_Capstone
     {
         private int _customerID;
 
-        // Property to pass the newly created plate number back to the dashboard
+      
         public string NewPlateNumber { get; private set; }
         public AddVehicle(int customerId)
         {
@@ -30,11 +30,9 @@ namespace Olvarra_Capstone
 
         private void addbtn_Click(object sender, EventArgs e)
         {
-            // Sanitize inputs to prevent blank spaces from being inserted
             string newModel = model_txtbox.Text.Trim();
             string newPlate = platenum_txtbox.Text.Trim();
 
-            // 1. Validation: Prevent empty submissions
             if (string.IsNullOrEmpty(newModel) || string.IsNullOrEmpty(newPlate))
             {
                 MessageBox.Show("Please fill out both the Vehicle Model and Plate Number.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -43,7 +41,7 @@ namespace Olvarra_Capstone
 
             try
             {
-                // 2. Validation: Check for duplicate plate numbers system-wide
+               
                 string checkQuery = "SELECT COUNT(*) FROM VehicleInfo WHERE PlateNumber = @PlateNumber";
                 SqlParameter[] checkParams = new SqlParameter[]
                 {
@@ -58,7 +56,7 @@ namespace Olvarra_Capstone
                     return;
                 }
 
-                // 3. Execution: Insert the new vehicle linked to the CustomerID
+               
                 string insertQuery = @"
                     INSERT INTO VehicleInfo (CustomerID, VehicleModel, PlateNumber) 
                     VALUES (@CustomerID, @Model, @PlateNumber)";
@@ -76,7 +74,7 @@ namespace Olvarra_Capstone
                 {
                     MessageBox.Show("New vehicle added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Store the plate so the dashboard can auto-search it, then close
+               
                     this.NewPlateNumber = newPlate;
                     this.DialogResult = DialogResult.OK;
                     this.Close();

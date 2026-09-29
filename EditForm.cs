@@ -41,7 +41,6 @@ namespace Olvarra_Capstone
 
             editinventorygrid.DataSource = _dtParts;
 
-            // Wire up essential events
             editinventorygrid.CurrentCellDirtyStateChanged += EditInventoryGrid_CurrentCellDirtyStateChanged;
             editinventorygrid.EditingControlShowing += EditInventoryGrid_EditingControlShowing;
             editinventorygrid.CellValidating += EditInventoryGrid_CellValidating;
@@ -69,7 +68,7 @@ namespace Olvarra_Capstone
             editinventorygrid.RowTemplate.Height = 40;
         }
 
-        // 1. Instant Commit (No Enter key required)
+
         private void EditInventoryGrid_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
             if (editinventorygrid.IsCurrentCellDirty)
@@ -78,7 +77,7 @@ namespace Olvarra_Capstone
             }
         }
 
-        // 2. Attach specialized key press filters depending on the column
+
         private void EditInventoryGrid_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             if (e.Control is TextBox tb)
@@ -99,7 +98,7 @@ namespace Olvarra_Capstone
             }
         }
 
-        // 3a. Filter: Integers only for Stock
+
         private void Stock_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -108,7 +107,6 @@ namespace Olvarra_Capstone
             }
         }
 
-        // 3b. Filter: Numbers and a single decimal point for Price
         private void Price_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -116,14 +114,13 @@ namespace Olvarra_Capstone
                 e.Handled = true;
             }
 
-            // Prevent a second decimal point
+    
             if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
             {
                 e.Handled = true;
             }
         }
 
-        // 4. Prevent users from leaving a cell completely blank or filled with spaces
         private void EditInventoryGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             string colName = editinventorygrid.Columns[e.ColumnIndex].Name;
@@ -154,7 +151,7 @@ namespace Olvarra_Capstone
                 string newStockStr = row.Cells["StockQuantity"].Value?.ToString().Trim() ?? "0";
                 string newPriceStr = row.Cells["Price"].Value?.ToString().Trim() ?? "0";
 
-                // check against blanks cells
+         
                 if (string.IsNullOrEmpty(newName) || string.IsNullOrEmpty(newStockStr) || string.IsNullOrEmpty(newPriceStr))
                 {
                     MessageBox.Show("All fields must be completely filled out. Please fix empty cells before saving.", "Save Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -164,7 +161,6 @@ namespace Olvarra_Capstone
                 int newStock = Convert.ToInt32(newStockStr);
                 decimal newPrice = Convert.ToDecimal(newPriceStr);
 
-                // Find the original row to compare values
                 DataRow originalRow = _originalData.AsEnumerable().FirstOrDefault(r => r.Field<int>("PartID") == partId);
 
                 if (originalRow != null)
@@ -173,7 +169,6 @@ namespace Olvarra_Capstone
                     int oldStock = originalRow.Field<int>("StockQuantity");
                     decimal oldPrice = originalRow.Field<decimal>("Price");
 
-                    // Check if anything ACTUALLY changed
                     if (newName != oldName || newStock != oldStock || newPrice != oldPrice)
                     {
                         string query = "UPDATE SpareParts SET PartName = @PartName, StockQuantity = @StockQuantity, Price = @Price WHERE PartID = @PartID";
@@ -194,13 +189,13 @@ namespace Olvarra_Capstone
 
             if (queries.Count == 0)
             {
-                // Silently close or show a message if they hit save without making genuine changes
+
                 this.DialogResult = DialogResult.Cancel;
                 this.Close();
                 return;
             }
 
-            // Execute genuine updates via transaction
+
             bool success = DatabaseHelper.ExecuteTransaction(queries.ToArray(), parametersList.ToArray());
 
             if (success)

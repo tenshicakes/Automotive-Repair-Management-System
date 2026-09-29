@@ -90,7 +90,7 @@ namespace Olvarra_Capstone
         // ==========================================
         // DATE FILTER TRIGGERS
         // ==========================================
-        // Double-click your dtpfrom and dtpto controls in the designer to create these events
+    
         private void dtpfrom_ValueChanged(object sender, EventArgs e)
         {
             LoadFinishedJobOrdersToGrid();
@@ -148,14 +148,14 @@ namespace Olvarra_Capstone
 
         private void reportbtn_Click(object sender, EventArgs e)
         {
-            // 1. Guardrail: Ensure there is data to print
+    
             if (finishedjobgrid.Rows.Count == 0)
             {
                 MessageBox.Show("There are no records currently displayed to generate a report.", "Empty Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // 2. Setup Save Dialog
+        
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
                 sfd.Filter = "PDF Document (*.pdf)|*.pdf";

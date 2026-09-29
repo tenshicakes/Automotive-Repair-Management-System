@@ -22,19 +22,14 @@ namespace Olvarra_Capstone
             _vehicleId = vehicleId;
             _vehicleModel = vehicleModel;
             _plateNumber = plateNumber;
-
-            // 1. Auto-change your labels based on the clicked vehicle
             vehiclenamelbl.Text = _vehicleModel;     
             vehicleplatelbl.Text = _plateNumber;      
-
-            // 2. Load the combined history data into the grid
             LoadHistoryGrid();
             SetupHistoryGridStyle();
         }
         private void LoadHistoryGrid()
         {
-            // SQL query: Pulls ServiceLogs for this vehicle and joins PaymentInfo via LogID.
-            // Explicitly selects only the columns you want (excluding VehicleID, PaymentID, and LogID).
+
             string query = @"
                 SELECT 
                     s.LogID,
@@ -58,7 +53,7 @@ namespace Olvarra_Capstone
                 new SqlParameter("@VehicleID", _vehicleId)
             };
 
-            // Fetch table using your DatabaseHelper
+
             DataTable dt = DatabaseHelper.GetTable(query, parameters);
             vehiclehistorygrid.DataSource = dt;
 
