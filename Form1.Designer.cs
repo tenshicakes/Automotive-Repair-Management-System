@@ -38,10 +38,13 @@
             this.loginbtn = new ReaLTaiizor.Controls.ForeverButton();
             this.foxLabel1 = new ReaLTaiizor.Controls.FoxLabel();
             this.usernamelbl = new ReaLTaiizor.Controls.FoxLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.loginform.SuspendLayout();
             this.rightpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.leftpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // loginform
@@ -65,7 +68,7 @@
             this.loginform.SmartBounds = true;
             this.loginform.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.loginform.TabIndex = 0;
-            this.loginform.Text = "Login to your account";
+            this.loginform.Text = "VEHICLE REPAIR LOG AND SERVICE HISTORY SYSTEM";
             this.loginform.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.loginform.Transparent = false;
             this.loginform.Click += new System.EventHandler(this.loginform_Click);
@@ -73,7 +76,9 @@
             // rightpanel
             // 
             this.rightpanel.BackColor = System.Drawing.Color.Transparent;
+            this.rightpanel.Controls.Add(this.label1);
             this.rightpanel.Controls.Add(this.pictureBox1);
+            this.rightpanel.Controls.Add(this.pictureBox2);
             this.rightpanel.Location = new System.Drawing.Point(447, 24);
             this.rightpanel.Name = "rightpanel";
             this.rightpanel.Size = new System.Drawing.Size(353, 426);
@@ -185,6 +190,27 @@
             this.usernamelbl.Text = "Username";
             this.usernamelbl.Click += new System.EventHandler(this.usernamelbl_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(68, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "System Developer: Bryan Mar Olvarra";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 387);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(76, 55);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,8 +227,10 @@
             this.TransparencyKey = System.Drawing.Color.Fuchsia;
             this.loginform.ResumeLayout(false);
             this.rightpanel.ResumeLayout(false);
+            this.rightpanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.leftpanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -218,6 +246,8 @@
         private ReaLTaiizor.Controls.ForeverButton loginbtn;
         private ReaLTaiizor.Controls.DungeonTextBox username_txt;
         private ReaLTaiizor.Controls.DungeonTextBox password_txt;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label1;
     }
 }
 
